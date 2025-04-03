@@ -1,13 +1,13 @@
 export const TECH_BADGE = [
-  { name: "HTML5", color: "bg-orange-600" },
-  { name: "CSS3", color: "bg-blue-500" },
-  { name: "JavaScript", color: "bg-yellow-500" },
-  { name: "TypeScript", color: "bg-blue-600" },
-  { name: "React", color: "bg-cyan-500" },
-  { name: "Next.js", color: "bg-black" },
-  { name: "Vue.js", color: "bg-green-500" },
-  { name: "Angular", color: "bg-red-600" },
-  { name: "Node.js", color: "bg-green-600" },
+  { name: "HTML5" },
+  { name: "CSS3" },
+  { name: "JavaScript" },
+  { name: "TypeScript" },
+  { name: "React" },
+  { name: "Next.js" },
+  { name: "Vue.js" },
+  { name: "Angular" },
+  { name: "Node.js" },
 ];
 
 export const EXPERIENCES = [
