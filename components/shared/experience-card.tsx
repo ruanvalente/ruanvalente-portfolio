@@ -20,19 +20,23 @@ export function ExperienceCard({
       {!isLast && (
         <div className="absolute left-3 top-3 bottom-0 w-px bg-slate-700"></div>
       )}
-      <div className="absolute left-0 top-3 w-6 h-6 rounded-full bg-yellow-400 flex items-center justify-center">
-        <div className="w-2 h-2 rounded-full bg-slate-900"></div>
+      <div className="absolute left-0 top-3 w-6 h-6 rounded-full bg-amber-600 dark:bg-yellow-400 flex items-center justify-center">
+        <div className="w-2 h-2 rounded-full bg-white dark:bg-slate-900"></div>
       </div>
       <div>
         <h3 className="text-xl font-semibold">{title}</h3>
         <div className="flex items-center gap-2 mb-2">
-          <span className="text-yellow-400">{company}</span>
-          <span className="text-sm text-slate-400">• {period}</span>
+          <span className="text-amber-600 dark:text-yellow-400">{company}</span>
+          <span className="text-sm text-muted-foreground">• {period}</span>
         </div>
-        <p className="text-slate-300 mb-4">{description}</p>
+        <p className="text-muted-foreground mb-4">{description}</p>
         <div className="flex flex-wrap gap-2">
           {technologies.map((tech, index) => (
-            <Badge key={index} variant="outline" className="border-slate-600">
+            <Badge
+              key={index}
+              variant="outline"
+              className="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 text-foreground"
+            >
               {tech}
             </Badge>
           ))}

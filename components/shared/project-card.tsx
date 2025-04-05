@@ -20,12 +20,14 @@ export function ProjectCard({
   link: string;
 }) {
   return (
-    <Card className="bg-slate-800 border-slate-700 hover:border-yellow-400 transition-colors">
+    <Card className="rounded-lg border bg-card text-card-foreground shadow-md hover:border-amber-600 dark:hover:border-yellow-400 transition-colors">
       <CardHeader>
-        <CardTitle className="text-yellow-400">{title}</CardTitle>
+        <CardTitle className="text-2xl font-semibold leading-none tracking-tight text-amber-600 dark:text-yellow-400">
+          {title}
+        </CardTitle>
       </CardHeader>
       <CardContent>
-        <p className="text-slate-300 mb-4">{description}</p>
+        <p className="text-muted-foreground mb-4">{description}</p>
         <div className="flex flex-wrap gap-2">
           {tags.map((tag, index) => (
             <Badge key={index} variant="outline" className="border-slate-600">
@@ -39,7 +41,7 @@ export function ProjectCard({
           href={link}
           target="_blank"
           rel="noopener noreferrer"
-          className="text-yellow-400 hover:underline inline-flex items-center"
+          className="text-amber-600 dark:text-yellow-400 hover:underline inline-flex items-center"
         >
           View Project <ExternalLink size={16} className="ml-1" />
         </a>

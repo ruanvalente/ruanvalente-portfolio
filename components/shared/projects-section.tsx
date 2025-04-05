@@ -14,7 +14,11 @@ export function ProjectsSection() {
         <Tabs defaultValue="all" className="max-w-3xl mx-auto">
           <TabsList className="grid w-full grid-cols-4 mb-8">
             {TABS.map((tab, index) => (
-              <TabsTrigger key={index} value={tab.value}>
+              <TabsTrigger
+                className="data-[state=active]:animate-in data-[state=active]:fade-in-50 duration-700 ease-in-out"
+                key={index}
+                value={tab.value}
+              >
                 {tab.label}
               </TabsTrigger>
             ))}
@@ -24,7 +28,7 @@ export function ProjectsSection() {
             <TabsContent
               key={index}
               value={tab.value}
-              className="grid md:grid-cols-2 gap-6 cursor-pointer"
+              className="grid md:grid-cols-2 gap-6 cursor-pointer data-[state=active]:animate-in data-[state=active]:fade-in-0 data-[state=inactive]:animate-out data-[state=inactive]:fade-out-0 duration-700 ease-in-out"
             >
               {PROJECTS.filter((project) =>
                 project.category.includes(tab.value)
@@ -46,7 +50,7 @@ export function ProjectsSection() {
             href="https://github.com/ruanvalente"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center text-yellow-400 hover:underline"
+            className="inline-flex items-center text-amber-600 dark:text-yellow-400 hover:underline"
           >
             View more on GitHub <ExternalLink size={16} className="ml-1" />
           </a>

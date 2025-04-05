@@ -1,13 +1,3 @@
-// import { AboutSection } from "@/components/shared/about-section";
-// import { BackToTopButton } from "@/components/ui/back-to-top-button";
-// import { ContactSection } from "@/components/shared/contact-section";
-// import { ExperiencesSection } from "@/components/shared/experiences-section";
-// import { HeroSection } from "@/components/shared/hero-section";
-// import { ProjectsSection } from "@/components/shared/projects-section";
-// import { SkillsSection } from "@/components/shared/skills-section";
-// import { TechChallengeSection } from "@/components/shared/tech-challenge-section";
-
-import { BackToTopButton } from "@/components/ui/back-to-top-button";
 import dynamic from "next/dynamic";
 import { Suspense } from "react";
 
@@ -39,8 +29,7 @@ const ContactSection = dynamic(() =>
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-950 to-slate-900 text-white">
-      <BackToTopButton />
+    <div className="min-h-screen bg-gradient-to-b from-background to-secondary dark:from-slate-950 dark:to-slate-900 text-foreground">
       <Suspense fallback={<div>Loading...</div>}>
         <HeroSection />
         <AboutSection />
