@@ -8,16 +8,18 @@ export function SkillCard({
   skills: string[];
 }) {
   return (
-    <Card className="bg-slate-800 border-slate-700">
+    <Card className="rounded-lg border bg-card text-card-foreground shadow-md">
       <CardHeader>
-        <CardTitle className="text-yellow-400">{title}</CardTitle>
+        <CardTitle className="text-2xl font-semibold leading-none tracking-tight text-amber-600 dark:text-yellow-400">
+          {title}
+        </CardTitle>
       </CardHeader>
       <CardContent>
         <ul className="space-y-2">
           {skills.map((skill, index) => (
             <li key={index} className="flex items-center gap-2">
-              <div className="w-1.5 h-1.5 rounded-full bg-yellow-400"></div>
-              <span className="text-slate-300">{skill}</span>
+              <div className="w-1.5 h-1.5 rounded-full bg-amber-600 dark:bg-yellow-400"></div>
+              <span className="text-muted-foreground">{skill}</span>
             </li>
           ))}
         </ul>

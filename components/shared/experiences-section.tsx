@@ -3,7 +3,7 @@ import { ExperienceCard } from "./experience-card";
 
 export function ExperiencesSection() {
   return (
-    <section id="experience" className="bg-slate-900 py-20">
+    <section id="experience" className="bg-secondary dark:bg-slate-900 py-20">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-bold mb-12 text-center">
           Work Experience

@@ -46,7 +46,7 @@ export function SkillsSection() {
           </h3>
           <div className="flex flex-wrap justify-center gap-3">
             {TECH_BADGE.map((badge, index) => (
-              <TechBadge key={index} name={badge.name} color="bg-secondary" />
+              <TechBadge key={index} name={badge.name} />
             ))}
           </div>
         </div>
