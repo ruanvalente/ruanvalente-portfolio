@@ -1,26 +1,23 @@
+"use client";
+
+import { useLanguage } from "@/context/language-context";
 import { Briefcase, MapPin } from "lucide-react";
 
 export function AboutSection() {
+  const { t } = useLanguage();
   return (
     <section id="about" className="bg-secondary dark:bg-slate-900 py-20">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold mb-12 text-center">About Me</h2>
+        <h2 className="text-3xl font-bold mb-12 text-center">
+          {t("about.title")}
+        </h2>
         <div className="grid md:grid-cols-2 gap-10">
           <div>
             <h3 className="text-xl font-semibold mb-4 text-amber-600 dark:text-yellow-400">
-              Who I Am
+              {t("about.whoiam.title")}
             </h3>
-            <p className="text-muted-foreground mb-6">
-              I'm a Frontend Engineer based in Belém-PA, Brazil with over 5
-              years of experience in web development. My journey is driven by a
-              passion for transforming digital experiences through clean,
-              accessible, and high-performance code.
-            </p>
-            <p className="text-muted-foreground mb-6">
-              Currently working at Compass UOL, collaborating on large-impact
-              projects and continuously improving my skills in modern frontend
-              technologies.
-            </p>
+            <p className="text-muted-foreground mb-6">{t("about.whoiam.p1")}</p>
+            <p className="text-muted-foreground mb-6">{t("about.whoiam.p2")}</p>
             <div className="flex flex-col gap-3">
               <div className="flex items-center gap-2">
                 <MapPin
@@ -40,35 +37,32 @@ export function AboutSection() {
           </div>
           <div>
             <h3 className="text-xl font-semibold mb-4 text-amber-600 dark:text-yellow-400">
-              My Focus
+              {t("about.focus.title")}
             </h3>
             <ul className="space-y-4">
               <li className="flex items-start gap-2">
                 <div className="min-w-5 mt-1">✅</div>
-                <div>
-                  Working with modern frameworks like React, Next.js, Vue.js,
-                  Quasar and Angular
-                </div>
+                <div>{t("about.focus.item1")}</div>
               </li>
               <li className="flex items-start gap-2">
                 <div className="min-w-5 mt-1">✅</div>
-                <div>Focusing on performance and scalability</div>
+                <div> {t("about.focus.item2")}</div>
               </li>
               <li className="flex items-start gap-2">
                 <div className="min-w-5 mt-1">✅</div>
-                <div>Creating and maintaining design systems</div>
+                <div>{t("about.focus.item3")}</div>
               </li>
               <li className="flex items-start gap-2">
                 <div className="min-w-5 mt-1">✅</div>
-                <div>Committed to web accessibility</div>
+                <div>{t("about.focus.item4")}</div>
               </li>
               <li className="flex items-start gap-2">
                 <div className="min-w-5 mt-1">✅</div>
-                <div>Efficient collaboration in multidisciplinary teams</div>
+                <div>{t("about.focus.item5")}</div>
               </li>
               <li className="flex items-start gap-2">
                 <div className="min-w-5 mt-1">📚</div>
-                <div>Currently learning: Node.js, Ruby and Rails</div>
+                <div>{t("about.focus.item6")}</div>
               </li>
             </ul>
           </div>
