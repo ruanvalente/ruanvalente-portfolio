@@ -9,6 +9,7 @@ import { BackToTopButton } from "@/components/ui/back-to-top-button";
 import { ThemeProvider } from "@/components/theme-provider";
 
 import "./globals.css";
+import { LanguageProvider } from "@/context/language-context";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -33,8 +34,10 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <Header />
-          {children}
+          <LanguageProvider>
+            <Header />
+            {children}
+          </LanguageProvider>
         </ThemeProvider>
         <Footer />
       </body>
