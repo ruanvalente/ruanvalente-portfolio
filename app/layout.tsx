@@ -37,9 +37,9 @@ export default function RootLayout({
           <LanguageProvider>
             <Header />
             {children}
+            <Footer />
           </LanguageProvider>
         </ThemeProvider>
-        <Footer />
       </body>
     </html>
   );
