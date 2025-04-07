@@ -96,8 +96,8 @@ export const TRANSLATIONS = {
 
     // Contact
     "contact.title": "Get In Touch",
-    "contact.subtitle":
-      "Interested in working together or have any questions? Feel free to reach out!",
+    "contact.subtitle": "Interested in working together or have any questions?",
+    "contact.subtitle2": "Feel free to reach out!",
     "contact.email": "Email",
     "contact.linkedin": "LinkedIn",
     "contact.github": "GitHub",
@@ -204,7 +204,8 @@ export const TRANSLATIONS = {
     // Contact
     "contact.title": "Entre em Contato",
     "contact.subtitle":
-      "Interessado em trabalharmos juntos ou tem alguma pergunta? Sinta-se à vontade para entrar em contato!",
+      "Interessado em trabalharmos juntos ou tem alguma pergunta?",
+    "contact.subtitle2": "Sinta-se à vontade para entrar em contato!",
     "contact.email": "Email",
     "contact.linkedin": "LinkedIn",
     "contact.github": "GitHub",
