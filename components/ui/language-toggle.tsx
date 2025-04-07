@@ -19,9 +19,9 @@ export function LanguageToggle() {
         <Button
           variant="outline"
           size="sm"
-          className="w-16 border-slate-300 dark:border-slate-700"
+          className="w-1/4 border-slate-300 dark:border-slate-700"
         >
-          {language === "en" ? "EN" : "PT-BR"}
+          {language === "en" ? "🇺🇸" : "🇧🇷"}
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
