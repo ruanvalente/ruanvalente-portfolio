@@ -129,14 +129,16 @@ export const PROJECTS = [
 export const CHALLENGES = [
   {
     title: "Yube Challenge",
-    description: "Frontend Challenge",
+    description: "challenges.description",
+    descriptionKey: "projects.descriptions.yube",
     content:
       "A technical challenge focused on building a modern web interface with React and TypeScript, demonstrating best practices in frontend development.",
     link: "https://github.com/ruanvalente/yube-challenge-frontend",
   },
   {
     title: "Link Soluções",
-    description: "Frontend Challenge",
+    description: "challenges.description",
+    descriptionKey: "projects.descriptions.link",
     content:
       "A challenge that showcases responsive design and modern JavaScript implementation, focusing on clean code and user experience.",
     link: "https://github.com/ruanvalente/link-solucoes-challenge-frontend",

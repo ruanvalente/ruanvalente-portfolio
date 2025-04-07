@@ -87,7 +87,7 @@ export const TRANSLATIONS = {
     // Challenges
     "challenges.title": "Technical Challenges",
     "challenges.view": "View on GitHub",
-
+    "challenges.description": "Frontend Challenge",
     // Challenges Descriptions
     "challenges.descriptions.yube":
       "Frontend challenge focused on building a modern web interface with React and TypeScript.",
@@ -194,6 +194,7 @@ export const TRANSLATIONS = {
     // Challenges
     "challenges.title": "Desafios Técnicos",
     "challenges.view": "Ver no GitHub",
+    "challenges.description": "Desafio de Frontend",
 
     "challenges.descriptions.yube":
       "Desafio de frontend focado na construção de uma interface web moderna com React e TypeScript.",
