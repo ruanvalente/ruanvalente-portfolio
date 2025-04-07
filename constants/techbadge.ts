@@ -88,6 +88,8 @@ export const PROJECTS = [
     title: "Yube Challenge",
     description:
       "Frontend challenge focused on building a modern web interface with React and TypeScript.",
+    descriptionKey: "projects.descriptions.yube",
+
     tags: ["React", "TypeScript", "CSS"],
     link: "https://github.com/ruanvalente/yube-challenge-frontend",
     category: ["all", "react"],
@@ -96,6 +98,8 @@ export const PROJECTS = [
     title: "Link Soluções Challenge",
     description:
       "Frontend implementation for a company challenge, showcasing responsive design and modern JavaScript.",
+    descriptionKey: "projects.descriptions.link",
+
     tags: ["JavaScript", "HTML", "CSS"],
     link: "https://github.com/ruanvalente/link-solucoes-challenge-frontend",
     category: ["all", "other"],
@@ -104,6 +108,8 @@ export const PROJECTS = [
     title: "Personal Portfolio",
     description:
       "My personal portfolio website built with Next.js and Tailwind CSS.",
+    descriptionKey: "projects.descriptions.portfolio",
+
     tags: ["Next.js", "Tailwind", "React"],
     link: "#",
     category: ["all", "react"],
@@ -112,6 +118,8 @@ export const PROJECTS = [
     title: "E-commerce UI",
     description:
       "A modern e-commerce user interface built with Vue.js and Vuex.",
+    descriptionKey: "projects.descriptions.ecommerce",
+
     tags: ["Vue.js", "Vuex", "SCSS"],
     link: "#",
     category: ["all", "vue"],

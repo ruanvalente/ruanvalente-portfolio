@@ -74,9 +74,25 @@ export const TRANSLATIONS = {
     "projects.view": "View Project",
     "projects.viewmore": "View more on GitHub",
 
+    // Project Descriptions
+    "projects.descriptions.yube":
+      "Frontend challenge focused on building a modern web interface with React and TypeScript.",
+    "projects.descriptions.link":
+      "Frontend implementation for a company challenge, showcasing responsive design and modern JavaScript.",
+    "projects.descriptions.portfolio":
+      "My personal portfolio website built with Next.js and Tailwind CSS.",
+    "projects.descriptions.ecommerce":
+      "A modern e-commerce user interface built with Vue.js and Vuex.",
+
     // Challenges
     "challenges.title": "Technical Challenges",
     "challenges.view": "View on GitHub",
+
+    // Challenges Descriptions
+    "challenges.descriptions.yube":
+      "Frontend challenge focused on building a modern web interface with React and TypeScript.",
+    "challenges.descriptions.link":
+      "Frontend implementation for a company challenge, showcasing responsive design and modern JavaScript.",
 
     // Contact
     "contact.title": "Get In Touch",
@@ -166,9 +182,23 @@ export const TRANSLATIONS = {
     "projects.view": "Ver Projeto",
     "projects.viewmore": "Ver mais no GitHub",
 
+    // Descrições dos Projetos (PT-BR)
+    "projects.descriptions.yube":
+      "Desafio de frontend focado na construção de uma interface web moderna com React e TypeScript.",
+    "projects.descriptions.link":
+      "Implementação de frontend para um desafio corporativo, com foco em design responsivo e JavaScript moderno.",
+    "projects.descriptions.portfolio":
+      "Meu site de portfólio pessoal desenvolvido com Next.js e Tailwind CSS.",
+    "projects.descriptions.ecommerce":
+      "Interface moderna de e-commerce desenvolvida com Vue.js e Vuex.",
     // Challenges
     "challenges.title": "Desafios Técnicos",
     "challenges.view": "Ver no GitHub",
+
+    "challenges.descriptions.yube":
+      "Desafio de frontend focado na construção de uma interface web moderna com React e TypeScript.",
+    "challenges.descriptions.link":
+      "Implementação de frontend para um desafio corporativo, com foco em design responsivo e JavaScript moderno.",
 
     // Contact
     "contact.title": "Entre em Contato",
