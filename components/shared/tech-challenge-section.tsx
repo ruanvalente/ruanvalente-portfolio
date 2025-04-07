@@ -1,6 +1,6 @@
 "use client";
 
-import { CHALLENGES } from "@/constants/techbadge";
+import { CHALLENGES } from "@/constants/config";
 import {
   Card,
   CardContent,

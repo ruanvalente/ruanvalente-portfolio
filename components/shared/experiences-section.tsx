@@ -1,6 +1,6 @@
 "use client";
 
-import { EXPERIENCES } from "@/constants/techbadge";
+import { EXPERIENCES } from "@/constants/config";
 import { ExperienceCard } from "./experience-card";
 import { useLanguage } from "@/context/language-context";
 

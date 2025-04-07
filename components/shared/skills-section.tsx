@@ -1,6 +1,6 @@
 "use client";
 
-import { TECH_BADGE } from "@/constants/techbadge";
+import { TECH_BADGE } from "@/constants/config";
 import { TechBadge } from "./techbadge";
 import { SkillCard } from "./skill-card";
 

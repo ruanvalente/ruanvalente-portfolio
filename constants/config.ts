@@ -66,7 +66,7 @@ export const EXPERIENCES = [
   },
   {
     title: "Desenvolvedor JR",
-    company: "Iago Cavalcante Desenvolimentoe Consultoria",
+    company: "Iago Cavalcante Desenvolvimento e Consultoria",
     period: "set 2018 - nov 2020",
     description:
       "Started my professional journey building web interfaces and learning modern frontend technologies. Participated in code reviews and improved my skills in JavaScript and CSS.",

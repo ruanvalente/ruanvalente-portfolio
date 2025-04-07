@@ -1,6 +1,6 @@
 "use client";
 
-import { PROJECTS, TABS } from "@/constants/techbadge";
+import { PROJECTS, TABS } from "@/constants/config";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
 import { ProjectCard } from "./project-card";
 import { ExternalLink } from "lucide-react";
