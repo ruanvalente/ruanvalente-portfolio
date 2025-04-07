@@ -1,36 +1,38 @@
+"use client";
+
+import { useLanguage } from "@/context/language-context";
 import { Github, Linkedin, Mail } from "lucide-react";
 import Image from "next/image";
 
 export function HeroSection() {
+  const { t } = useLanguage();
   return (
     <section className="container mx-auto py-20 px-4 flex flex-col md:flex-row items-center gap-10">
       <div className="md:w-1/2">
         <h1 className="text-4xl md:text-6xl font-bold mb-4">
-          Hello, I'm{" "}
+          {t("hero.hello")}{" "}
           <span className="text-amber-600 dark:text-yellow-400">
             Ruan Valente
           </span>
         </h1>
         <h2 className="text-2xl md:text-3xl mb-6 text-muted-foreground">
-          Frontend Engineer
+          {t("hero.title")}
         </h2>
         <p className="text-lg text-muted-foreground mb-8">
-          Passionate frontend developer with 5+ years of experience creating
-          modern, scalable, and high-performance web interfaces. Focused on
-          delivering clean, accessible code and exceptional digital experiences.
+          {t("hero.description")}
         </p>
         <div className="flex gap-4 mb-8">
           <a
             href="#contact"
             className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 h-10 px-4 py-2 bg-amber-600 text-white hover:bg-amber-700 dark:bg-yellow-400 dark:text-slate-900 dark:hover:bg-yellow-500"
           >
-            Get in touch
+            {t("hero.cta.contact")}
           </a>
           <a
             className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 border-foreground"
             href="#projects"
           >
-            View Projects
+            {t("hero.cta.projects")}
           </a>
         </div>
         <div className="flex gap-4">

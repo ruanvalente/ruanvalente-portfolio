@@ -1,13 +1,17 @@
+"use client";
+
+import { useLanguage } from "@/context/language-context";
 import { Github, Linkedin, Mail } from "lucide-react";
 
 export function Footer() {
+  const { t } = useLanguage();
   return (
     <footer className="bg-card py-10 border-t">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-4 md:mb-0">
             <p className="text-muted-foreground">
-              © {new Date().getFullYear()} Ruan Valente. All rights reserved.
+              © {new Date().getFullYear()} Ruan Valente. {t("footer.rights")}
             </p>
           </div>
           <div className="flex gap-4">

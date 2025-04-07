@@ -1,16 +1,23 @@
+"use client";
+
 import { Github, Linkedin, Mail } from "lucide-react";
 import { Button } from "../ui/button";
+import { useLanguage } from "@/context/language-context";
 
 export function ContactSection() {
+  const { t } = useLanguage();
   return (
     <section id="contact" className="py-20">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold mb-12 text-center">Get In Touch</h2>
+        <h2 className="text-3xl font-bold mb-12 text-center whitespace-pre-line">
+          {t("contact.title")}
+        </h2>
 
         <div className="max-w-3xl mx-auto bg-card rounded-lg p-8 shadow-lg border">
           <p className="text-center text-muted-foreground mb-8">
-            Interested in working together or have any questions? Feel free to
-            reach out!
+            {t("contact.subtitle")}
+            <br />
+            {t("contact.subtitle2")}
           </p>
 
           <div className="grid md:grid-cols-2 gap-8">
@@ -20,7 +27,7 @@ export function ContactSection() {
                   <Mail size={24} />
                 </div>
                 <div>
-                  <h3 className="font-medium">Email</h3>
+                  <h3 className="font-medium"> {t("contact.email")}</h3>
                   <a
                     href="mailto:contato.ruanvalente@gmail.com"
                     className="text-muted-foreground hover:text-amber-600 dark:hover:text-yellow-400"
@@ -35,7 +42,7 @@ export function ContactSection() {
                   <Linkedin size={24} />
                 </div>
                 <div>
-                  <h3 className="font-medium">LinkedIn</h3>
+                  <h3 className="font-medium"> {t("contact.linkedin")}</h3>
                   <a
                     href="https://www.linkedin.com/in/ruan-valente"
                     target="_blank"
@@ -52,7 +59,7 @@ export function ContactSection() {
                   <Github size={24} />
                 </div>
                 <div>
-                  <h3 className="font-medium">GitHub</h3>
+                  <h3 className="font-medium">{t("contact.github")}</h3>
                   <a
                     href="https://github.com/ruanvalente"
                     target="_blank"
@@ -69,7 +76,7 @@ export function ContactSection() {
               <form className="space-y-4">
                 <div>
                   <label htmlFor="name" className="block mb-2">
-                    Name
+                    {t("contact.form.name")}
                   </label>
                   <input
                     type="text"
@@ -79,7 +86,7 @@ export function ContactSection() {
                 </div>
                 <div>
                   <label htmlFor="email" className="block mb-2">
-                    Email
+                    {t("contact.form.email")}
                   </label>
                   <input
                     type="email"
@@ -89,7 +96,7 @@ export function ContactSection() {
                 </div>
                 <div>
                   <label htmlFor="message" className="block mb-2">
-                    Message
+                    {t("contact.form.message")}
                   </label>
                   <textarea
                     id="message"
@@ -98,7 +105,7 @@ export function ContactSection() {
                   ></textarea>
                 </div>
                 <Button className="w-full bg-amber-600 text-white hover:bg-amber-700 dark:bg-yellow-400 dark:text-slate-900 dark:hover:bg-yellow-500">
-                  Send Message
+                  {t("contact.form.send")}
                 </Button>
               </form>
             </div>

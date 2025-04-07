@@ -1,17 +1,22 @@
-import { TECH_BADGE } from "@/constants/techbadge";
+"use client";
+
+import { TECH_BADGE } from "@/constants/config";
 import { TechBadge } from "./techbadge";
 import { SkillCard } from "./skill-card";
 
+import { useLanguage } from "@/context/language-context";
+
 export function SkillsSection() {
+  const { t } = useLanguage();
   return (
     <section id="skills" className="py-20">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-bold mb-12 text-center">
-          Skills & Technologies
+          {t("skills.title")}
         </h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
           <SkillCard
-            title="Frontend"
+            title={t("skills.frontend")}
             skills={[
               "HTML5",
               "CSS3",
@@ -21,15 +26,15 @@ export function SkillsSection() {
             ]}
           />
           <SkillCard
-            title="Frameworks"
+            title={t("skills.frameworks")}
             skills={["React", "Next.js", "Vue.js", "Angular", "Quasar"]}
           />
           <SkillCard
-            title="Tools"
+            title={t("skills.tools")}
             skills={["Git", "Webpack", "Vite", "Jest", "Testing Library"]}
           />
           <SkillCard
-            title="Other"
+            title={t("skills.other")}
             skills={[
               "Accessibility",
               "Performance",
@@ -42,7 +47,7 @@ export function SkillsSection() {
 
         <div className="mt-16">
           <h3 className="text-xl font-semibold mb-6 text-center">
-            Main Tech Stack
+            {t("skills.stack")}
           </h3>
           <div className="flex flex-wrap justify-center gap-3">
             {TECH_BADGE.map((badge, index) => (

@@ -26,6 +26,9 @@ export const EXPERIENCES = [
       "Next.js",
       "Design System",
       "REST APIs",
+      "Java",
+      "Spring",
+      "Oracle",
     ],
     isCurrent: true,
     isLast: false,
@@ -57,17 +60,39 @@ export const EXPERIENCES = [
     period: "dez 2020 - jul 2021",
     description:
       "Developed responsive web applications and maintained existing codebases. Collaborated with designers and backend developers to implement new features and improve user experience.",
-    tecnologies: ["Vue.js", "JavaScript", "SCSS", "REST APIs"],
+    tecnologies: [
+      "Vue.js",
+      "JavaScript",
+      "SCSS",
+      "REST APIs",
+      "Git",
+      "Scrum",
+      "Kanban",
+      "Docker",
+    ],
     isCurrent: false,
     isLast: false,
   },
   {
     title: "Desenvolvedor JR",
-    company: "Iago Cavalcante Desenvolimentoe Consultoria",
+    company: "Iago Cavalcante Desenvolvimento e Consultoria",
     period: "set 2018 - nov 2020",
     description:
       "Started my professional journey building web interfaces and learning modern frontend technologies. Participated in code reviews and improved my skills in JavaScript and CSS.",
-    tecnologies: ["HTML", "CSS", "JavaScript", "jQuery"],
+    tecnologies: [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Quasar Framework",
+      "Vue.js",
+      "Adonis.js",
+      "PostgreSQL",
+      "Rest APIs",
+      "Git",
+      "Scrum",
+      "Kanban",
+      "Docker",
+    ],
     isCurrent: false,
     isLast: true,
   },
@@ -85,6 +110,8 @@ export const PROJECTS = [
     title: "Yube Challenge",
     description:
       "Frontend challenge focused on building a modern web interface with React and TypeScript.",
+    descriptionKey: "projects.descriptions.yube",
+
     tags: ["React", "TypeScript", "CSS"],
     link: "https://github.com/ruanvalente/yube-challenge-frontend",
     category: ["all", "react"],
@@ -93,6 +120,8 @@ export const PROJECTS = [
     title: "Link Soluções Challenge",
     description:
       "Frontend implementation for a company challenge, showcasing responsive design and modern JavaScript.",
+    descriptionKey: "projects.descriptions.link",
+
     tags: ["JavaScript", "HTML", "CSS"],
     link: "https://github.com/ruanvalente/link-solucoes-challenge-frontend",
     category: ["all", "other"],
@@ -101,6 +130,8 @@ export const PROJECTS = [
     title: "Personal Portfolio",
     description:
       "My personal portfolio website built with Next.js and Tailwind CSS.",
+    descriptionKey: "projects.descriptions.portfolio",
+
     tags: ["Next.js", "Tailwind", "React"],
     link: "#",
     category: ["all", "react"],
@@ -109,6 +140,8 @@ export const PROJECTS = [
     title: "E-commerce UI",
     description:
       "A modern e-commerce user interface built with Vue.js and Vuex.",
+    descriptionKey: "projects.descriptions.ecommerce",
+
     tags: ["Vue.js", "Vuex", "SCSS"],
     link: "#",
     category: ["all", "vue"],
@@ -118,14 +151,16 @@ export const PROJECTS = [
 export const CHALLENGES = [
   {
     title: "Yube Challenge",
-    description: "Frontend Challenge",
+    description: "challenges.description",
+    descriptionKey: "projects.descriptions.yube",
     content:
       "A technical challenge focused on building a modern web interface with React and TypeScript, demonstrating best practices in frontend development.",
     link: "https://github.com/ruanvalente/yube-challenge-frontend",
   },
   {
     title: "Link Soluções",
-    description: "Frontend Challenge",
+    description: "challenges.description",
+    descriptionKey: "projects.descriptions.link",
     content:
       "A challenge that showcases responsive design and modern JavaScript implementation, focusing on clean code and user experience.",
     link: "https://github.com/ruanvalente/link-solucoes-challenge-frontend",
