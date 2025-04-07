@@ -1,14 +1,18 @@
+"use client";
+
 import { PROJECTS, TABS } from "@/constants/techbadge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
 import { ProjectCard } from "./project-card";
 import { ExternalLink } from "lucide-react";
+import { useLanguage } from "@/context/language-context";
 
 export function ProjectsSection() {
+  const { t } = useLanguage();
   return (
     <section id="projects" className="py-20">
       <div className="container mx-auto px-4">
         <h2 className="text-3xl font-bold mb-12 text-center">
-          Featured Projects
+          {t("projects.title")}
         </h2>
 
         <Tabs defaultValue="all" className="max-w-3xl mx-auto">
@@ -19,7 +23,7 @@ export function ProjectsSection() {
                 key={index}
                 value={tab.value}
               >
-                {tab.label}
+                {t(`projects.filter.${tab.value}`)}
               </TabsTrigger>
             ))}
           </TabsList>
@@ -36,7 +40,7 @@ export function ProjectsSection() {
                 <ProjectCard
                   key={project.title}
                   title={project.title}
-                  description={project.description}
+                  description={t(project.descriptionKey)}
                   tags={project.tags}
                   link={project.link}
                 />
@@ -52,7 +56,7 @@ export function ProjectsSection() {
             rel="noopener noreferrer"
             className="inline-flex items-center text-amber-600 dark:text-yellow-400 hover:underline"
           >
-            View more on GitHub <ExternalLink size={16} className="ml-1" />
+            {t("projects.viewmore")} <ExternalLink size={16} className="ml-1" />
           </a>
         </div>
       </div>
