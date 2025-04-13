@@ -70,6 +70,7 @@ export const TRANSLATIONS = {
     "projects.filter.all": "All",
     "projects.filter.react": "React",
     "projects.filter.vue": "Vue",
+    "projects.filter.node": "Node",
     "projects.filter.other": "Other",
     "projects.view": "View Project",
     "projects.viewmore": "View more on GitHub",
@@ -82,18 +83,25 @@ export const TRANSLATIONS = {
     "projects.descriptions.portfolio":
       "My personal portfolio website built with Next.js and Tailwind CSS.",
     "projects.descriptions.ecommerce":
-      "A modern e-commerce user interface built with Vue.js and Vuex.",
+      "This project is a modern and highly productive dashboard developed with Nuxt, DaisyUI, Tailwind CSS, Vitest, Biome JS and TypeScript. The goal is to create a scalable, responsive and SEO-optimized solution by combining the power of these technologies.",
+    "projects.descriptions.order-service":
+      "Study project of a microservice responsible for managing customers, orders and order items.",
+    "projects.descriptions.ledger":
+      "Ledger CLI is a simple command line (CLI) financial management application using Ruby and SQLite. The project is part of a challenge provided by the DevsNorte community.",
+    "projects.descriptions.book_challenge":
+      "Web API of a bookstore system with TDD.",
 
     // Challenges
     "challenges.title": "Technical Challenges",
     "challenges.view": "View on GitHub",
     "challenges.description": "Frontend Challenge",
     // Challenges Descriptions
-    "challenges.descriptions.yube":
+    "challenges.description.yube":
       "Frontend challenge focused on building a modern web interface with React and TypeScript.",
-    "challenges.descriptions.link":
+    "challenges.description.link":
       "Frontend implementation for a company challenge, showcasing responsive design and modern JavaScript.",
-
+    "challenges.description.ledger": "Backend challenge",
+    "challenges.description.book_challenge": "Backend challenge",
     // Contact
     "contact.title": "Get In Touch",
     "contact.subtitle": "Interested in working together or have any questions?",
@@ -178,6 +186,7 @@ export const TRANSLATIONS = {
     "projects.filter.all": "Todos",
     "projects.filter.react": "React",
     "projects.filter.vue": "Vue",
+    "projects.filter.node": "Node",
     "projects.filter.other": "Outros",
     "projects.view": "Ver Projeto",
     "projects.viewmore": "Ver mais no GitHub",
@@ -190,7 +199,14 @@ export const TRANSLATIONS = {
     "projects.descriptions.portfolio":
       "Meu site de portfólio pessoal desenvolvido com Next.js e Tailwind CSS.",
     "projects.descriptions.ecommerce":
-      "Interface moderna de e-commerce desenvolvida com Vue.js e Vuex.",
+      "Este projeto é um dashboard moderno e altamente produtivo desenvolvido com Nuxt, DaisyUI, Tailwind CSS, Vitest, Biome JS e TypeScript. O objetivo é criar uma solução escalável, responsiva e otimizada para SEO, combinando o poder dessas tecnologias.",
+    "projects.descriptions.order-service":
+      "Projeto de estudo de um microsserviço responsável pela gestão de clientes, pedidos e itens de pedidos.",
+    "projects.descriptions.ledger":
+      "Ledger CLI é uma aplicação simples de gestão financeira via linha de comando (CLI) utilizando Ruby e SQLite. O projeto faz parte de um desafio fornecido pela comunidade DevsNorte",
+    "projects.descriptions.book_challenge":
+      "API web de um sistema para livraria com TDD.",
+
     // Challenges
     "challenges.title": "Desafios Técnicos",
     "challenges.view": "Ver no GitHub",
@@ -200,7 +216,8 @@ export const TRANSLATIONS = {
       "Desafio de frontend focado na construção de uma interface web moderna com React e TypeScript.",
     "challenges.descriptions.link":
       "Implementação de frontend para um desafio corporativo, com foco em design responsivo e JavaScript moderno.",
-
+    "challenges.description.ledger": "Desafio backend",
+    "challenges.description.book_challenge": "Desafio backend",
     // Contact
     "contact.title": "Entre em Contato",
     "contact.subtitle":

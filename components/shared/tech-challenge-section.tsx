@@ -28,7 +28,7 @@ export function TechChallengeSection() {
               key={index}
             >
               <CardHeader>
-                <CardTitle className="text-2xl font-semibold leading-none tracking-tight text-amber-600 dark:text-yellow-400">
+                <CardTitle className="text-2xl font-semibold leading-none tracking-tight text-amber-600 dark:text-yellow-400 truncate">
                   {t(challenge.title)}
                 </CardTitle>
                 <CardDescription className="text-muted-foreground">

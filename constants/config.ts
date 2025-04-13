@@ -102,6 +102,7 @@ export const TABS = [
   { value: "all", label: "All" },
   { value: "react", label: "React" },
   { value: "vue", label: "Vue" },
+  { value: "node", label: "Node" },
   { value: "other", label: "Other" },
 ];
 
@@ -123,7 +124,7 @@ export const PROJECTS = [
     descriptionKey: "projects.descriptions.link",
 
     tags: ["JavaScript", "HTML", "CSS"],
-    link: "https://github.com/ruanvalente/link-solucoes-challenge-frontend",
+    link: "https://yube-challenge-frontend-ruanopensuselinux.vercel.app",
     category: ["all", "other"],
   },
   {
@@ -133,18 +134,36 @@ export const PROJECTS = [
     descriptionKey: "projects.descriptions.portfolio",
 
     tags: ["Next.js", "Tailwind", "React"],
-    link: "#",
+    link: "https://ruanvalente-portfolio.vercel.app",
     category: ["all", "react"],
   },
   {
-    title: "E-commerce UI",
+    title: "DaisyUI Nuxt Application",
     description:
-      "A modern e-commerce user interface built with Vue.js and Vuex.",
+      "This project is a modern and highly productive dashboard developed with Nuxt, DaisyUI, Tailwind CSS, Vitest, Biome JS and TypeScript. The goal is to create a scalable, responsive and SEO-optimized solution by combining the power of these technologies.",
     descriptionKey: "projects.descriptions.ecommerce",
 
-    tags: ["Vue.js", "Vuex", "SCSS"],
-    link: "#",
+    tags: ["Vue.js", "Nuxt", "Pinia", "CSS", "DaisyUI", "Tailwindcss"],
+    link: "https://daisy-ui-nuxt.vercel.app",
     category: ["all", "vue"],
+  },
+  {
+    title: "MS Order Service",
+    description:
+      "Study project of a microservice responsible for managing customers, orders and order items.",
+    descriptionKey: "projects.descriptions.order-service",
+
+    tags: ["Nest.js", "Typescript", "PostgreSQL", "RabbitMQ", "Docker"],
+    link: "https://github.com/ruanvalente/ms-customer-order-service",
+    category: ["all", "node"],
+  },
+  {
+    title: "Book Challenge",
+    description: "challenges.description.book_challenge",
+    descriptionKey: "projects.descriptions.book_challenge",
+    tags: ["Nest.js", "Typescript", "MySQL", "Docker"],
+    link: "https://github.com/ruanvalente/book-challenge-nest",
+    category: ["all", "node"],
   },
 ];
 
@@ -164,5 +183,20 @@ export const CHALLENGES = [
     content:
       "A challenge that showcases responsive design and modern JavaScript implementation, focusing on clean code and user experience.",
     link: "https://github.com/ruanvalente/link-solucoes-challenge-frontend",
+  },
+  {
+    title: "Ledger CLI",
+    description: "challenges.description.ledger",
+    descriptionKey: "projects.descriptions.ledger",
+    content:
+      "Ledger CLI is a simple command line (CLI) financial management application using Ruby and SQLite. The project is part of a challenge provided by the DevsNorte community.",
+    link: "https://github.com/ruanvalente/ledger_api_cli",
+  },
+  {
+    title: "Desafio Técnico - Desenvolvedor Backend",
+    description: "challenges.description.book_challenge",
+    descriptionKey: "projects.descriptions.book_challenge",
+    content: "Web API of a bookstore system with TDD.",
+    link: "https://github.com/ruanvalente/book-challenge-nest",
   },
 ];
