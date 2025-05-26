@@ -14,7 +14,7 @@ export function SkillCard({
   return (
     <Card className="rounded-lg border bg-card text-card-foreground shadow-md">
       <CardHeader>
-        <CardTitle className="text-2xl font-semibold leading-none tracking-tight text-amber-600 dark:text-yellow-400">
+        <CardTitle className="text-base md:text-2xl font-semibold leading-none tracking-tight text-amber-600 dark:text-yellow-400">
           {t(title)}
         </CardTitle>
       </CardHeader>
