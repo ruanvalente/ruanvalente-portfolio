@@ -21,7 +21,7 @@ export function TechChallengeSection() {
           {t("challenges.title")}
         </h2>
 
-        <div className="max-w-3xl mx-auto grid md:grid-cols-2 gap-6">
+        <div className="max-w-3xl mx-auto flex flex-col md:grid md:grid-cols-2 gap-6">
           {CHALLENGES.map((challenge, index) => (
             <Card
               className="rounded-lg border bg-card text-card-foreground shadow-md"

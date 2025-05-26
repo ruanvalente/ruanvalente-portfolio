@@ -20,7 +20,7 @@ export function ContactSection() {
             {t("contact.subtitle2")}
           </p>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="md:grid md:grid-cols-2 gap-8">
             <div className="space-y-6">
               <div className="flex items-center gap-4">
                 <div className="bg-amber-600 dark:bg-yellow-400 text-white dark:text-slate-900 p-3 rounded-full">
@@ -30,7 +30,7 @@ export function ContactSection() {
                   <h3 className="font-medium"> {t("contact.email")}</h3>
                   <a
                     href="mailto:contato.ruanvalente@gmail.com"
-                    className="text-muted-foreground hover:text-amber-600 dark:hover:text-yellow-400"
+                    className="text-sm md:text-base text-muted-foreground hover:text-amber-600 dark:hover:text-yellow-400"
                   >
                     contato.ruanvalente@gmail.com
                   </a>
@@ -47,7 +47,7 @@ export function ContactSection() {
                     href="https://www.linkedin.com/in/ruan-valente"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-muted-foreground hover:text-amber-600 dark:hover:text-yellow-400"
+                    className="text-sm md:text-base text-muted-foreground hover:text-amber-600 dark:hover:text-yellow-400"
                   >
                     linkedin.com/in/ruan-valente
                   </a>
@@ -64,7 +64,7 @@ export function ContactSection() {
                     href="https://github.com/ruanvalente"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-muted-foreground hover:text-amber-600 dark:hover:text-yellow-400"
+                    className="text-sm md:text-base text-muted-foreground hover:text-amber-600 dark:hover:text-yellow-400"
                   >
                     github.com/ruanvalente
                   </a>
@@ -75,7 +75,7 @@ export function ContactSection() {
             <div>
               <form className="space-y-4">
                 <div>
-                  <label htmlFor="name" className="block mb-2">
+                  <label htmlFor="name" className="block mb-2 mt-4">
                     {t("contact.form.name")}
                   </label>
                   <input
