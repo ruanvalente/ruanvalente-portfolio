@@ -75,7 +75,7 @@ export function ContactSection() {
             <div>
               <form className="space-y-4">
                 <div>
-                  <label htmlFor="name" className="block mb-2 mt-4">
+                  <label htmlFor="name" className="block mb-2">
                     {t("contact.form.name")}
                   </label>
                   <input
