@@ -1,15 +1,15 @@
 "use client";
 
-import { useLanguage } from "@/context/language-context";
-import { LanguageToggle } from "../ui/language-toggle";
-import { ThemeToggle } from "../ui/theme-toggle";
 import {
   Sheet,
   SheetContent,
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { Menu } from "lucide-react";
+import { useLanguage } from "@/context/language-context";
+import { DownloadCloudIcon, Menu } from "lucide-react";
+import { LanguageToggle } from "../ui/language-toggle";
+import { ThemeToggle } from "../ui/theme-toggle";
 
 const NAV_MENU = [
   {
@@ -61,10 +61,13 @@ export function Header() {
           <ThemeToggle />
           <a
             className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border bg-background h-10 px-4 py-2 border-amber-600 text-amber-600 hover:bg-amber-600 hover:text-white dark:border-yellow-400 dark:text-yellow-400 dark:hover:bg-yellow-400 dark:hover:text-slate-900 hover:animate-pulse"
-            href="/ruanvalente-resume.pdf"
+            href="/ruan-valente-resume.pdf"
             download
           >
-            {t("nav.resume")}
+            <span>{t("nav.resume")}</span>
+            <span>
+              <DownloadCloudIcon />
+            </span>
           </a>
         </div>
 
@@ -81,10 +84,13 @@ export function Header() {
                 <ThemeToggle />
                 <a
                   className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border bg-background h-10 px-4 py-2 border-amber-600 text-amber-600 hover:bg-amber-600 hover:text-white dark:border-yellow-400 dark:text-yellow-400 dark:hover:bg-yellow-400 dark:hover:text-slate-900"
-                  href="/ruanvalente-resume.pdf"
+                  href="/ruan-valente-resume.pdf"
                   download
                 >
-                  {t("nav.resume")}
+                  <span> {t("nav.resume")}</span>
+                  <span>
+                    <DownloadCloudIcon />
+                  </span>
                 </a>
               </div>
             </div>
