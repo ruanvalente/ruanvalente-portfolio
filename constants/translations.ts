@@ -61,7 +61,7 @@ export const TRANSLATIONS = {
 
     "experience.job3.title": "Junior Frontend Developer",
     "experience.job3.company": "Iago Cavalcante Desenvolvimento e Consultoria",
-    "experience.job3.period": "Sep 2018 - Nov 2020",
+    "experience.job3.period": "Sep 2020 - Nov 2020",
     "experience.job3.description":
       "I began my professional journey by building web interfaces and learning modern frontend technologies. I participated in code reviews and improved my JavaScript and CSS skills using Quasar Framework and Adonis.js for the development and maintenance of a Web ERP system.\n\nMy main competencies included:\n\n- Code review, problem solving, and responsiveness.\n- Collaboration with multidisciplinary teams using agile methodologies such as Scrum and Kanban.\n- Use of tools like Git, GitLab, ESLint, Docker, and continuous integration.\n- State management, effective communication, and technical knowledge sharing.",
 
@@ -177,7 +177,7 @@ export const TRANSLATIONS = {
       "Atuei no desenvolvimento de interfaces e na manutenção de sistemas web e mobile para o Detran-PA, utilizando as seguintes tecnologias:\n\n- Frontend: Angular, TypeScript, CSS, SCSS, Bootstrap e Angular Material\n- Mobile: Ionic\n\nMinhas principais competências envolviam:\n\n- Revisão de código, resolução de problemas e responsividade.\n- Colaboração com equipes multidisciplinares utilizando metodologias ágeis como Scrum e Kanban.\n- Uso de ferramentas como Git, GitLab, ESLint, CLI Angular e gerenciamento de estado.\n- Compartilhamento de conhecimento técnico e boas práticas no desenvolvimento de software.",
     "experience.job3.title": "Desenvolvedor Frontend Júnior",
     "experience.job3.company": "Iago Cavalcante Desenvolvimento e Consultoria",
-    "experience.job3.period": "Set 2018 - Nov 2020",
+    "experience.job3.period": "Set 2020 - Nov 2020",
     "experience.job3.description":
       "Iniciei minha jornada profissional construindo interfaces web e aprendendo tecnologias frontend modernas. Participei de code reviews e aprimorei minhas habilidades em JavaScript e CSS utilizando Quasar Framework e Adonis.js no desenvolvimento e manutenção de um ERP Web.\n\nMinhas principais competências envolviam:\n\n- Revisão de código, resolução de problemas e responsividade.\n- Colaboração com equipes multidisciplinares utilizando metodologias ágeis como Scrum e Kanban.\n- Utilização de ferramentas como Git, GitLab, ESLint, Docker e integração contínua.\n- Gerenciamento de estado, comunicação eficiente e compartilhamento de conhecimento técnico.",
 
