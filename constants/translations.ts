@@ -5,6 +5,7 @@ export const TRANSLATIONS = {
     "nav.skills": "Skills",
     "nav.experience": "Experience",
     "nav.projects": "Projects",
+    "nav.testimonials": "Testimonials",
     "nav.contact": "Contact",
     "nav.resume": "Resume",
 
@@ -31,6 +32,9 @@ export const TRANSLATIONS = {
     "about.focus.item4": "Committed to web accessibility",
     "about.focus.item5": "Efficient collaboration in multidisciplinary teams",
     "about.focus.item6": "Currently learning: Node.js, Ruby and Rails",
+    "about.company.position": "Frontend Engineer at Compass UOL",
+    "about.company.location": "Belém-PA, Brazil",
+    "about.education.title": "Systems Analysis and Development by FACINT College",
 
     // Skills
     "skills.title": "Skills & Technologies",
@@ -74,6 +78,22 @@ export const TRANSLATIONS = {
     "projects.filter.other": "Other",
     "projects.view": "View Project",
     "projects.viewmore": "View more on GitHub",
+
+    // Testimonials
+    "testimonials.title": "What People Say",
+    "testimonials.subtitle": "Feedback from colleagues and clients I've had the pleasure to work with",
+    "testimonials.pauseAutoplay": "Pause autoplay",
+    "testimonials.resumeAutoplay": "Resume autoplay",
+    "testimonials.ana.text":
+      "Ruan is an exceptional frontend engineer. His attention to detail and ability to translate complex designs into pixel-perfect interfaces is remarkable. He consistently delivers high-quality code and is always willing to help the team.",
+    "testimonials.carlos.text":
+      "Working with Ruan was a great experience. He has deep knowledge of modern frontend technologies and always brings innovative solutions to technical challenges. His code is clean, well-documented, and maintainable.",
+    "testimonials.maria.text":
+      "Ruan has an excellent eye for design and user experience. He understands the importance of accessibility and performance, always ensuring that the final product meets the highest standards. A true professional.",
+    "testimonials.joao.text":
+      "I learned a lot working alongside Ruan. He's patient, collaborative, and always willing to share his knowledge. His expertise in React and Next.js helped our team deliver projects faster and with better quality.",
+    "testimonials.fernanda.text":
+      "Ruan is reliable and communicative. He always meets deadlines and keeps the team informed about project progress. His technical skills combined with his collaborative approach make him an invaluable team member.",
 
     // Project Descriptions
     "projects.descriptions.yube":
@@ -123,6 +143,7 @@ export const TRANSLATIONS = {
     "nav.skills": "Habilidades",
     "nav.experience": "Experiência",
     "nav.projects": "Projetos",
+    "nav.testimonials": "Depoimentos",
     "nav.contact": "Contato",
     "nav.resume": "Currículo",
 
@@ -149,6 +170,9 @@ export const TRANSLATIONS = {
     "about.focus.item4": "Comprometido com acessibilidade web",
     "about.focus.item5": "Colaboração eficiente em equipes multidisciplinares",
     "about.focus.item6": "Atualmente aprendendo: Node.js, Ruby e Rails",
+    "about.company.position": "Engenheiro Frontend na Compass UOL",
+    "about.company.location": "Belém-PA, Brasil",
+    "about.education.title": "Análise e Desenvolvimento de Sistemas pela Faculdade FACINT",
 
     // Skills
     "skills.title": "Habilidades & Tecnologias",
@@ -190,6 +214,22 @@ export const TRANSLATIONS = {
     "projects.filter.other": "Outros",
     "projects.view": "Ver Projeto",
     "projects.viewmore": "Ver mais no GitHub",
+
+     // Testimonials
+    "testimonials.title": "O Que Dizem Sobre Mim",
+    "testimonials.subtitle": "Feedback de colegas e clientes com quem tive o prazer de trabalhar",
+    "testimonials.pauseAutoplay": "Pausar reprodução automática",
+    "testimonials.resumeAutoplay": "Retomar reprodução automática",
+    "testimonials.ana.text":
+      "Ruan é um engenheiro frontend excepcional. Sua atenção aos detalhes e capacidade de traduzir designs complexos em interfaces pixel-perfect é notável. Ele sempre entrega código de alta qualidade e está sempre disposto a ajudar a equipe.",
+    "testimonials.carlos.text":
+      "Trabalhar com o Ruan foi uma ótima experiência. Ele tem conhecimento profundo de tecnologias frontend modernas e sempre traz soluções inovadoras para desafios técnicos. Seu código é limpo, bem documentado e fácil de manter.",
+    "testimonials.maria.text":
+      "Ruan tem um excelente olho para design e experiência do usuário. Ele entende a importância da acessibilidade e performance, sempre garantindo que o produto final atenda aos mais altos padrões. Um verdadeiro profissional.",
+    "testimonials.joao.text":
+      "Aprendi muito trabalhando ao lado do Ruan. Ele é paciente, colaborativo e sempre disposto a compartilhar seu conhecimento. Sua expertise em React e Next.js ajudou nossa equipe a entregar projetos mais rápido e com melhor qualidade.",
+    "testimonials.fernanda.text":
+      "Ruan é confiável e comunicativo. Ele sempre cumpre prazos e mantém a equipe informada sobre o progresso dos projetos. Suas habilidades técnicas combinadas com sua abordagem colaborativa o tornam um membro valioso da equipe.",
 
     // Descrições dos Projetos (PT-BR)
     "projects.descriptions.yube":
