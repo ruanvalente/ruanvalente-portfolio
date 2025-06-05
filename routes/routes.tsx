@@ -48,6 +48,16 @@ export const ROUTES_SECTION: RoutesSection[] = [
   {
     Component: dynamic(
       () =>
+        import("@/components/shared/testimonials-section").then(
+          (m) => m.TestimonialsSection
+        ),
+      { loading: () => <SectionLoader text="Testimonials" /> }
+    ),
+    delay: 0.3,
+  },
+  {
+    Component: dynamic(
+      () =>
         import("@/components/shared/projects-section").then(
           (m) => m.ProjectsSection
         ),
@@ -65,6 +75,7 @@ export const ROUTES_SECTION: RoutesSection[] = [
     ),
     delay: 0.5,
   },
+
   {
     Component: dynamic(
       () =>
