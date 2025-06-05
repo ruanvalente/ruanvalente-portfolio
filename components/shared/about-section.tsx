@@ -1,7 +1,7 @@
 "use client";
 
 import { useLanguage } from "@/context/language-context";
-import { Briefcase, MapPin } from "lucide-react";
+import { Briefcase, MapPin, BookOpen } from "lucide-react";
 
 export function AboutSection() {
   const { t } = useLanguage();
@@ -24,14 +24,21 @@ export function AboutSection() {
                   size={18}
                   className="lucide lucide-map-pin text-amber-600 dark:text-yellow-400"
                 />
-                <span>Belém-PA, Brazil</span>
+                <span>{t("about.company.location")}</span>
               </div>
               <div className="flex items-center gap-2">
                 <Briefcase
                   size={18}
                   className="lucide lucide-map-pin text-amber-600 dark:text-yellow-400"
                 />
-                <span>Frontend Engineer at Compass UOL</span>
+                <span>{t("about.company.position")}</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <BookOpen
+                  size={18}
+                  className="lucide lucide-map-pin text-amber-600 dark:text-yellow-400"
+                />
+                <span>{t("about.education.title")}</span>
               </div>
             </div>
           </div>

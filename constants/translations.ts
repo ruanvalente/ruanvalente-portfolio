@@ -32,6 +32,9 @@ export const TRANSLATIONS = {
     "about.focus.item4": "Committed to web accessibility",
     "about.focus.item5": "Efficient collaboration in multidisciplinary teams",
     "about.focus.item6": "Currently learning: Node.js, Ruby and Rails",
+    "about.company.position": "Frontend Engineer at Compass UOL",
+    "about.company.location": "Belém-PA, Brazil",
+    "about.education.title": "Systems Analysis and Development by FACINT College",
 
     // Skills
     "skills.title": "Skills & Technologies",
@@ -167,6 +170,9 @@ export const TRANSLATIONS = {
     "about.focus.item4": "Comprometido com acessibilidade web",
     "about.focus.item5": "Colaboração eficiente em equipes multidisciplinares",
     "about.focus.item6": "Atualmente aprendendo: Node.js, Ruby e Rails",
+    "about.company.position": "Engenheiro Frontend na Compass UOL",
+    "about.company.location": "Belém-PA, Brasil",
+    "about.education.title": "Análise e Desenvolvimento de Sistemas pela Faculdade FACINT",
 
     // Skills
     "skills.title": "Habilidades & Tecnologias",
