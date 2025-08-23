@@ -10,6 +10,8 @@ import { useLanguage } from "@/context/language-context";
 import { DownloadCloudIcon, Menu } from "lucide-react";
 import { LanguageToggle } from "../ui/language-toggle";
 import { ThemeToggle } from "../ui/theme-toggle";
+import { getResumePath } from "@/utils/getResume";
+import { useEffect, useState } from "react";
 
 const NAV_MENU = [
   {
@@ -35,7 +37,8 @@ const NAV_MENU = [
 ];
 
 export function Header() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
+  const resumePath = getResumePath(language);
 
   return (
     <header className="container mx-auto py-6 px-4 border-b">
@@ -61,7 +64,7 @@ export function Header() {
           <ThemeToggle />
           <a
             className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border bg-background h-10 px-4 py-2 border-amber-600 text-amber-600 hover:bg-amber-600 hover:text-white dark:border-yellow-400 dark:text-yellow-400 dark:hover:bg-yellow-400 dark:hover:text-slate-900 hover:animate-pulse"
-            href="/ruan-valente-resume.pdf"
+            href={resumePath}
             download
           >
             <span>{t("nav.resume")}</span>
@@ -84,7 +87,7 @@ export function Header() {
                 <ThemeToggle />
                 <a
                   className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border bg-background h-10 px-4 py-2 border-amber-600 text-amber-600 hover:bg-amber-600 hover:text-white dark:border-yellow-400 dark:text-yellow-400 dark:hover:bg-yellow-400 dark:hover:text-slate-900"
-                  href="/ruan-valente-resume.pdf"
+                  href={resumePath}
                   download
                 >
                   <span> {t("nav.resume")}</span>
