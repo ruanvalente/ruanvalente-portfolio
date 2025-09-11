@@ -5,11 +5,13 @@ import { Inter } from "next/font/google";
 
 import { Header } from "@/components/shared/header";
 import { Footer } from "@/components/shared/footer";
+import { TooltipProvider } from "@/components/ui/tooltip";
 import { BackToTopButton } from "@/components/ui/back-to-top-button";
 import { ThemeProvider } from "@/components/theme-provider";
 
 import "./globals.css";
 import { LanguageProvider } from "@/context/language-context";
+
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -89,7 +91,9 @@ export default function RootLayout({
         >
           <LanguageProvider>
             <Header />
-            {children}
+            <TooltipProvider>
+              {children}
+            </TooltipProvider>
             <Footer />
           </LanguageProvider>
         </ThemeProvider>
