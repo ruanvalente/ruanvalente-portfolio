@@ -11,7 +11,6 @@ import { DownloadCloudIcon, Menu } from "lucide-react";
 import { LanguageToggle } from "../ui/language-toggle";
 import { ThemeToggle } from "../ui/theme-toggle";
 import { getResumePath } from "@/utils/getResume";
-import { useEffect, useState } from "react";
 
 const NAV_MENU = [
   {
