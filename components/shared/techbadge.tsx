@@ -1,7 +1,7 @@
 
 import {
   SiAngular,
-  SiCss3,
+  SiCss,
   SiDocker,
   SiGit,
   SiHtml5,
@@ -30,7 +30,7 @@ import { Badge } from "../ui/badge";
 const ICON_MAP: Record<string, React.ReactElement> = {
   // Front-end
   HTML5: <SiHtml5 className="w-4 h-4 text-orange-500" />,
-  CSS3: <SiCss3 className="w-4 h-4 text-blue-500" />,
+  CSS3: <SiCss className="w-4 h-4 text-blue-500" />,
   JavaScript: <SiJavascript className="w-4 h-4 text-yellow-400" />,
   TypeScript: <SiTypescript className="w-4 h-4 text-blue-600" />,
   React: <SiReact className="w-4 h-4 text-cyan-400" />,
