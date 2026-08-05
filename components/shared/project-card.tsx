@@ -28,7 +28,6 @@ export function ProjectCard({
   index = 0,
 }: ProjectCardProps) {
   const { t } = useLanguage();
-
   return (
     <motion.div
       initial={{ opacity: 0, y: 50 }}
@@ -44,15 +43,15 @@ export function ProjectCard({
       }}
       className="h-full"
     >
-      <Card className="rounded-lg border bg-card text-card-foreground shadow-md hover:border-amber-600 dark:hover:border-yellow-400 transition-all duration-300 h-full flex flex-col group hover:shadow-xl">
+      <Card className="rounded-lg border bg-card text-card-foreground shadow-md hover:border-amber-700 dark:hover:border-yellow-400 transition-all duration-300 h-full flex flex-col group hover:shadow-xl">
         <CardHeader>
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: index * 0.1 + 0.2 }}
           >
-            <CardTitle className="text-2xl font-semibold leading-none tracking-tight text-amber-600 dark:text-yellow-400 group-hover:text-amber-700 dark:group-hover:text-yellow-300 transition-colors duration-300">
-              {t(title)}
+            <CardTitle className="text-2xl font-semibold leading-none tracking-tight text-amber-700 dark:text-yellow-400 group-hover:text-amber-700 dark:group-hover:text-yellow-300 transition-colors duration-300">
+              {title}
             </CardTitle>
           </motion.div>
         </CardHeader>
@@ -64,7 +63,7 @@ export function ProjectCard({
             transition={{ duration: 0.6, delay: index * 0.1 + 0.3 }}
             className="text-muted-foreground mb-4 leading-relaxed"
           >
-            {t(description)}
+            {description}
           </motion.p>
 
           <div className="flex flex-wrap gap-2">
@@ -85,7 +84,7 @@ export function ProjectCard({
               >
                 <Badge
                   variant="outline"
-                  className="border-slate-600 hover:border-amber-600 dark:hover:border-yellow-400 transition-colors duration-200"
+                  className="border-slate-600 hover:border-amber-700 dark:hover:border-yellow-400 transition-colors duration-200"
                 >
                   {tag}
                 </Badge>
@@ -107,7 +106,7 @@ export function ProjectCard({
               href={link}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-amber-600 dark:text-yellow-400 hover:text-amber-700 dark:hover:text-yellow-300 hover:underline inline-flex items-center transition-colors duration-200 font-medium"
+              className="text-amber-700 dark:text-yellow-400 hover:text-amber-700 dark:hover:text-yellow-300 hover:underline inline-flex items-center transition-colors duration-200 font-medium"
             >
               {t("projects.viewmore")}
               <motion.div

@@ -1,10 +1,7 @@
-"use client";
-
-import { useLanguage } from "@/context/language-context";
 import { Briefcase, MapPin, BookOpen } from "lucide-react";
+import type { Translator } from "@/lib/i18n";
 
-export function AboutSection() {
-  const { t } = useLanguage();
+export function AboutSection({ t }: { t: Translator }) {
   return (
     <section id="about" className="bg-secondary dark:bg-slate-900 py-20">
       <div className="container mx-auto px-4">
@@ -13,7 +10,7 @@ export function AboutSection() {
         </h2>
         <div className="grid md:grid-cols-2 gap-10">
           <div>
-            <h3 className="text-xl font-semibold mb-4 text-amber-600 dark:text-yellow-400">
+            <h3 className="text-xl font-semibold mb-4 text-amber-700 dark:text-yellow-400">
               {t("about.whoiam.title")}
             </h3>
             <p className="text-muted-foreground mb-6">{t("about.whoiam.p1")}</p>
@@ -22,53 +19,65 @@ export function AboutSection() {
               <div className="flex items-center gap-2">
                 <MapPin
                   size={18}
-                  className="lucide lucide-map-pin text-amber-600 dark:text-yellow-400"
+                  className="lucide lucide-map-pin text-amber-700 dark:text-yellow-400"
                 />
                 <span>{t("about.company.location")}</span>
               </div>
               <div className="flex items-center gap-2">
                 <Briefcase
                   size={18}
-                  className="lucide lucide-map-pin text-amber-600 dark:text-yellow-400"
+                  className="lucide lucide-map-pin text-amber-700 dark:text-yellow-400"
                 />
                 <span>{t("about.company.position")}</span>
               </div>
               <div className="flex items-center gap-2">
                 <BookOpen
                   size={18}
-                  className="lucide lucide-map-pin text-amber-600 dark:text-yellow-400"
+                  className="lucide lucide-map-pin text-amber-700 dark:text-yellow-400"
                 />
                 <span>{t("about.education.title")}</span>
               </div>
             </div>
           </div>
           <div>
-            <h3 className="text-xl font-semibold mb-4 text-amber-600 dark:text-yellow-400">
+            <h3 className="text-xl font-semibold mb-4 text-amber-700 dark:text-yellow-400">
               {t("about.focus.title")}
             </h3>
             <ul className="space-y-4">
               <li className="flex items-start gap-2">
-                <div className="min-w-5 mt-1">✅</div>
+                <div className="min-w-5 mt-1" aria-hidden="true">
+                  ✅
+                </div>
                 <div>{t("about.focus.item1")}</div>
               </li>
               <li className="flex items-start gap-2">
-                <div className="min-w-5 mt-1">✅</div>
+                <div className="min-w-5 mt-1" aria-hidden="true">
+                  ✅
+                </div>
                 <div> {t("about.focus.item2")}</div>
               </li>
               <li className="flex items-start gap-2">
-                <div className="min-w-5 mt-1">✅</div>
+                <div className="min-w-5 mt-1" aria-hidden="true">
+                  ✅
+                </div>
                 <div>{t("about.focus.item3")}</div>
               </li>
               <li className="flex items-start gap-2">
-                <div className="min-w-5 mt-1">✅</div>
+                <div className="min-w-5 mt-1" aria-hidden="true">
+                  ✅
+                </div>
                 <div>{t("about.focus.item4")}</div>
               </li>
               <li className="flex items-start gap-2">
-                <div className="min-w-5 mt-1">✅</div>
+                <div className="min-w-5 mt-1" aria-hidden="true">
+                  ✅
+                </div>
                 <div>{t("about.focus.item5")}</div>
               </li>
               <li className="flex items-start gap-2">
-                <div className="min-w-5 mt-1">📚</div>
+                <div className="min-w-5 mt-1" aria-hidden="true">
+                  📚
+                </div>
                 <div>{t("about.focus.item6")}</div>
               </li>
             </ul>

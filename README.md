@@ -1,6 +1,6 @@
 # Ruan Valente Portfolio
 
-Personal portfolio website built with Next.js, TypeScript, and Tailwind CSS.
+Personal portfolio website built with Next.js (App Router), TypeScript, and Tailwind CSS.
 
 ## 🚀 Features
 
@@ -13,13 +13,17 @@ Personal portfolio website built with Next.js, TypeScript, and Tailwind CSS.
 
 ## 🛠 Tech Stack
 
-- Next.js
+- Next.js (App Router)
+- React 19
 - TypeScript
 - Tailwind CSS
-- Radix UI
-- Lucide Icons
+- Radix UI (shadcn/ui)
+- framer-motion
+- next-themes
 
 ## 🔧 Getting Started
+
+Prerequisites: Node.js (see `.tool-versions`) and yarn.
 
 1. Clone the repository:
 
@@ -31,35 +35,38 @@ cd ruanvalente-portfolio
 2. Install dependencies:
 
 ```bash
-npm install
+yarn install
 ```
 
 3. Run the development server:
 
 ```bash
-npm run dev
+yarn dev
 ```
 
 4. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ## 📝 Scripts
 
-- `npm run dev` - Starts development server
-- `npm run build` - Creates production build
-- `npm run start` - Starts production server
-- `npm run lint` - Runs ESLint
+- `yarn dev` - Starts development server
+- `yarn build` - Creates production build
+- `yarn start` - Starts production server
+- `yarn lint` - Runs ESLint (flat config, `--max-warnings=0`)
+- `yarn format` - Formats code with Prettier
+- `yarn format:check` - Checks formatting with Prettier
 
 ## 📂 Project Structure
 
 ```
-├── app/               # Next.js app directory
-├── components/        # React components
+├── app/               # Next.js App Router (layout, page, globals.css)
+├── components/        # React components (shared sections + ui)
 ├── constants/         # Constants and translations
 ├── context/          # React context providers
 ├── hooks/            # Custom React hooks
 ├── lib/              # Utility functions
 ├── public/           # Static assets
-└── styles/           # Global styles
+├── types/            # Shared TypeScript types
+└── routes/           # (removed) route/section registry
 ```
 
 ## 📄 License

@@ -10,7 +10,7 @@ import { useLanguage } from "@/context/language-context";
 import { DownloadCloudIcon, Menu } from "lucide-react";
 import { LanguageToggle } from "../ui/language-toggle";
 import { ThemeToggle } from "../ui/theme-toggle";
-import { getResumePath } from "@/utils/getResume";
+import { getResumePath } from "@/lib/getResume";
 
 const NAV_MENU = [
   {
@@ -50,7 +50,7 @@ export function Header() {
             <a
               key={index}
               href={menu.href}
-              className="hover:text-amber-600 dark:hover:text-yellow-400 transition-colors"
+              className="hover:text-amber-700 dark:hover:text-yellow-400 transition-colors"
             >
               {t(menu.key)}
             </a>
@@ -62,7 +62,7 @@ export function Header() {
           <LanguageToggle />
           <ThemeToggle />
           <a
-            className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border bg-background h-10 px-4 py-2 border-amber-600 text-amber-600 hover:bg-amber-600 hover:text-white dark:border-yellow-400 dark:text-yellow-400 dark:hover:bg-yellow-400 dark:hover:text-slate-900 hover:animate-pulse"
+            className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border bg-background h-10 px-4 py-2 border-amber-700 text-amber-700 hover:bg-amber-700 hover:text-white dark:border-yellow-400 dark:text-yellow-400 dark:hover:bg-yellow-400 dark:hover:text-slate-900 hover:animate-pulse"
             href={resumePath}
             download
           >
@@ -75,8 +75,10 @@ export function Header() {
 
         {/* Mobile Menu */}
         <Sheet>
-          <SheetTrigger className="md:hidden">
-            <Menu className="h-6 w-6" />
+          <SheetTrigger asChild className="md:hidden">
+            <button aria-label="Open menu">
+              <Menu className="h-6 w-6" />
+            </button>
           </SheetTrigger>
           <SheetContent side="right" className="w-[280px] sm:w-[340px]">
             <SheetTitle className="text-lg font-bold">Menu</SheetTitle>
@@ -85,7 +87,7 @@ export function Header() {
                 <LanguageToggle />
                 <ThemeToggle />
                 <a
-                  className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border bg-background h-10 px-4 py-2 border-amber-600 text-amber-600 hover:bg-amber-600 hover:text-white dark:border-yellow-400 dark:text-yellow-400 dark:hover:bg-yellow-400 dark:hover:text-slate-900"
+                  className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border bg-background h-10 px-4 py-2 border-amber-700 text-amber-700 hover:bg-amber-700 hover:text-white dark:border-yellow-400 dark:text-yellow-400 dark:hover:bg-yellow-400 dark:hover:text-slate-900"
                   href={resumePath}
                   download
                 >
@@ -102,7 +104,7 @@ export function Header() {
                 <a
                   key={index}
                   href={menu.href}
-                  className="text-lg hover:text-amber-600 dark:hover:text-yellow-400 transition-colors"
+                  className="text-lg hover:text-amber-700 dark:hover:text-yellow-400 transition-colors"
                 >
                   {t(menu.key)}
                 </a>

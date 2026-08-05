@@ -1,0 +1,8 @@
+node_modules
+.next
+out
+build
+PLAN.md
+tsconfig.tsbuildinfo
+tsconfig.json
+next-env.d.ts

@@ -20,13 +20,20 @@ export function BackToTopButton() {
   }, []);
 
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
+    window.scrollTo({
+      top: 0,
+      behavior: prefersReducedMotion ? "auto" : "smooth",
+    });
   };
 
   return (
     <button
       onClick={scrollToTop}
-      className={`z-10 fixed bottom-6 right-6 p-3 rounded-full bg-amber-600 hover:bg-amber-700 text-white dark:bg-yellow-400 dark:text-black shadow-lg transition-opacity animate-bounce ${
+      aria-label="Back to top"
+      className={`z-10 fixed bottom-6 right-6 p-3 rounded-full bg-amber-700 hover:bg-amber-800 text-white dark:bg-yellow-400 dark:text-black shadow-lg transition-opacity animate-bounce ${
         isVisible ? "opacity-100" : "opacity-0 pointer-events-none"
       }`}
     >

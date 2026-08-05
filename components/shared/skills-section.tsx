@@ -1,13 +1,9 @@
-"use client";
-
 import { TECH_BADGE } from "@/constants/config";
 import { TechBadge } from "./techbadge";
 import { SkillCard } from "./skill-card";
+import type { Translator } from "@/lib/i18n";
 
-import { useLanguage } from "@/context/language-context";
-
-export function SkillsSection() {
-  const { t } = useLanguage();
+export function SkillsSection({ t }: { t: Translator }) {
   return (
     <section id="skills" className="py-20">
       <div className="container mx-auto px-4">

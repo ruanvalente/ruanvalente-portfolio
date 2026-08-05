@@ -34,7 +34,8 @@ export const TRANSLATIONS = {
     "about.focus.item6": "Currently learning: Node.js, Ruby and Rails",
     "about.company.position": "Frontend Engineer at Compass UOL",
     "about.company.location": "Belém-PA, Brazil",
-    "about.education.title": "Systems Analysis and Development by FACINT College",
+    "about.education.title":
+      "Systems Analysis and Development by FACINT College",
 
     // Skills
     "skills.title": "Skills & Technologies",
@@ -81,7 +82,8 @@ export const TRANSLATIONS = {
 
     // Testimonials
     "testimonials.title": "What People Say",
-    "testimonials.subtitle": "Feedback from colleagues and clients I've had the pleasure to work with",
+    "testimonials.subtitle":
+      "Feedback from colleagues and clients I've had the pleasure to work with",
     "testimonials.pauseAutoplay": "Pause autoplay",
     "testimonials.resumeAutoplay": "Resume autoplay",
     "testimonials.ana.text":
@@ -172,7 +174,8 @@ export const TRANSLATIONS = {
     "about.focus.item6": "Atualmente aprendendo: Node.js, Ruby e Rails",
     "about.company.position": "Engenheiro Frontend na Compass UOL",
     "about.company.location": "Belém-PA, Brasil",
-    "about.education.title": "Análise e Desenvolvimento de Sistemas pela Faculdade FACINT",
+    "about.education.title":
+      "Análise e Desenvolvimento de Sistemas pela Faculdade FACINT",
 
     // Skills
     "skills.title": "Habilidades & Tecnologias",
@@ -215,9 +218,10 @@ export const TRANSLATIONS = {
     "projects.view": "Ver Projeto",
     "projects.viewmore": "Ver mais no GitHub",
 
-     // Testimonials
+    // Testimonials
     "testimonials.title": "O Que Dizem Sobre Mim",
-    "testimonials.subtitle": "Feedback de colegas e clientes com quem tive o prazer de trabalhar",
+    "testimonials.subtitle":
+      "Feedback de colegas e clientes com quem tive o prazer de trabalhar",
     "testimonials.pauseAutoplay": "Pausar reprodução automática",
     "testimonials.resumeAutoplay": "Retomar reprodução automática",
     "testimonials.ana.text":

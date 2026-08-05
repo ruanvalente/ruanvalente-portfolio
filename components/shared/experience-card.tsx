@@ -1,6 +1,3 @@
-"use client";
-
-import { useLanguage } from "@/context/language-context";
 import { Badge } from "../ui/badge";
 
 export function ExperienceCard({
@@ -18,7 +15,6 @@ export function ExperienceCard({
   technologies: string[];
   isLast?: boolean;
 }) {
-  const { t } = useLanguage();
   return (
     <div className="relative pl-8 pb-12">
       {!isLast && (
@@ -28,15 +24,13 @@ export function ExperienceCard({
         <div className="w-2 h-2 rounded-full bg-white dark:bg-slate-900"></div>
       </div>
       <div>
-        <h3 className="text-xl font-semibold">{t(title)}</h3>
+        <h3 className="text-xl font-semibold">{title}</h3>
         <div className="flex items-center gap-2 mb-2">
-          <span className="text-amber-600 dark:text-yellow-400">
-            {t(company)}
-          </span>
-          <span className="text-sm text-muted-foreground">• {t(period)}</span>
+          <span className="text-amber-700 dark:text-yellow-400">{company}</span>
+          <span className="text-sm text-muted-foreground">• {period}</span>
         </div>
         <p className="text-muted-foreground mb-4 whitespace-pre-line">
-          {t(description)}
+          {description}
         </p>
         <div className="flex flex-wrap gap-2">
           {technologies.map((tech, index) => (

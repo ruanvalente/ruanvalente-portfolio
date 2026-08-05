@@ -7,10 +7,11 @@ import {
   useEffect,
   type ReactNode,
 } from "react";
+import { useRouter } from "next/navigation";
 
 import { TRANSLATIONS } from "@/constants/translations";
-
-type Language = "en" | "pt-BR";
+import { LANGUAGE_COOKIE } from "@/lib/i18n";
+import type { Language } from "@/types";
 
 type LanguageContextType = {
   language: Language;
@@ -22,22 +23,29 @@ const LanguageContext = createContext<LanguageContextType | undefined>(
   undefined
 );
 
-export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [language, setLanguageState] = useState<Language>("en");
+export function LanguageProvider({
+  children,
+  initialLanguage,
+}: {
+  children: ReactNode;
+  initialLanguage: Language;
+}) {
+  const [language, setLanguageState] = useState<Language>(initialLanguage);
+  const router = useRouter();
 
   useEffect(() => {
-    const savedLanguage = localStorage.getItem("language") as Language;
-    if (
-      savedLanguage &&
-      (savedLanguage === "en" || savedLanguage === "pt-BR")
-    ) {
-      setLanguageState(savedLanguage);
-    }
-  }, []);
+    document.documentElement.lang = language;
+  }, [language]);
 
   const setLanguage = (newLanguage: Language) => {
     setLanguageState(newLanguage);
-    localStorage.setItem("language", newLanguage);
+    document.cookie = `${LANGUAGE_COOKIE}=${newLanguage}; path=/; max-age=31536000; samesite=lax`;
+    try {
+      localStorage.setItem(LANGUAGE_COOKIE, newLanguage);
+    } catch {
+      // localStorage may be unavailable (e.g. private browsing mode)
+    }
+    router.refresh();
   };
 
   const t = (key: string): string => {
