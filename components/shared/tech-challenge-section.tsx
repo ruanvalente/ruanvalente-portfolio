@@ -1,19 +1,15 @@
-"use client";
-
 import { CHALLENGES } from "@/constants/config";
 import {
   Card,
   CardContent,
-  CardDescription,
   CardFooter,
   CardHeader,
   CardTitle,
 } from "../ui/card";
 import { ExternalLink } from "lucide-react";
-import { useLanguage } from "@/context/language-context";
+import type { Translator } from "@/lib/i18n";
 
-export function TechChallengeSection() {
-  const { t } = useLanguage();
+export function TechChallengeSection({ t }: { t: Translator }) {
   return (
     <section className="bg-secondary dark:bg-slate-900 py-20">
       <div className="container mx-auto px-4">
@@ -28,12 +24,9 @@ export function TechChallengeSection() {
               key={index}
             >
               <CardHeader>
-                <CardTitle className="text-2xl font-semibold leading-none tracking-tight text-amber-600 dark:text-yellow-400 truncate">
-                  {t(challenge.title)}
+                <CardTitle className="text-2xl font-semibold leading-none tracking-tight text-amber-700 dark:text-yellow-400 truncate">
+                  {challenge.title}
                 </CardTitle>
-                <CardDescription className="text-muted-foreground">
-                  {t(challenge.description)}
-                </CardDescription>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
@@ -45,7 +38,7 @@ export function TechChallengeSection() {
                   href={challenge.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-amber-600 dark:text-yellow-400 hover:underline inline-flex items-center"
+                  className="text-amber-700 dark:text-yellow-400 hover:underline inline-flex items-center"
                 >
                   {t("challenges.view")}{" "}
                   <ExternalLink size={16} className="ml-1" />

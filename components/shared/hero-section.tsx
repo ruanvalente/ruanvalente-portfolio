@@ -1,17 +1,14 @@
-"use client";
-
-import { useLanguage } from "@/context/language-context";
 import { Github, Linkedin, Mail } from "lucide-react";
 import Image from "next/image";
+import type { Translator } from "@/lib/i18n";
 
-export function HeroSection() {
-  const { t } = useLanguage();
+export function HeroSection({ t }: { t: Translator }) {
   return (
     <section className="container mx-auto py-20 px-4 flex flex-col md:flex-row items-center gap-10">
       <div className="md:w-1/2">
         <h1 className="text-4xl md:text-6xl font-bold mb-4">
           {t("hero.hello")}{" "}
-          <span className="text-amber-600 dark:text-yellow-400">
+          <span className="text-amber-700 dark:text-yellow-400">
             Ruan Valente
           </span>
         </h1>
@@ -24,7 +21,7 @@ export function HeroSection() {
         <div className="flex gap-4 mb-8">
           <a
             href="#contact"
-            className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 h-10 px-4 py-2 bg-amber-600 text-white hover:bg-amber-700 dark:bg-yellow-400 dark:text-slate-900 dark:hover:bg-yellow-500"
+            className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 h-10 px-4 py-2 bg-amber-700 text-white hover:bg-amber-800 dark:bg-yellow-400 dark:text-slate-900 dark:hover:bg-yellow-500"
           >
             {t("hero.cta.contact")}
           </a>
@@ -68,7 +65,8 @@ export function HeroSection() {
             fill
             className="object-cover"
             priority
-            quality={100}
+            quality={80}
+            sizes="(max-width: 768px) 256px, 320px"
           />
         </div>
       </div>

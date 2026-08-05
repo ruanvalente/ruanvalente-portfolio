@@ -1,10 +1,8 @@
-"use client";
-
 import { EXPERIENCES } from "@/constants/config";
 import { ExperienceCard } from "./experience-card";
-import { useLanguage } from "@/context/language-context";
+import type { Translator } from "@/lib/i18n";
 
-function getTranslatedExperience(index: number, t: (key: string) => string) {
+function getTranslatedExperience(index: number, t: Translator) {
   const fields = ["title", "company", "period", "description"];
   const translations = fields.map((field) =>
     t(`experience.job${index}.${field}`)
@@ -21,9 +19,7 @@ function getTranslatedExperience(index: number, t: (key: string) => string) {
   return { title, company, period, description };
 }
 
-export function ExperiencesSection() {
-  const { t } = useLanguage();
-
+export function ExperiencesSection({ t }: { t: Translator }) {
   return (
     <section id="experience" className="bg-secondary dark:bg-slate-900 py-20">
       <div className="container mx-auto px-4">
@@ -43,7 +39,8 @@ export function ExperiencesSection() {
                 company={translated.company}
                 period={translated.period}
                 description={translated.description}
-                technologies={experience.tecnologies}
+                technologies={experience.technologies}
+                isLast={index === EXPERIENCES.length - 1}
               />
             );
           })}

@@ -54,7 +54,7 @@ export function ProjectsSection() {
             href="https://github.com/ruanvalente"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center text-amber-600 dark:text-yellow-400 hover:underline"
+            className="inline-flex items-center text-amber-700 dark:text-yellow-400 hover:underline"
           >
             {t("projects.viewmore")} <ExternalLink size={16} className="ml-1" />
           </a>

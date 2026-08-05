@@ -1,19 +1,44 @@
 import type React from "react";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
+import { cookies } from "next/headers";
 
 import { Inter } from "next/font/google";
 
 import { Header } from "@/components/shared/header";
 import { Footer } from "@/components/shared/footer";
-import { TooltipProvider } from "@/components/ui/tooltip";
 import { BackToTopButton } from "@/components/ui/back-to-top-button";
 import { ThemeProvider } from "@/components/theme-provider";
 
 import "./globals.css";
 import { LanguageProvider } from "@/context/language-context";
-
+import { getLanguage, LANGUAGE_COOKIE } from "@/lib/i18n";
 
 const inter = Inter({ subsets: ["latin"] });
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#f8fafc" },
+    { media: "(prefers-color-scheme: dark)", color: "#020817" },
+  ],
+};
+
+const JSON_LD_PERSON = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Ruan Valente",
+  url: "https://ruanvalente-portfolio.vercel.app",
+  jobTitle: "Frontend Engineer",
+  worksFor: {
+    "@type": "Organization",
+    name: "Compass UOL",
+  },
+  sameAs: [
+    "https://github.com/ruanvalente",
+    "https://www.linkedin.com/in/ruan-valente",
+  ],
+};
 
 export const metadata: Metadata = {
   title: "Ruan Valente | Frontend Engineer",
@@ -62,7 +87,7 @@ export const metadata: Metadata = {
       {
         url: "/icon1.png",
         type: "image/png",
-        sizes: "32x32",
+        sizes: "96x96",
       },
     ],
     apple: [
@@ -74,14 +99,26 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const cookieStore = await cookies();
+  const lang = getLanguage(cookieStore.get(LANGUAGE_COOKIE)?.value);
+
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang={lang} suppressHydrationWarning>
       <body className={inter.className}>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{var l=localStorage.getItem("language");if(l!=="pt-BR"&&l!=="en")return;document.cookie="language="+l+"; path=/; max-age=31536000; samesite=lax";if(l===document.documentElement.lang)return;if(sessionStorage.getItem("language-migrating"))return;sessionStorage.setItem("language-migrating","1");window.location.reload();}catch(e){}})();`,
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(JSON_LD_PERSON) }}
+        />
         <BackToTopButton />
         <ThemeProvider
           attribute="class"
@@ -89,11 +126,9 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <LanguageProvider>
+          <LanguageProvider initialLanguage={lang}>
             <Header />
-            <TooltipProvider>
-              {children}
-            </TooltipProvider>
+            {children}
             <Footer />
           </LanguageProvider>
         </ThemeProvider>

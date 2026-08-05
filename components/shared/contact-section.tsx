@@ -1,10 +1,7 @@
-"use client";
-
 import { Github, Linkedin, Mail } from "lucide-react";
-import { useLanguage } from "@/context/language-context";
+import type { Translator } from "@/lib/i18n";
 
-export function ContactSection() {
-  const { t } = useLanguage();
+export function ContactSection({ t }: { t: Translator }) {
   return (
     <section id="contact" className="py-20">
       <div className="container mx-auto px-4">
@@ -20,16 +17,15 @@ export function ContactSection() {
           </p>
 
           <div className="flex flex-col md:flex-row md:flex-wrap gap-8 md:gap-6 md:justify-between">
-
             <div className="flex items-center gap-4 min-w-[200px] flex-1">
-              <div className="bg-amber-600 dark:bg-yellow-400 text-white dark:text-slate-900 p-3 rounded-full">
+              <div className="bg-amber-700 dark:bg-yellow-400 text-white dark:text-slate-900 p-3 rounded-full">
                 <Mail size={24} />
               </div>
               <div className="min-w-0">
                 <h3 className="font-medium">{t("contact.email")}</h3>
                 <a
                   href="mailto:contato.ruanvalente@gmail.com"
-                  className="text-sm md:text-base text-muted-foreground hover:text-amber-600 dark:hover:text-yellow-400 break-words"
+                  className="text-sm md:text-base text-muted-foreground hover:text-amber-700 dark:hover:text-yellow-400 break-words"
                 >
                   contato.ruanvalente@gmail.com
                 </a>
@@ -37,7 +33,7 @@ export function ContactSection() {
             </div>
 
             <div className="flex items-center gap-4 min-w-[200px] flex-1">
-              <div className="bg-amber-600 dark:bg-yellow-400 text-white dark:text-slate-900 p-3 rounded-full">
+              <div className="bg-amber-700 dark:bg-yellow-400 text-white dark:text-slate-900 p-3 rounded-full">
                 <Linkedin size={24} />
               </div>
               <div className="min-w-0">
@@ -46,7 +42,7 @@ export function ContactSection() {
                   href="https://www.linkedin.com/in/ruan-valente"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm md:text-base text-muted-foreground hover:text-amber-600 dark:hover:text-yellow-400 break-words"
+                  className="text-sm md:text-base text-muted-foreground hover:text-amber-700 dark:hover:text-yellow-400 break-words"
                 >
                   linkedin.com/in/ruan-valente
                 </a>
@@ -54,7 +50,7 @@ export function ContactSection() {
             </div>
 
             <div className="flex items-center gap-4 min-w-[200px] flex-1">
-              <div className="bg-amber-600 dark:bg-yellow-400 text-white dark:text-slate-900 p-3 rounded-full">
+              <div className="bg-amber-700 dark:bg-yellow-400 text-white dark:text-slate-900 p-3 rounded-full">
                 <Github size={24} />
               </div>
               <div className="min-w-0">
@@ -63,13 +59,12 @@ export function ContactSection() {
                   href="https://github.com/ruanvalente"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm md:text-base text-muted-foreground hover:text-amber-600 dark:hover:text-yellow-400 break-words"
+                  className="text-sm md:text-base text-muted-foreground hover:text-amber-700 dark:hover:text-yellow-400 break-words"
                 >
                   github.com/ruanvalente
                 </a>
               </div>
             </div>
-
           </div>
         </div>
       </div>

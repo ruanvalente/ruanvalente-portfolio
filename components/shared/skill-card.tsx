@@ -1,6 +1,3 @@
-"use client";
-
-import { useLanguage } from "@/context/language-context";
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
 
 export function SkillCard({
@@ -10,12 +7,11 @@ export function SkillCard({
   title: string;
   skills: string[];
 }) {
-  const { t } = useLanguage();
   return (
     <Card className="rounded-lg border bg-card text-card-foreground shadow-md">
       <CardHeader>
-        <CardTitle className="text-base md:text-2xl font-semibold leading-none tracking-tight text-amber-600 dark:text-yellow-400">
-          {t(title)}
+        <CardTitle className="text-base md:text-2xl font-semibold leading-none tracking-tight text-amber-700 dark:text-yellow-400">
+          {title}
         </CardTitle>
       </CardHeader>
       <CardContent>
@@ -23,7 +19,7 @@ export function SkillCard({
           {skills.map((skill, index) => (
             <li key={index} className="flex items-center gap-2">
               <div className="w-1.5 h-1.5 rounded-full bg-amber-600 dark:bg-yellow-400"></div>
-              <span className="text-muted-foreground">{t(skill)}</span>
+              <span className="text-muted-foreground">{skill}</span>
             </li>
           ))}
         </ul>
