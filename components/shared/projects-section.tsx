@@ -1,62 +1,75 @@
 "use client";
 
-import { PROJECTS, TABS } from "@/constants/config";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
-import { ProjectCard } from "./project-card";
 import { ExternalLink } from "lucide-react";
+import { ProjectCard } from "./project-card";
+import { SectionHeader } from "./section-header";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "../ui/tabs";
+import { PROJECTS, TABS } from "@/constants/config";
 import { useLanguage } from "@/context/language-context";
 
 export function ProjectsSection() {
   const { t } = useLanguage();
-  return (
-    <section id="projects" className="py-20">
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold mb-12 text-center">
-          {t("projects.title")}
-        </h2>
 
-        <Tabs defaultValue="all" className="max-w-3xl mx-auto">
-          <TabsList className="grid w-full grid-cols-4 mb-8">
-            {TABS.map((tab, index) => (
+  return (
+    <section id="projects" className="py-space-xl md:py-space-2xl">
+      <div className="container px-gutter-mobile md:px-gutter">
+        <SectionHeader
+          eyebrow={t("projects.eyebrow")}
+          title={t("projects.title")}
+          accent
+        />
+
+        <Tabs defaultValue="all" className="mx-auto max-w-4xl">
+          <TabsList className="mb-space-lg flex h-auto flex-wrap items-center justify-center gap-space-sm rounded-none bg-transparent p-0">
+            {TABS.map((tab) => (
               <TabsTrigger
-                className="data-[state=active]:animate-in data-[state=active]:fade-in-50 duration-700 ease-in-out"
-                key={index}
+                key={tab.value}
                 value={tab.value}
+                className="rounded-full border border-border/80 bg-transparent px-space-md py-space-xs text-label-md text-muted-foreground data-[state=active]:border-primary data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-none"
               >
                 {t(`projects.filter.${tab.value}`)}
               </TabsTrigger>
             ))}
           </TabsList>
 
-          {TABS.map((tab, index) => (
+          {TABS.map((tab) => (
             <TabsContent
-              key={index}
+              key={tab.value}
               value={tab.value}
-              className="grid md:grid-cols-2 gap-6 cursor-pointer data-[state=active]:animate-in data-[state=active]:fade-in-0 data-[state=inactive]:animate-out data-[state=inactive]:fade-out-0 duration-700 ease-in-out"
+              className="grid gap-space-md md:grid-cols-2 md:gap-space-lg lg:grid-cols-3"
             >
               {PROJECTS.filter((project) =>
                 project.category.includes(tab.value)
-              ).map((project) => (
+              ).map((project, idx) => (
                 <ProjectCard
                   key={project.title}
                   title={project.title}
                   description={t(project.descriptionKey)}
                   tags={project.tags}
                   link={project.link}
+                  category={t(
+                    `projects.filter.${
+                      project.category.find((value) => value !== "all") ??
+                      "other"
+                    }`
+                  )}
+                  featured={"featured" in project && project.featured}
+                  index={idx}
                 />
               ))}
             </TabsContent>
           ))}
         </Tabs>
 
-        <div className="text-center mt-10">
+        <div className="mt-space-lg text-center md:mt-space-xl">
           <a
             href="https://github.com/ruanvalente"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center text-amber-700 dark:text-yellow-400 hover:underline"
+            className="inline-flex items-center gap-1 rounded-sm px-1 text-primary transition-colors hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
           >
-            {t("projects.viewmore")} <ExternalLink size={16} className="ml-1" />
+            {t("projects.viewmore")}
+            <ExternalLink size={16} aria-hidden="true" />
           </a>
         </div>
       </div>

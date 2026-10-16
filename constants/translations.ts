@@ -11,20 +11,31 @@ export const TRANSLATIONS = {
 
     // Hero
     "hero.hello": "Hello, I'm",
-    "hero.title": "Frontend Engineer",
+    "hero.title": "Mid-Level Frontend Engineer",
     "hero.description":
       "Passionate frontend developer with 5+ years of experience creating modern, scalable, and high-performance web interfaces. Focused on delivering clean, accessible code and exceptional digital experiences.",
     "hero.cta.contact": "Get in touch",
     "hero.cta.projects": "View Projects",
+    "hero.status": "Available for new opportunities",
+    "hero.social": "Connect with me",
+    "hero.badge.role": "Frontend Engineer",
+    "hero.badge.stack": "React / TypeScript",
+    "hero.metrics.years.value": "5+",
+    "hero.metrics.years.label": "Years of experience",
+    "hero.metrics.seniority.value": "Mid-Level",
+    "hero.metrics.seniority.label": "Seniority",
+    "hero.metrics.specialty.value": "Design Systems",
+    "hero.metrics.specialty.label": "Specialization",
 
     // About
     "about.title": "About Me",
+    "about.eyebrow": "About",
     "about.whoiam.title": "Who I Am",
     "about.whoiam.p1":
       "I'm a Frontend Engineer based in Belém-PA, Brazil with over 5 years of experience in web development. My journey is driven by a passion for transforming digital experiences through clean, accessible, and high-performance code.",
     "about.whoiam.p2":
       "Currently working at Compass UOL, collaborating on large-impact projects and continuously improving my skills in modern frontend technologies.",
-    "about.focus.title": "My Focus",
+    "about.focus.title": "My Focus & Principles",
     "about.focus.item1":
       "Working with modern frameworks like React, Next.js, Vue.js, Quasar and Angular",
     "about.focus.item2": "Focusing on performance and scalability",
@@ -39,17 +50,20 @@ export const TRANSLATIONS = {
 
     // Skills
     "skills.title": "Skills & Technologies",
-    "skills.frontend": "Frontend",
+    "skills.eyebrow": "Skills",
+    "skills.frontend": "Frontend Core",
     "skills.frameworks": "Frameworks",
-    "skills.tools": "Tools",
-    "skills.other": "Other",
+    "skills.tools": "Tools & Testing",
+    "skills.other": "Practices & Others",
     "skills.stack": "Main Tech Stack",
 
     // Experience
     "experience.title": "Work Experience",
+    "experience.eyebrow": "Career Path",
+    "experience.current": "Current",
     "experience.job0.title": "Frontend Mid-Level",
     "experience.job0.company": "Compass UOL",
-    "experience.job0.period": "Current",
+    "experience.job0.period": "2022 — Present",
     "experience.job0.description":
       "I work as a Front-end Developer in the development and evolution of digital solutions for clients across different segments, such as e-commerce, telecommunications, corporate platforms, and digital products, taking part in medium and large-scale projects focused on scalability, performance, and user experience.\n\nMy work spans from defining technical solutions to implementing, evolving, and sustaining applications in production, always collaborating with multidisciplinary teams and agile methodologies.\n\nKey contributions:\n\n- Development of web applications using React, Next.js, Vue.js, Quasar Framework, TypeScript, Nest.js, and Java, applying best practices of architecture, componentization, and clean code.\n- Participation in defining the Front-end architecture, creating scalable, reusable, and easy-to-maintain solutions.\n- Creation, evolution, and maintenance of Design Systems, promoting visual standardization, accessibility (WCAG), and greater productivity across teams.\n- Development of high-performance components for platforms integrated with Oracle Cloud Commerce (OCC).\n- Implementation and integration with REST APIs, contributing to more stable, performant, and scalable applications.\n- Resolution of challenges related to performance, architecture, rendering, and system integration.\n- Collaboration with Product, UX/UI, Back-end, QA, and DevOps teams, taking part in technical refinements, code reviews, and continuous deliveries.\n- Technical support to the Front-end team through knowledge sharing and the dissemination of software engineering best practices.",
     "experience.job1.title": "Frontend Developer II",
@@ -72,12 +86,14 @@ export const TRANSLATIONS = {
 
     // Projects
     "projects.title": "Featured Projects",
+    "projects.eyebrow": "Portfolio",
     "projects.filter.all": "All",
     "projects.filter.react": "React",
     "projects.filter.vue": "Vue",
     "projects.filter.node": "Node",
     "projects.filter.other": "Other",
     "projects.view": "View Project",
+    "projects.featured": "Featured",
     "projects.viewmore": "View more on GitHub",
 
     // Testimonials
@@ -115,8 +131,11 @@ export const TRANSLATIONS = {
 
     // Challenges
     "challenges.title": "Technical Challenges",
+    "challenges.eyebrow": "Challenges",
     "challenges.view": "View on GitHub",
     "challenges.description": "Frontend Challenge",
+    "challenges.category.frontend": "Frontend",
+    "challenges.category.backend": "Backend",
     // Challenges Descriptions
     "challenges.description.yube":
       "Frontend challenge focused on building a modern web interface with React and TypeScript.",
@@ -126,6 +145,7 @@ export const TRANSLATIONS = {
     "challenges.description.book_challenge": "Backend challenge",
     // Contact
     "contact.title": "Get In Touch",
+    "contact.eyebrow": "Contact",
     "contact.subtitle": "Interested in working together or have any questions?",
     "contact.subtitle2": "Feel free to reach out!",
     "contact.email": "Email",
@@ -151,20 +171,31 @@ export const TRANSLATIONS = {
 
     // Hero
     "hero.hello": "Olá, eu sou",
-    "hero.title": "Engenheiro Frontend",
+    "hero.title": "Engenheiro Frontend Pleno",
     "hero.description":
       "Desenvolvedor frontend apaixonado com mais de 5 anos de experiência criando interfaces web modernas, escaláveis e de alta performance. Focado em entregar código limpo, acessível e experiências digitais excepcionais.",
     "hero.cta.contact": "Entre em contato",
     "hero.cta.projects": "Ver Projetos",
+    "hero.status": "Disponível para novas oportunidades",
+    "hero.social": "Conecte-se comigo",
+    "hero.badge.role": "Engenheiro Frontend",
+    "hero.badge.stack": "React / TypeScript",
+    "hero.metrics.years.value": "5+",
+    "hero.metrics.years.label": "Anos de experiência",
+    "hero.metrics.seniority.value": "Pleno",
+    "hero.metrics.seniority.label": "Senioridade",
+    "hero.metrics.specialty.value": "Design Systems",
+    "hero.metrics.specialty.label": "Especialização",
 
     // About
     "about.title": "Sobre Mim",
+    "about.eyebrow": "Sobre",
     "about.whoiam.title": "Quem Sou",
     "about.whoiam.p1":
       "Sou um Engenheiro Frontend baseado em Belém-PA, Brasil, com mais de 5 anos de experiência em desenvolvimento web. Minha jornada é impulsionada pela paixão em transformar experiências digitais através de código limpo, acessível e de alta performance.",
     "about.whoiam.p2":
       "Atualmente trabalho na Compass UOL, colaborando em projetos de grande impacto e continuamente aprimorando minhas habilidades em tecnologias frontend modernas.",
-    "about.focus.title": "Meu Foco",
+    "about.focus.title": "Meu Foco & Princípios",
     "about.focus.item1":
       "Trabalhar com frameworks modernos como React, Next.js, Vue.js, Quasar e Angular",
     "about.focus.item2": "Foco em performance e escalabilidade",
@@ -179,17 +210,20 @@ export const TRANSLATIONS = {
 
     // Skills
     "skills.title": "Habilidades & Tecnologias",
-    "skills.frontend": "Frontend",
+    "skills.eyebrow": "Habilidades",
+    "skills.frontend": "Frontend Core",
     "skills.frameworks": "Frameworks",
-    "skills.tools": "Ferramentas",
-    "skills.other": "Outros",
+    "skills.tools": "Ferramentas & Testes",
+    "skills.other": "Práticas & Outros",
     "skills.stack": "Principais Tecnologias",
 
     // Experience
     "experience.title": "Experiência Profissional",
+    "experience.eyebrow": "Trajetória",
+    "experience.current": "Atual",
     "experience.job0.title": "Frontend Pleno",
     "experience.job0.company": "Compass UOL",
-    "experience.job0.period": "Atual",
+    "experience.job0.period": "2022 — Atual",
     "experience.job0.description":
       "Atuo como Desenvolvedor Front-end no desenvolvimento e evolução de soluções digitais para clientes de diferentes segmentos, como e-commerce, telecomunicações, plataformas corporativas e produtos digitais, participando de projetos de médio e grande porte com foco em escalabilidade, performance e experiência do usuário.\n\nMinha atuação abrange desde a definição de soluções técnicas até a implementação, evolução e sustentação de aplicações em produção, sempre em colaboração com equipes multidisciplinares e metodologias ágeis.\n\nPrincipais contribuições:\n\n- Desenvolvimento de aplicações web utilizando React, Next.js, Vue.js, Quasar Framework, TypeScript, Nest.js e Java, aplicando boas práticas de arquitetura, componentização e código limpo.\n- Participação na definição da arquitetura Front-end, criando soluções escaláveis, reutilizáveis e de fácil manutenção.\n- Criação, evolução e manutenção de Design Systems, promovendo padronização visual, acessibilidade (WCAG) e maior produtividade entre equipes.\n- Desenvolvimento de componentes de alta performance para plataformas integradas ao Oracle Cloud Commerce (OCC).\n- Implementação e integração com APIs REST, contribuindo para aplicações mais estáveis, performáticas e escaláveis.\n- Resolução de desafios relacionados à performance, arquitetura, renderização e integração entre sistemas.\n- Colaboração com equipes de Produto, UX/UI, Back-end, QA e DevOps, participando de refinamentos técnicos, code reviews e entregas contínuas.\n- Apoio técnico ao time de Front-end por meio do compartilhamento de conhecimento e da disseminação de boas práticas de engenharia de software.",
     "experience.job1.title": "Desenvolvedor Frontend II",
@@ -210,12 +244,14 @@ export const TRANSLATIONS = {
 
     // Projects
     "projects.title": "Projetos em Destaque",
+    "projects.eyebrow": "Portfólio",
     "projects.filter.all": "Todos",
     "projects.filter.react": "React",
     "projects.filter.vue": "Vue",
     "projects.filter.node": "Node",
     "projects.filter.other": "Outros",
     "projects.view": "Ver Projeto",
+    "projects.featured": "Destaque",
     "projects.viewmore": "Ver mais no GitHub",
 
     // Testimonials
@@ -253,8 +289,11 @@ export const TRANSLATIONS = {
 
     // Challenges
     "challenges.title": "Desafios Técnicos",
+    "challenges.eyebrow": "Desafios",
     "challenges.view": "Ver no GitHub",
     "challenges.description": "Desafio de Frontend",
+    "challenges.category.frontend": "Frontend",
+    "challenges.category.backend": "Backend",
 
     "challenges.descriptions.yube":
       "Desafio de frontend focado na construção de uma interface web moderna com React e TypeScript.",
@@ -264,6 +303,7 @@ export const TRANSLATIONS = {
     "challenges.description.book_challenge": "Desafio backend",
     // Contact
     "contact.title": "Entre em Contato",
+    "contact.eyebrow": "Contato",
     "contact.subtitle":
       "Interessado em trabalharmos juntos ou tem alguma pergunta?",
     "contact.subtitle2": "Sinta-se à vontade para entrar em contato!",

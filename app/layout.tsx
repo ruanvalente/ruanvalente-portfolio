@@ -2,7 +2,7 @@ import type React from "react";
 import type { Metadata, Viewport } from "next";
 import { cookies } from "next/headers";
 
-import { Inter } from "next/font/google";
+import { Plus_Jakarta_Sans, JetBrains_Mono } from "next/font/google";
 
 import { Header } from "@/components/shared/header";
 import { Footer } from "@/components/shared/footer";
@@ -13,14 +13,26 @@ import "./globals.css";
 import { LanguageProvider } from "@/context/language-context";
 import { getLanguage, LANGUAGE_COOKIE } from "@/lib/i18n";
 
-const inter = Inter({ subsets: ["latin"] });
+const fontSans = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  variable: "--font-sans",
+  weight: ["400", "600", "700", "800"],
+  display: "swap",
+});
+
+const fontMono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono",
+  weight: ["400", "500"],
+  display: "swap",
+});
 
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#f8fafc" },
-    { media: "(prefers-color-scheme: dark)", color: "#020817" },
+    { media: "(prefers-color-scheme: light)", color: "#fbf8ff" },
+    { media: "(prefers-color-scheme: dark)", color: "#0b0b12" },
   ],
 };
 
@@ -109,7 +121,9 @@ export default async function RootLayout({
 
   return (
     <html lang={lang} suppressHydrationWarning>
-      <body className={inter.className}>
+      <body
+        className={`${fontSans.variable} ${fontMono.variable} font-sans antialiased`}
+      >
         <script
           dangerouslySetInnerHTML={{
             __html: `(function(){try{var l=localStorage.getItem("language");if(l!=="pt-BR"&&l!=="en")return;document.cookie="language="+l+"; path=/; max-age=31536000; samesite=lax";if(l===document.documentElement.lang)return;if(sessionStorage.getItem("language-migrating"))return;sessionStorage.setItem("language-migrating","1");window.location.reload();}catch(e){}})();`,

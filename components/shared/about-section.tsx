@@ -1,87 +1,91 @@
-import { Briefcase, MapPin, BookOpen } from "lucide-react";
+import { BookOpen, Briefcase, MapPin } from "lucide-react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { SectionHeader } from "./section-header";
 import type { Translator } from "@/lib/i18n";
 
+const FOCUS_ITEMS = [
+  "about.focus.item1",
+  "about.focus.item2",
+  "about.focus.item3",
+  "about.focus.item4",
+  "about.focus.item5",
+  "about.focus.item6",
+] as const;
+
 export function AboutSection({ t }: { t: Translator }) {
+  const facts = [
+    { icon: MapPin, label: t("about.company.location") },
+    { icon: Briefcase, label: t("about.company.position") },
+    { icon: BookOpen, label: t("about.education.title") },
+  ];
+
   return (
-    <section id="about" className="bg-secondary dark:bg-slate-900 py-20">
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold mb-12 text-center">
-          {t("about.title")}
-        </h2>
-        <div className="grid md:grid-cols-2 gap-10">
-          <div>
-            <h3 className="text-xl font-semibold mb-4 text-amber-700 dark:text-yellow-400">
-              {t("about.whoiam.title")}
-            </h3>
-            <p className="text-muted-foreground mb-6">{t("about.whoiam.p1")}</p>
-            <p className="text-muted-foreground mb-6">{t("about.whoiam.p2")}</p>
-            <div className="flex flex-col gap-3">
-              <div className="flex items-center gap-2">
-                <MapPin
-                  size={18}
-                  className="lucide lucide-map-pin text-amber-700 dark:text-yellow-400"
-                />
-                <span>{t("about.company.location")}</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Briefcase
-                  size={18}
-                  className="lucide lucide-map-pin text-amber-700 dark:text-yellow-400"
-                />
-                <span>{t("about.company.position")}</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <BookOpen
-                  size={18}
-                  className="lucide lucide-map-pin text-amber-700 dark:text-yellow-400"
-                />
-                <span>{t("about.education.title")}</span>
-              </div>
-            </div>
-          </div>
-          <div>
-            <h3 className="text-xl font-semibold mb-4 text-amber-700 dark:text-yellow-400">
-              {t("about.focus.title")}
-            </h3>
-            <ul className="space-y-4">
-              <li className="flex items-start gap-2">
-                <div className="min-w-5 mt-1" aria-hidden="true">
-                  ✅
-                </div>
-                <div>{t("about.focus.item1")}</div>
-              </li>
-              <li className="flex items-start gap-2">
-                <div className="min-w-5 mt-1" aria-hidden="true">
-                  ✅
-                </div>
-                <div> {t("about.focus.item2")}</div>
-              </li>
-              <li className="flex items-start gap-2">
-                <div className="min-w-5 mt-1" aria-hidden="true">
-                  ✅
-                </div>
-                <div>{t("about.focus.item3")}</div>
-              </li>
-              <li className="flex items-start gap-2">
-                <div className="min-w-5 mt-1" aria-hidden="true">
-                  ✅
-                </div>
-                <div>{t("about.focus.item4")}</div>
-              </li>
-              <li className="flex items-start gap-2">
-                <div className="min-w-5 mt-1" aria-hidden="true">
-                  ✅
-                </div>
-                <div>{t("about.focus.item5")}</div>
-              </li>
-              <li className="flex items-start gap-2">
-                <div className="min-w-5 mt-1" aria-hidden="true">
-                  📚
-                </div>
-                <div>{t("about.focus.item6")}</div>
-              </li>
-            </ul>
-          </div>
+    <section
+      id="about"
+      className="bg-surface-container py-space-xl md:py-space-2xl"
+    >
+      <div className="container px-gutter-mobile md:px-gutter">
+        <SectionHeader
+          eyebrow={t("about.eyebrow")}
+          title={t("about.title")}
+          accent
+        />
+
+        <div className="grid gap-space-lg md:grid-cols-2">
+          <Card className="border border-border/80 bg-card shadow-sm">
+            <CardHeader>
+              <CardTitle className="text-headline-sm text-primary">
+                {t("about.whoiam.title")}
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-body-md text-muted-foreground">
+                {t("about.whoiam.p1")}
+              </p>
+              <p className="mt-space-md text-body-md text-muted-foreground">
+                {t("about.whoiam.p2")}
+              </p>
+              <ul className="mt-space-lg space-y-space-sm border-t border-border/60 pt-space-lg">
+                {facts.map(({ icon: Icon, label }) => (
+                  <li
+                    key={label}
+                    className="flex items-start gap-space-sm text-body-sm text-muted-foreground"
+                  >
+                    <Icon
+                      size={18}
+                      className="mt-0.5 shrink-0 text-primary"
+                      aria-hidden="true"
+                    />
+                    <span>{label}</span>
+                  </li>
+                ))}
+              </ul>
+            </CardContent>
+          </Card>
+
+          <Card className="border border-border/80 bg-card shadow-sm">
+            <CardHeader>
+              <CardTitle className="text-headline-sm text-primary">
+                {t("about.focus.title")}
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <ul className="space-y-space-md">
+                {FOCUS_ITEMS.map((key) => (
+                  <li
+                    key={key}
+                    className="flex items-start gap-space-sm text-body-md text-muted-foreground"
+                  >
+                    <span
+                      aria-hidden="true"
+                      className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary"
+                    />
+                    <span>{t(key)}</span>
+                  </li>
+                ))}
+              </ul>
+            </CardContent>
+          </Card>
         </div>
       </div>
     </section>

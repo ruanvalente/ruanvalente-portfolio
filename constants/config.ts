@@ -146,6 +146,7 @@ export const PROJECTS = [
     tags: ["Next.js", "Tailwind", "React"],
     link: "https://ruanvalente-portfolio.vercel.app",
     category: ["all", "react"],
+    featured: true,
   },
   {
     title: "DaisyUI Nuxt Application",

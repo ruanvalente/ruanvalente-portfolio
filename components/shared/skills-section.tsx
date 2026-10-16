@@ -1,53 +1,69 @@
+import { Boxes, Layout, Sparkles, Wrench } from "lucide-react";
 import { TECH_BADGE } from "@/constants/config";
 import { TechBadge } from "./techbadge";
 import { SkillCard } from "./skill-card";
+import { SectionHeader } from "./section-header";
 import type { Translator } from "@/lib/i18n";
 
 export function SkillsSection({ t }: { t: Translator }) {
+  const categories = [
+    {
+      key: "skills.frontend",
+      icon: Layout,
+      skills: [
+        "HTML5",
+        "CSS3",
+        "JavaScript",
+        "TypeScript",
+        "Responsive Design",
+        "Accessibility",
+      ],
+    },
+    {
+      key: "skills.frameworks",
+      icon: Boxes,
+      skills: ["React", "Next.js", "Vue.js", "Angular", "Quasar"],
+    },
+    {
+      key: "skills.tools",
+      icon: Wrench,
+      skills: ["Git", "Vite", "Webpack", "Jest", "Testing Library", "Docker"],
+    },
+    {
+      key: "skills.other",
+      icon: Sparkles,
+      skills: [
+        "Design Systems",
+        "Performance",
+        "SEO",
+        "UI/UX",
+        "Clean Code",
+        "Agile (Scrum/Kanban)",
+      ],
+    },
+  ];
+
   return (
-    <section id="skills" className="py-20">
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold mb-12 text-center">
-          {t("skills.title")}
-        </h2>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-          <SkillCard
-            title={t("skills.frontend")}
-            skills={[
-              "HTML5",
-              "CSS3",
-              "JavaScript",
-              "TypeScript",
-              "Responsive Design",
-            ]}
-          />
-          <SkillCard
-            title={t("skills.frameworks")}
-            skills={["React", "Next.js", "Vue.js", "Angular", "Quasar"]}
-          />
-          <SkillCard
-            title={t("skills.tools")}
-            skills={["Git", "Webpack", "Vite", "Jest", "Testing Library"]}
-          />
-          <SkillCard
-            title={t("skills.other")}
-            skills={[
-              "Accessibility",
-              "Performance",
-              "SEO",
-              "UI/UX",
-              "Design Systems",
-            ]}
-          />
+    <section id="skills" className="py-space-xl md:py-space-2xl">
+      <div className="container px-gutter-mobile md:px-gutter">
+        <SectionHeader
+          eyebrow={t("skills.eyebrow")}
+          title={t("skills.title")}
+        />
+
+        <div className="grid grid-cols-1 gap-space-md sm:grid-cols-2 md:grid-cols-4 md:gap-space-lg">
+          {categories.map(({ key, icon, skills }) => (
+            <SkillCard key={key} title={t(key)} icon={icon} skills={skills} />
+          ))}
         </div>
 
-        <div className="mt-16">
-          <h3 className="text-xl font-semibold mb-6 text-center">
+        <div className="mt-space-xl md:mt-space-2xl">
+          <h3 className="mb-space-lg text-center text-label-sm uppercase tracking-wide text-muted-foreground">
             {t("skills.stack")}
           </h3>
-          <div className="flex flex-wrap justify-center gap-3">
-            {TECH_BADGE.map((badge, index) => (
-              <TechBadge key={index} name={badge.name} />
+          <div className="flex flex-wrap justify-center gap-space-sm md:gap-space-md">
+            {TECH_BADGE.map((badge) => (
+              <TechBadge key={badge.name} name={badge.name} />
             ))}
           </div>
         </div>
