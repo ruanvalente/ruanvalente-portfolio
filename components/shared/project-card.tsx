@@ -17,6 +17,8 @@ interface ProjectCardProps {
   description: string;
   tags: string[];
   link: string;
+  category?: string;
+  featured?: boolean;
   index?: number;
 }
 
@@ -25,99 +27,68 @@ export function ProjectCard({
   description,
   tags,
   link,
+  category,
+  featured = false,
   index = 0,
 }: ProjectCardProps) {
   const { t } = useLanguage();
+
   return (
     <motion.div
-      initial={{ opacity: 0, y: 50 }}
+      initial={{ opacity: 0, y: 24 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{
-        duration: 0.5,
-        delay: index * 0.1,
-        ease: "easeOut",
-      }}
-      whileHover={{
-        y: -8,
-        transition: { duration: 0.2 },
-      }}
+      transition={{ duration: 0.4, delay: index * 0.06, ease: "easeOut" }}
       className="h-full"
     >
-      <Card className="rounded-lg border bg-card text-card-foreground shadow-md hover:border-amber-700 dark:hover:border-yellow-400 transition-all duration-300 h-full flex flex-col group hover:shadow-xl">
+      <Card className="group flex h-full flex-col border border-border/80 bg-card shadow-sm transition-all hover:border-primary/30 hover:shadow-[0_10px_30px_-10px_rgba(24,24,27,0.05),0_4px_6px_-2px_rgba(24,24,27,0.02)]">
         <CardHeader>
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: index * 0.1 + 0.2 }}
-          >
-            <CardTitle className="text-2xl font-semibold leading-none tracking-tight text-amber-700 dark:text-yellow-400 group-hover:text-amber-700 dark:group-hover:text-yellow-300 transition-colors duration-300">
-              {title}
-            </CardTitle>
-          </motion.div>
+          <div className="flex items-start justify-between gap-space-sm">
+            {category ? (
+              <Badge
+                variant="outline"
+                className="rounded-full border-border/80 text-on-surface-variant"
+              >
+                {category}
+              </Badge>
+            ) : (
+              <span aria-hidden="true" />
+            )}
+            {featured ? (
+              <Badge className="rounded-full border-primary/20 bg-primary/10 text-primary hover:bg-primary/10">
+                {t("projects.featured")}
+              </Badge>
+            ) : null}
+          </div>
+          <CardTitle className="mt-space-md text-headline-sm font-semibold tracking-tight text-primary transition-colors">
+            {title}
+          </CardTitle>
         </CardHeader>
 
         <CardContent className="flex-grow">
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.6, delay: index * 0.1 + 0.3 }}
-            className="text-muted-foreground mb-4 leading-relaxed"
-          >
-            {description}
-          </motion.p>
-
-          <div className="flex flex-wrap gap-2">
-            {tags.map((tag, tagIndex) => (
-              <motion.div
-                key={tagIndex}
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{
-                  duration: 0.3,
-                  delay: index * 0.1 + 0.4 + tagIndex * 0.05,
-                  ease: "easeOut",
-                }}
-                whileHover={{
-                  scale: 1.05,
-                  transition: { duration: 0.2 },
-                }}
+          <p className="text-body-sm text-muted-foreground">{description}</p>
+          <div className="mt-space-md flex flex-wrap gap-space-xs">
+            {tags.map((tag) => (
+              <Badge
+                key={tag}
+                variant="outline"
+                className="rounded-full border-border/80 text-on-surface-variant transition-colors group-hover:border-primary/40"
               >
-                <Badge
-                  variant="outline"
-                  className="border-slate-600 hover:border-amber-700 dark:hover:border-yellow-400 transition-colors duration-200"
-                >
-                  {tag}
-                </Badge>
-              </motion.div>
+                {tag}
+              </Badge>
             ))}
           </div>
         </CardContent>
 
         <CardFooter>
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5, delay: index * 0.1 + 0.5 }}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className="w-full"
+          <a
+            href={link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1 rounded-sm font-medium text-primary transition-colors hover:text-primary/90 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
           >
-            <a
-              href={link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-amber-700 dark:text-yellow-400 hover:text-amber-700 dark:hover:text-yellow-300 hover:underline inline-flex items-center transition-colors duration-200 font-medium"
-            >
-              {t("projects.viewmore")}
-              <motion.div
-                className="ml-1"
-                whileHover={{ x: 3 }}
-                transition={{ duration: 0.2 }}
-              >
-                <ExternalLink size={16} />
-              </motion.div>
-            </a>
-          </motion.div>
+            {t("projects.viewmore")}
+            <ExternalLink size={16} aria-hidden="true" />
+          </a>
         </CardFooter>
       </Card>
     </motion.div>

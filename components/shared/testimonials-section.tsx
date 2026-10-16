@@ -86,24 +86,24 @@ export function TestimonialsSection() {
   };
 
   return (
-    <section className="py-20 bg-secondary dark:bg-slate-900">
-      <div className="container mx-auto px-4">
+    <section className="py-space-xl md:py-space-2xl bg-surface-container">
+      <div className="container px-gutter-mobile md:px-gutter">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-
-          className="text-center mb-12"
+          className="text-center mb-space-xl"
         >
-          <h2 className="text-3xl font-bold mb-4">{t("testimonials.title")}</h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+          <h2 className="text-headline-lg-mobile md:text-headline-lg font-bold mb-space-md">
+            {t("testimonials.title")}
+          </h2>
+          <p className="text-body-md md:text-body-lg text-muted-foreground max-w-2xl mx-auto">
             {t("testimonials.subtitle")}
           </p>
         </motion.div>
 
         <div className="max-w-4xl mx-auto">
-          {/* Main Carousel */}
           <div className="relative">
             <AnimatePresence mode="wait">
               <motion.div
@@ -114,43 +114,40 @@ export function TestimonialsSection() {
                 transition={{ duration: 0.5, ease: "easeInOut" }}
                 className="w-full"
               >
-                <Card className="bg-card border-0 shadow-lg">
-                  <CardContent className="p-8 md:p-12">
+                <Card className="border border-border/80 bg-card shadow-sm">
+                  <CardContent className="p-6 md:p-10 lg:p-12">
                     <div className="flex flex-col items-center text-center">
-                      {/* Quote Icon */}
                       <motion.div
                         initial={{ scale: 0 }}
                         animate={{ scale: 1 }}
                         transition={{ delay: 0.2, duration: 0.3 }}
-                        className="mb-6"
+                        className="mb-space-md"
                       >
-                        <Quote className="w-12 h-12 text-amber-700 dark:text-yellow-400" />
+                        <Quote className="w-12 h-12 text-primary" />
                       </motion.div>
 
-                      {/* Testimonial Text */}
                       <motion.blockquote
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.3, duration: 0.5 }}
-                        className="text-base md:text-lg leading-relaxed text-muted-foreground mb-8 italic"
+                        className="text-headline-sm font-normal leading-relaxed text-muted-foreground mb-space-lg md:mb-space-xl italic"
                       >
                         &ldquo;{t(testimonials[currentIndex].text)}&rdquo;
                       </motion.blockquote>
 
-                      {/* Avatar and Info */}
                       <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.4, duration: 0.5 }}
                         className="flex flex-col items-center"
                       >
-                        <div className="w-16 h-16 rounded-full bg-gradient-to-br from-amber-700 to-amber-800 dark:from-yellow-400 dark:to-yellow-500 flex items-center justify-center mb-4 text-white font-bold text-xl">
+                        <div className="w-16 h-16 rounded-full bg-gradient-to-br from-primary to-primary/80 flex items-center justify-center mb-space-md text-primary-foreground font-bold text-xl">
                           {testimonials[currentIndex].name.charAt(0)}
                         </div>
                         <h3 className="font-semibold text-lg text-foreground">
                           {testimonials[currentIndex].name}
                         </h3>
-                        <p className="text-amber-700 dark:text-yellow-400 font-medium">
+                        <p className="text-primary font-medium">
                           {testimonials[currentIndex].role}
                         </p>
                         <p className="text-sm text-muted-foreground">
@@ -163,13 +160,12 @@ export function TestimonialsSection() {
               </motion.div>
             </AnimatePresence>
 
-            {/* Navigation Buttons */}
             <Button
               variant="outline"
               size="icon"
               onClick={prevTestimonial}
               aria-label="Previous testimonial"
-              className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-background/80 backdrop-blur-sm border-amber-700 dark:border-yellow-400 hover:bg-amber-700 hover:text-white dark:hover:bg-yellow-400 dark:hover:text-slate-900 transition-all duration-300"
+              className="absolute -left-2 md:-left-4 top-1/2 -translate-y-1/2 h-9 w-9 rounded-full border border-border/80 bg-background/80 backdrop-blur-sm hover:bg-primary hover:text-primary-foreground transition-all"
             >
               <ChevronLeft className="w-4 h-4" />
             </Button>
@@ -179,19 +175,18 @@ export function TestimonialsSection() {
               size="icon"
               onClick={nextTestimonial}
               aria-label="Next testimonial"
-              className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-background/80 backdrop-blur-sm border-amber-700 dark:border-yellow-400 hover:bg-amber-700 hover:text-white dark:hover:bg-yellow-400 dark:hover:text-slate-900 transition-all duration-300"
+              className="absolute -right-2 md:-right-4 top-1/2 -translate-y-1/2 h-9 w-9 rounded-full border border-border/80 bg-background/80 backdrop-blur-sm hover:bg-primary hover:text-primary-foreground transition-all"
             >
               <ChevronRight className="w-4 h-4" />
             </Button>
           </div>
 
-          {/* Dots Indicator */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.5, duration: 0.5 }}
-            className="flex justify-center mt-8 space-x-2"
+            className="flex justify-center mt-space-lg space-x-2"
           >
             {testimonials.map((_, index) => (
               <motion.button
@@ -199,9 +194,9 @@ export function TestimonialsSection() {
                 onClick={() => goToTestimonial(index)}
                 aria-label={`Go to testimonial ${index + 1}`}
                 aria-current={index === currentIndex ? "true" : undefined}
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                className={`h-2.5 w-2.5 rounded-full transition-all duration-300 ${
                   index === currentIndex
-                    ? "bg-amber-600 dark:bg-yellow-400 scale-125"
+                    ? "bg-primary scale-125"
                     : "bg-muted-foreground/30 hover:bg-muted-foreground/50"
                 }`}
                 whileHover={{ scale: 1.2 }}
@@ -210,16 +205,15 @@ export function TestimonialsSection() {
             ))}
           </motion.div>
 
-          {/* Auto-play indicator */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.6 }}
-            className="flex justify-center mt-4"
+            className="flex justify-center mt-space-sm"
           >
             <button
               onClick={() => setIsAutoPlaying(!isAutoPlaying)}
-              className="text-xs text-muted-foreground hover:text-foreground transition-colors duration-200"
+              className="text-xs text-muted-foreground hover:text-foreground transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm px-2 py-1"
             >
               {isAutoPlaying
                 ? t("testimonials.pauseAutoplay")

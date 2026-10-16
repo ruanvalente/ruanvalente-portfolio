@@ -19,7 +19,8 @@ export function LanguageToggle() {
         <Button
           variant="outline"
           size="sm"
-          className="w-1/4 border-slate-300 dark:border-slate-700"
+          className="border-border/80"
+          aria-label="Toggle language"
         >
           {language === "en" ? "🇺🇸" : "🇧🇷"}
         </Button>

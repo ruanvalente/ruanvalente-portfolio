@@ -16,7 +16,7 @@ export default async function Home() {
   const t = createTranslator(lang);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-background to-secondary dark:from-slate-950 dark:to-slate-900 text-foreground">
+    <div className="bg-background text-foreground">
       <HeroSection t={t} />
       <AboutSection t={t} />
       <SkillsSection t={t} />

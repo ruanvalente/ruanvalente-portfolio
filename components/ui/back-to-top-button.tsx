@@ -33,7 +33,7 @@ export function BackToTopButton() {
     <button
       onClick={scrollToTop}
       aria-label="Back to top"
-      className={`z-10 fixed bottom-6 right-6 p-3 rounded-full bg-amber-700 hover:bg-amber-800 text-white dark:bg-yellow-400 dark:text-black shadow-lg transition-opacity animate-bounce ${
+      className={`z-10 fixed bottom-6 right-6 rounded-full bg-primary p-3 text-primary-foreground shadow-lg transition-opacity hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ${
         isVisible ? "opacity-100" : "opacity-0 pointer-events-none"
       }`}
     >
