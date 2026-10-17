@@ -152,13 +152,13 @@ export function HeroSection({ t }: { t: Translator }) {
         </div>
 
         {/* Metrics */}
-        <dl className="order-9 mt-space-xl grid grid-cols-3 gap-space-md border-t border-border/60 pt-space-lg md:col-start-1 md:row-start-8">
+        <dl className="order-9 mt-space-xl grid grid-cols-1 gap-space-md border-t border-border/60 pt-space-lg sm:grid-cols-3 md:col-start-1 md:row-start-8">
           {metrics.map((metric) => (
             <div key={metric.label} className="flex flex-col">
               <dt className="order-2 text-label-sm text-muted-foreground">
                 {metric.label}
               </dt>
-              <dd className="order-1 text-body-lg font-semibold text-foreground">
+              <dd className="order-1 whitespace-pre-line text-body-sm font-bold leading-snug text-foreground sm:text-body-md sm:font-bold">
                 {metric.value}
               </dd>
             </div>

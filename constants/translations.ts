@@ -22,9 +22,9 @@ export const TRANSLATIONS = {
     "hero.badge.stack": "React / TypeScript",
     "hero.metrics.years.value": "5+",
     "hero.metrics.years.label": "Years of experience",
-    "hero.metrics.seniority.value": "Mid-Level",
+    "hero.metrics.seniority.value": "Frontend Engineer · Mid-Level",
     "hero.metrics.seniority.label": "Seniority",
-    "hero.metrics.specialty.value": "Design Systems",
+    "hero.metrics.specialty.value": "Frontend Architecture\n& Design Systems",
     "hero.metrics.specialty.label": "Specialization",
 
     // About
@@ -53,8 +53,10 @@ export const TRANSLATIONS = {
     "skills.eyebrow": "Skills",
     "skills.frontend": "Frontend Core",
     "skills.frameworks": "Frameworks",
-    "skills.tools": "Tools & Testing",
-    "skills.other": "Practices & Others",
+    "skills.ai": "AI & LLM",
+    "skills.design": "Design & Product",
+    "skills.tools": "Tools & Quality",
+    "skills.other": "Engineering & Practices",
     "skills.stack": "Main Tech Stack",
 
     // Experience
@@ -182,9 +184,9 @@ export const TRANSLATIONS = {
     "hero.badge.stack": "React / TypeScript",
     "hero.metrics.years.value": "5+",
     "hero.metrics.years.label": "Anos de experiência",
-    "hero.metrics.seniority.value": "Pleno",
+    "hero.metrics.seniority.value": "Frontend Engineer · Pleno",
     "hero.metrics.seniority.label": "Senioridade",
-    "hero.metrics.specialty.value": "Design Systems",
+    "hero.metrics.specialty.value": "Frontend Architecture\n& Design Systems",
     "hero.metrics.specialty.label": "Especialização",
 
     // About
@@ -213,8 +215,10 @@ export const TRANSLATIONS = {
     "skills.eyebrow": "Habilidades",
     "skills.frontend": "Frontend Core",
     "skills.frameworks": "Frameworks",
-    "skills.tools": "Ferramentas & Testes",
-    "skills.other": "Práticas & Outros",
+    "skills.ai": "IA & LLM",
+    "skills.design": "Design & Product",
+    "skills.tools": "Ferramentas & Qualidade",
+    "skills.other": "Engenharia & Práticas",
     "skills.stack": "Principais Tecnologias",
 
     // Experience

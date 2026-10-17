@@ -8,6 +8,7 @@ import { TestimonialsSection } from "@/components/shared/testimonials-section";
 import { ProjectsSection } from "@/components/shared/projects-section";
 import { TechChallengeSection } from "@/components/shared/tech-challenge-section";
 import { ContactSection } from "@/components/shared/contact-section";
+import { SectionTransition } from "@/components/shared/section-transition";
 import { createTranslator, getLanguage, LANGUAGE_COOKIE } from "@/lib/i18n";
 
 export default async function Home() {
@@ -17,14 +18,30 @@ export default async function Home() {
 
   return (
     <div className="bg-background text-foreground">
-      <HeroSection t={t} />
-      <AboutSection t={t} />
-      <SkillsSection t={t} />
-      <ExperiencesSection t={t} />
-      <TestimonialsSection />
-      <ProjectsSection />
-      <TechChallengeSection t={t} />
-      <ContactSection t={t} />
+      <SectionTransition>
+        <HeroSection t={t} />
+      </SectionTransition>
+      <SectionTransition>
+        <AboutSection t={t} />
+      </SectionTransition>
+      <SectionTransition>
+        <SkillsSection t={t} />
+      </SectionTransition>
+      <SectionTransition>
+        <ExperiencesSection t={t} />
+      </SectionTransition>
+      <SectionTransition>
+        <TestimonialsSection />
+      </SectionTransition>
+      <SectionTransition>
+        <ProjectsSection />
+      </SectionTransition>
+      <SectionTransition>
+        <TechChallengeSection t={t} />
+      </SectionTransition>
+      <SectionTransition>
+        <ContactSection t={t} />
+      </SectionTransition>
     </div>
   );
 }
