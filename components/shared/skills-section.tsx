@@ -64,12 +64,7 @@ export function SkillsSection({ t }: { t: Translator }) {
     {
       key: "skills.other",
       icon: Sparkles,
-      skills: [
-        "Performance",
-        "SEO",
-        "Clean Code",
-        "Agile (Scrum/Kanban)",
-      ],
+      skills: ["Performance", "SEO", "Clean Code", "Agile (Scrum/Kanban)"],
     },
   ];
 
