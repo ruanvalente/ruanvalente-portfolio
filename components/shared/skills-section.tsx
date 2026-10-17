@@ -1,4 +1,11 @@
-import { Boxes, Layout, Sparkles, Wrench } from "lucide-react";
+import {
+  Boxes,
+  BrainCircuit,
+  Layout,
+  Palette,
+  Sparkles,
+  Wrench,
+} from "lucide-react";
 import { TECH_BADGE } from "@/constants/config";
 import { TechBadge } from "./techbadge";
 import { SkillCard } from "./skill-card";
@@ -25,6 +32,31 @@ export function SkillsSection({ t }: { t: Translator }) {
       skills: ["React", "Next.js", "Vue.js", "Angular", "Quasar"],
     },
     {
+      key: "skills.ai",
+      icon: BrainCircuit,
+      skills: [
+        "LLM Integration",
+        "AI Agents",
+        "Prompt Engineering",
+        "RAG",
+        "MCP",
+        "Ollama",
+      ],
+    },
+    {
+      key: "skills.design",
+      icon: Palette,
+      skills: [
+        "UI/UX",
+        "Design Systems",
+        "Design Tokens",
+        "Component Architecture",
+        "Product Thinking",
+        "User-Centered Development",
+        "Figma",
+      ],
+    },
+    {
       key: "skills.tools",
       icon: Wrench,
       skills: ["Git", "Vite", "Webpack", "Jest", "Testing Library", "Docker"],
@@ -33,10 +65,8 @@ export function SkillsSection({ t }: { t: Translator }) {
       key: "skills.other",
       icon: Sparkles,
       skills: [
-        "Design Systems",
         "Performance",
         "SEO",
-        "UI/UX",
         "Clean Code",
         "Agile (Scrum/Kanban)",
       ],
@@ -51,7 +81,7 @@ export function SkillsSection({ t }: { t: Translator }) {
           title={t("skills.title")}
         />
 
-        <div className="grid grid-cols-1 gap-space-md sm:grid-cols-2 md:grid-cols-4 md:gap-space-lg">
+        <div className="grid grid-cols-1 gap-space-md sm:grid-cols-2 lg:grid-cols-3 lg:gap-space-lg">
           {categories.map(({ key, icon, skills }) => (
             <SkillCard key={key} title={t(key)} icon={icon} skills={skills} />
           ))}
