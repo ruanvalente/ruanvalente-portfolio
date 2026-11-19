@@ -38,7 +38,7 @@ export function ProjectCard({
       target="_blank"
       rel="noopener noreferrer"
       aria-label={`${title} — ${t("projects.view")}`}
-      className="group block h-full rounded-md transition-transform duration-200 hover:-translate-y-0.5 active:translate-y-0"
+      className="card group block h-full rounded-md"
     >
       <Card className="flex h-full flex-col border border-border/80 bg-card shadow-sm transition-shadow duration-200 group-hover:border-primary/30 group-hover:shadow-md">
         <ProjectVisual tags={tags} />

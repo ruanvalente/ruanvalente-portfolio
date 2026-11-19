@@ -39,7 +39,7 @@ export function ProjectsSection() {
     <section
       id="projects"
       data-screen="free"
-      className="section g2 projects scroll-mt-16"
+      className="section g2 projects scroll-mt-16 py-20 lg:py-24"
     >
       <div className="wrap">
         <Tabs
@@ -88,7 +88,7 @@ export function ProjectsSection() {
           </TabsContent>
         </Tabs>
 
-        <div className="mt-space-md">
+        <div className="mt-space-lg border-t border-border/60 pt-space-md lg:mt-space-xl lg:pt-space-lg">
           <a
             href="https://github.com/ruanvalente"
             target="_blank"

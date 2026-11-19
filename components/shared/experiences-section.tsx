@@ -39,9 +39,9 @@ export function ExperiencesSection({ t }: { t: Translator }) {
     <section
       id="experience"
       data-screen="free"
-      className="section g2 scroll-mt-16 bg-surface-container"
+      className="section g2 scroll-mt-16 bg-surface-container py-20 lg:py-24"
     >
-      <div className="wrap">
+      <div className="wrap flex flex-col gap-12 lg:gap-16">
         {rows.map((row, groupIndex) => (
           <div key={groupIndex} className="screen-group">
             {groupIndex === 0 ? (
