@@ -36,7 +36,7 @@ export function ContactSection({ t }: { t: Translator }) {
   ];
 
   return (
-    <section id="contact" className="section scroll-mt-16">
+    <section id="contact" className="section scroll-mt-16 py-20 lg:py-24">
       <div className="wrap">
         <SectionHeader
           eyebrow={t("contact.eyebrow")}

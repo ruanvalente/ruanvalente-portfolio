@@ -69,8 +69,12 @@ export function SkillsSection({ t }: { t: Translator }) {
   ];
 
   return (
-    <section id="skills" data-screen="free" className="section scroll-mt-16">
-      <div className="wrap">
+    <section
+      id="skills"
+      data-screen="free"
+      className="section scroll-mt-16 py-20 lg:py-24"
+    >
+      <div className="wrap flex flex-col">
         <SectionHeader
           eyebrow={t("skills.eyebrow")}
           title={t("skills.title")}

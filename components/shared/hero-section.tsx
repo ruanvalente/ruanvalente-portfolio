@@ -71,7 +71,10 @@ export function HeroSection({ t }: { t: Translator }) {
                 {t("hero.description")}
               </p>
 
-              <div className="mt-space-md flex flex-wrap gap-space-sm max-md:order-5">
+              <div
+                data-enter-follow
+                className="mt-space-md flex flex-wrap gap-space-sm max-md:order-5"
+              >
                 <a
                   href="#projects"
                   className={buttonVariants({ variant: "default", size: "lg" })}
@@ -108,6 +111,7 @@ export function HeroSection({ t }: { t: Translator }) {
             <figure
               data-ui="portrait"
               data-moment="picture-develops"
+              data-moment-opts='{"look":"film","duration":1600}'
               className="relative aspect-square w-full overflow-hidden rounded-full border border-border/80 bg-surface-container max-md:order-3 max-md:mt-space-md"
             >
               <Image

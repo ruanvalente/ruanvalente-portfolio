@@ -31,7 +31,7 @@ export function RecentProjectsSection() {
     <section
       id="recent-work"
       data-screen="free"
-      className="section g2 projects recent-projects scroll-mt-16"
+      className="section g2 projects recent-projects scroll-mt-16 py-20 lg:py-24"
     >
       <div className="wrap">
         <div className="g2-grid min-h-0 flex-1">
@@ -56,7 +56,7 @@ export function RecentProjectsSection() {
           </div>
         </div>
 
-        <div className="mt-space-md">
+        <div className="mt-space-lg border-t border-border/60 pt-space-md lg:mt-space-xl lg:pt-space-lg">
           <a
             href="https://github.com/ruanvalente"
             target="_blank"

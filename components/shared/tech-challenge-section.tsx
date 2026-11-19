@@ -17,7 +17,7 @@ export function TechChallengeSection({ t }: { t: Translator }) {
     <section
       id="challenges"
       data-screen="free"
-      className="section scroll-mt-16 bg-surface-container"
+      className="section scroll-mt-16 bg-surface-container py-20 lg:py-24"
     >
       <div className="wrap">
         <SectionHeader

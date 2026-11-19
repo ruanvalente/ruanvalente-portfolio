@@ -47,6 +47,14 @@
   --padb: 3rem;
   --gut: 1.5rem;
   --container: 80rem;
+
+  --m-in: 150ms;
+  --m-out: 120ms;
+  --m-press: 90ms;
+  --m-enter: 700ms;
+  --m-enter-lead: 520ms;
+  --m-ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --m-ease-enter: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .dark {
@@ -119,7 +127,7 @@ html {
   border-radius: 2px;
 }
 
-@keyframes hero-in {
+@keyframes hero-line-in {
   from {
     opacity: 0;
     transform: translateY(12px);
@@ -130,130 +138,110 @@ html {
   }
 }
 
-html.m-enter:not(.m-enter-done) .hero-text > * {
-  animation: hero-in 700ms cubic-bezier(0.16, 1, 0.3, 1) both;
-}
-
-/* ---- one section per screen ----------------------------------------------
-   every main section and the footer is exactly one or two screens tall on a
-   desktop; on a phone it grows with its content (min-height, never fixed) so
-   nothing spills into the next section. */
-main > section,
-footer.closing {
-  position: relative;
-  height: calc(var(--h, 1) * 100svh);
-  padding: var(--padt) 0 calc(var(--padb) + var(--bar));
-}
-
-main > section.hero {
-  height: 100svh;
-  padding: 0;
-}
-
-main > section.hero > .wrap {
-  justify-content: center;
-  padding-block: calc(var(--nav) + 2rem) 1.5rem;
-}
-
-main > section > .wrap,
-footer.closing > .wrap {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
-/* two-screen sections: the one .wrap holds two screen groups (grid rows) */
-main > section.g2 {
-  --h: 2;
-}
-
-main > section.g2:not(.projects) > .wrap {
-  display: grid;
-  grid-template-rows: minmax(0, 1fr) minmax(0, 1fr);
-  row-gap: calc(var(--padt) + var(--padb) + var(--bar));
-}
-
-/* the recent-work gallery shows larger stack visuals than the main project grid */
-#recent-work [data-ui="project-stack"] {
-  height: 14rem;
-}
-
-/* the projects' tab panel is the two-screen grid; its wrap also holds the closing link */
-.g2-grid {
-  display: grid;
-  grid-template-rows: minmax(0, 1fr) minmax(0, 1fr);
-  row-gap: calc(var(--padt) + var(--padb) + var(--bar));
-}
-
-.screen-group {
-  display: flex;
-  flex-direction: column;
-  min-height: 0;
-}
-
-@media (min-width: 1024px) {
-  :root {
-    --gut: 5rem;
-    --padt: 7.5rem;
-    --padb: 4.5rem;
-    --nav: 4.5rem;
+@keyframes hero-follow-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
   }
-
-  main > section.g2 .screen-group > .grid:last-child {
-    flex: 1 1 auto;
-    min-height: 0;
+  to {
+    opacity: 1;
+    transform: none;
   }
 }
 
-/* 640-1279: keep at least the screens, grow past them rather than overlap */
-@media (min-width: 640px) and (max-width: 1279px) {
-  main > section:not(.hero),
-  footer.closing {
-    height: auto;
-    min-height: calc(var(--h, 1) * 100svh);
-  }
+html.m-enter:not(.m-enter-done) [data-enter="true"] .hero-text h1,
+html.m-enter:not(.m-enter-done)
+  [data-enter="true"]
+  .hero-text
+  > div
+  > div
+  > p:first-child {
+  animation: hero-line-in var(--m-enter) var(--m-ease-enter) both;
 }
 
-/* phone: lvh, auto height, --hm when stacking makes the content taller */
-@media (max-width: 639px) {
-  main > section:not(.hero),
-  footer.closing {
-    height: auto;
-    min-height: calc(var(--hm, var(--h, 1)) * 100lvh);
+html.m-enter:not(.m-enter-done)
+  [data-enter="true"]
+  .hero-text
+  p:not(:first-child),
+html.m-enter:not(.m-enter-done)
+  [data-enter="true"]
+  .hero-text
+  [data-enter-follow],
+html.m-enter:not(.m-enter-done) [data-enter="true"] .hero-text ul,
+html.m-enter:not(.m-enter-done) [data-enter="true"] .hero-text dl {
+  animation: hero-follow-in var(--m-enter-lead) var(--m-ease-enter) both;
+}
+
+html.m-enter:not(.m-enter-done) [data-enter="true"] [data-ui="portrait"] {
+  animation: hero-follow-in 900ms var(--m-ease-enter) both;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .btn,
+  [class*="buttonVariants"] {
+    transition:
+      transform var(--m-in) var(--m-ease),
+      background-color var(--m-in) var(--m-ease),
+      border-color var(--m-in) var(--m-ease),
+      color var(--m-in) var(--m-ease);
   }
 
-  main > section.g2:not(.g2m) > .wrap {
-    display: flex;
-    flex-direction: column;
-    row-gap: 2rem;
+  .btn:hover,
+  [class*="buttonVariants"]:hover {
+    transform: translateY(-1px);
   }
 
-  .g2-grid {
-    display: flex;
-    flex-direction: column;
-    row-gap: 2rem;
+  .btn:active,
+  [class*="buttonVariants"]:active {
+    transform: translateY(1px) scale(0.985);
+    transition-duration: var(--m-press);
   }
 
-  main > section.g2m {
-    --hm: 2;
+  a.card,
+  .card:has(a),
+  .group.block {
+    transition:
+      transform 180ms var(--m-ease),
+      box-shadow 180ms var(--m-ease),
+      border-color 180ms var(--m-ease);
   }
 
-  main > section.g2m > .wrap {
-    display: grid;
-    grid-template-rows: minmax(0, 1fr) minmax(0, 1fr);
-    row-gap: calc(var(--padt) + var(--padb) + var(--bar));
+  a.card:hover,
+  .card:has(a):hover,
+  .group.block:hover {
+    transform: translateY(-2px);
   }
 
-  /* the hero's full-width portrait makes the text taller than one phone screen;
-     grow with the content so nothing hides under the fixed nav */
-  main > section.hero {
-    height: auto;
-    min-height: 100lvh;
+  .group.block [data-ui="project-stack"] {
+    overflow: hidden;
   }
 
-  main > section.hero > .wrap {
-    justify-content: flex-end;
-    row-gap: 1rem;
+  .group.block [data-ui="project-stack"] svg {
+    transition: transform var(--m-out) var(--m-ease);
+  }
+
+  .group.block:hover [data-ui="project-stack"] svg {
+    transform: scale(1.03);
+    transition-duration: 600ms;
+  }
+
+  nav a,
+  footer a {
+    text-decoration: none;
+    background-image: linear-gradient(currentColor, currentColor);
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    background-size: 0 1px;
+    transition:
+      color var(--m-out) var(--m-ease),
+      background-size var(--m-in) var(--m-ease);
+  }
+
+  nav a:hover,
+  nav a:focus-visible,
+  footer a:hover,
+  footer a:focus-visible {
+    background-size: 100% 1px;
   }
 }
 
@@ -269,5 +257,11 @@ main > section.g2:not(.projects) > .wrap {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+
+  html.m-enter:not(.m-enter-done) [data-enter="true"] *,
+  html.m-enter:not(.m-enter-done) [data-enter="true"] *::before,
+  html.m-enter:not(.m-enter-done) [data-enter="true"] *::after {
+    animation: none !important;
   }
 }
