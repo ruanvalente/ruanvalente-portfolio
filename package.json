@@ -11,7 +11,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint . --max-warnings=0",
-    "format": "prettier --write .",
+    "format": "prettier --write app components constants context lib test",
     "format:check": "prettier --check app components constants context lib test types",
     "test": "vitest run",
     "test:watch": "vitest"
