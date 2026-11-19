@@ -14,6 +14,8 @@ const eslintConfig = [
   {
     ignores: [
       ".next/**",
+      ".agents/**",
+      "public/moments/**",
       "node_modules/**",
       "out/**",
       "build/**",

@@ -8,37 +8,40 @@ import {
 } from "../ui/card";
 import { Badge } from "../ui/badge";
 import { SectionHeader } from "./section-header";
-import { CHALLENGES, PROJECTS } from "@/constants/config";
+import { CHALLENGES } from "@/constants/config";
+import { ProjectVisual } from "./project-visual";
 import type { Translator } from "@/lib/i18n";
 
 export function TechChallengeSection({ t }: { t: Translator }) {
   return (
     <section
       id="challenges"
-      className="bg-surface-container py-space-xl md:py-space-2xl"
+      data-screen="free"
+      className="section scroll-mt-16 bg-surface-container"
     >
-      <div className="container px-gutter-mobile md:px-gutter">
+      <div className="wrap">
         <SectionHeader
           eyebrow={t("challenges.eyebrow")}
           title={t("challenges.title")}
           accent
+          align="left"
         />
 
-        <div className="mx-auto grid max-w-3xl gap-space-md md:grid-cols-2">
+        <div
+          data-ui="challenge-gallery"
+          className="grid gap-space-md md:grid-cols-2 lg:grid-cols-4"
+        >
           {CHALLENGES.map((challenge) => {
             const description = t(challenge.descriptionKey);
-            const category = /backend/i.test(description)
-              ? t("challenges.category.backend")
-              : t("challenges.category.frontend");
-            const stack =
-              PROJECTS.find((project) => project.link === challenge.link)
-                ?.tags ?? [];
+            const category = t(`challenges.category.${challenge.category}`);
+            const stack = challenge.tags;
 
             return (
               <Card
                 key={challenge.link}
-                className="flex flex-col border border-border/80 bg-card shadow-sm transition-all hover:border-primary/30 hover:shadow-[0_10px_30px_-10px_rgba(24,24,27,0.05),0_4px_6px_-2px_rgba(24,24,27,0.02)]"
+                className="flex h-full flex-col overflow-hidden border border-border/80 bg-card shadow-sm"
               >
+                <ProjectVisual tags={stack} />
                 <CardHeader>
                   <Badge
                     variant="outline"
@@ -73,7 +76,8 @@ export function TechChallengeSection({ t }: { t: Translator }) {
                     href={challenge.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 rounded-sm font-medium text-primary transition-colors hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+                    aria-label={`${challenge.title} — ${t("challenges.view")}`}
+                    className="inline-flex min-h-11 items-center gap-1 rounded-sm font-medium text-primary transition-colors hover:underline"
                   >
                     {t("challenges.view")}
                     <ExternalLink size={16} aria-hidden="true" />

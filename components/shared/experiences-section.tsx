@@ -33,78 +33,56 @@ export function ExperiencesSection({ t }: { t: Translator }) {
     ];
   });
 
+  const rows = [items.slice(0, 2), items.slice(2)];
+
   return (
     <section
       id="experience"
-      className="bg-surface-container py-space-xl md:py-space-2xl"
+      data-screen="free"
+      className="section g2 scroll-mt-16 bg-surface-container"
     >
-      <div className="container px-gutter-mobile md:px-gutter">
-        <header className="mb-space-xl text-center">
-          <p className="text-label-sm uppercase tracking-wide text-primary">
-            {t("experience.eyebrow")}
-          </p>
-          <h2 className="mt-space-sm text-headline-lg-mobile font-bold md:text-headline-lg">
-            {t("experience.title")}
-          </h2>
-        </header>
+      <div className="wrap">
+        {rows.map((row, groupIndex) => (
+          <div key={groupIndex} className="screen-group">
+            {groupIndex === 0 ? (
+              <header className="mb-space-lg">
+                <p className="text-label-sm uppercase tracking-wide text-primary">
+                  {t("experience.eyebrow")}
+                </p>
+                <h2 className="mt-space-sm text-headline-lg-mobile font-bold md:text-headline-lg">
+                  {t("experience.title")}
+                </h2>
+              </header>
+            ) : null}
 
-        <ol className="mx-auto max-w-5xl">
-          {items.map((item, position) => {
-            const isLast = position === items.length - 1;
-
-            return (
-              <li
-                key={item.index}
-                className="grid grid-cols-[2rem_minmax(0,1fr)] gap-x-space-md pb-space-xl last:pb-0 lg:grid-cols-[180px_2.5rem_minmax(0,1fr)] lg:gap-x-space-lg"
-              >
-                {/* Metadata (desktop only) */}
-                <div className="hidden pt-space-lg text-right lg:col-start-1 lg:block">
-                  <p className="text-label-md font-semibold text-foreground">
-                    {item.period}
-                  </p>
-                  <p className="mt-space-xs text-label-sm text-muted-foreground">
-                    {item.title}
-                  </p>
-                  <p className="text-label-sm text-muted-foreground">
-                    {item.company}
-                  </p>
-                </div>
-
-                {/* Timeline node + spine */}
-                <div className="relative flex justify-center lg:col-start-2">
-                  {position > 0 && (
-                    <span
-                      aria-hidden="true"
-                      className="absolute left-1/2 top-0 h-10 w-[1.5px] -translate-x-1/2 bg-border"
-                    />
-                  )}
-                  {!isLast && (
-                    <span
-                      aria-hidden="true"
-                      className="absolute bottom-0 left-1/2 top-10 w-[1.5px] -translate-x-1/2 bg-border"
-                    />
-                  )}
-                  <span className="relative z-10 mt-space-lg block h-4 w-4 rounded-full border-2 border-primary bg-surface-container">
-                    <span className="absolute inset-0 m-auto h-1.5 w-1.5 rounded-full bg-primary" />
+            <ol
+              data-ui="career-path"
+              className="grid gap-space-md md:grid-cols-2 md:gap-6"
+            >
+              {row.map((item) => (
+                <li key={item.index} className="flex gap-space-md">
+                  <span
+                    aria-hidden="true"
+                    className="mt-space-lg flex size-4 shrink-0 items-center justify-center rounded-full border-2 border-primary bg-surface-container"
+                  >
+                    <span className="size-1.5 rounded-full bg-primary" />
                   </span>
-                </div>
-
-                {/* Experience card */}
-                <div className="lg:col-start-3">
-                  <ExperienceCard
-                    title={item.title}
-                    company={item.company}
-                    period={item.period}
-                    description={item.description}
-                    technologies={item.technologies}
-                    isCurrent={item.index === 0}
-                    currentLabel={t("experience.current")}
-                  />
-                </div>
-              </li>
-            );
-          })}
-        </ol>
+                  <div className="min-w-0 flex-1">
+                    <ExperienceCard
+                      title={item.title}
+                      company={item.company}
+                      period={item.period}
+                      description={item.description}
+                      technologies={item.technologies}
+                      isCurrent={item.index === 0}
+                      currentLabel={t("experience.current")}
+                    />
+                  </div>
+                </li>
+              ))}
+            </ol>
+          </div>
+        ))}
       </div>
     </section>
   );

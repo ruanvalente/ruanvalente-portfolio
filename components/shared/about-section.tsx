@@ -20,15 +20,13 @@ export function AboutSection({ t }: { t: Translator }) {
   ];
 
   return (
-    <section
-      id="about"
-      className="bg-surface-container py-space-xl md:py-space-2xl"
-    >
-      <div className="container px-gutter-mobile md:px-gutter">
+    <section id="about" className="section scroll-mt-16 bg-surface-container">
+      <div className="wrap">
         <SectionHeader
           eyebrow={t("about.eyebrow")}
           title={t("about.title")}
           accent
+          align="left"
         />
 
         <div className="grid gap-space-lg md:grid-cols-2">
@@ -42,10 +40,10 @@ export function AboutSection({ t }: { t: Translator }) {
               <p className="text-body-md text-muted-foreground">
                 {t("about.whoiam.p1")}
               </p>
-              <p className="mt-space-md text-body-md text-muted-foreground">
+              <p className="mt-space-sm text-body-md text-muted-foreground md:mt-space-md">
                 {t("about.whoiam.p2")}
               </p>
-              <ul className="mt-space-lg space-y-space-sm border-t border-border/60 pt-space-lg">
+              <ul className="mt-space-sm space-y-space-sm border-t border-border/60 pt-space-sm md:mt-space-lg md:pt-space-lg">
                 {facts.map(({ icon: Icon, label }) => (
                   <li
                     key={label}
@@ -63,29 +61,37 @@ export function AboutSection({ t }: { t: Translator }) {
             </CardContent>
           </Card>
 
-          <Card className="border border-border/80 bg-card shadow-sm">
-            <CardHeader>
-              <CardTitle className="text-headline-sm text-primary">
-                {t("about.focus.title")}
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <ul className="space-y-space-md">
-                {FOCUS_ITEMS.map((key) => (
-                  <li
-                    key={key}
-                    className="flex items-start gap-space-sm text-body-md text-muted-foreground"
-                  >
-                    <span
-                      aria-hidden="true"
-                      className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary"
-                    />
-                    <span>{t(key)}</span>
-                  </li>
-                ))}
-              </ul>
-            </CardContent>
-          </Card>
+          <div
+            data-ui="work-profile"
+            className="flex min-h-[22rem] flex-col rounded-lg border border-border/80 bg-card p-space-lg shadow-sm md:min-h-[32rem]"
+          >
+            <div className="flex items-center gap-space-sm border-b border-border/60 pb-space-md">
+              <span className="flex size-10 items-center justify-center rounded-md bg-primary/10 text-primary">
+                <Briefcase size={20} aria-hidden="true" />
+              </span>
+              <div>
+                <p className="text-label-md font-semibold text-foreground">
+                  {t("about.focus.title")}
+                </p>
+                <p className="text-label-sm text-muted-foreground">
+                  {t("about.company.position")}
+                </p>
+              </div>
+            </div>
+            <ul className="mt-space-md flex flex-1 flex-col justify-between gap-space-sm">
+              {FOCUS_ITEMS.map((key, index) => (
+                <li
+                  key={key}
+                  className="flex items-start gap-space-md text-body-md text-muted-foreground"
+                >
+                  <span className="font-mono text-label-sm text-primary">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <span>{t(key)}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
     </section>

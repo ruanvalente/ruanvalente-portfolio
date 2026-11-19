@@ -136,7 +136,7 @@ export const PROJECTS = [
     descriptionKey: "projects.descriptions.link",
 
     tags: ["JavaScript", "HTML", "CSS"],
-    link: "https://yube-challenge-frontend-ruanopensuselinux.vercel.app",
+    link: "https://github.com/ruanvalente/link-solucoes-challenge-frontend",
     category: ["all", "other"],
   },
   {
@@ -173,25 +173,78 @@ export const PROJECTS = [
   },
 ];
 
+export const RECENT_PROJECTS = [
+  {
+    title: "Ver-o-Preço Marketplace",
+    descriptionKey: "projects.descriptions.vero_preco",
+    tags: ["Next.js", "TypeScript", "Tailwind", "Supabase"],
+    link: "https://github.com/ruanvalente/ver-o-preco-marketplace",
+    category: ["all", "react"],
+  },
+  {
+    title: "DiaBemApp",
+    descriptionKey: "projects.descriptions.diabemapp",
+    tags: ["Swift", "SwiftUI", "SwiftData", "XCTest"],
+    link: "https://github.com/ruanvalente/diabemapp",
+    category: ["all", "other"],
+  },
+  {
+    title: "DiaBem",
+    descriptionKey: "projects.descriptions.diabem",
+    tags: ["Next.js", "TypeScript", "Tailwind", "PWA"],
+    link: "https://github.com/ruanvalente/diabem",
+    category: ["all", "react"],
+  },
+  {
+    title: "Image Compressor",
+    descriptionKey: "projects.descriptions.image_compressor",
+    tags: ["Next.js", "TypeScript", "Tailwind", "Sharp"],
+    link: "https://github.com/ruanvalente/image-compressor",
+    category: ["all", "react"],
+  },
+  {
+    title: "ContaAI Rails",
+    descriptionKey: "projects.descriptions.contaai_rails",
+    tags: ["Ruby", "Rails", "PostgreSQL", "Hotwire"],
+    link: "https://github.com/ruanvalente/contaai-rails",
+    category: ["all", "other"],
+  },
+  {
+    title: "BunStack Playground",
+    descriptionKey: "projects.descriptions.bunstack",
+    tags: ["Bun", "Elysia", "React", "TypeScript"],
+    link: "https://github.com/ruanvalente/bunstack-playground",
+    category: ["all", "react"],
+  },
+];
+
 export const CHALLENGES = [
   {
     title: "Yube Challenge",
-    descriptionKey: "projects.descriptions.yube",
+    descriptionKey: "challenges.description.yube",
+    category: "frontend",
+    tags: ["React", "TypeScript", "CSS"],
     link: "https://github.com/ruanvalente/yube-challenge-frontend",
   },
   {
     title: "Link Soluções",
-    descriptionKey: "projects.descriptions.link",
+    descriptionKey: "challenges.description.link",
+    category: "frontend",
+    tags: ["JavaScript", "HTML", "CSS"],
     link: "https://github.com/ruanvalente/link-solucoes-challenge-frontend",
   },
   {
     title: "Ledger CLI",
-    descriptionKey: "projects.descriptions.ledger",
+    descriptionKey: "challenges.description.ledger",
+    category: "backend",
+    tags: ["Ruby", "SQLite", "Docker"],
     link: "https://github.com/ruanvalente/ledger_api_cli",
   },
   {
     title: "Desafio Técnico - Desenvolvedor Backend",
-    descriptionKey: "projects.descriptions.book_challenge",
+    descriptionKey: "challenges.description.book_challenge",
+    category: "backend",
+    tags: ["Nest.js", "Typescript", "MySQL", "Docker"],
     link: "https://github.com/ruanvalente/book-challenge-nest",
   },
-];
+] as const;

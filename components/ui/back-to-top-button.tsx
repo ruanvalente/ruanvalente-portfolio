@@ -1,43 +1,24 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import { ArrowUp } from "lucide-react";
 
+import { buttonVariants } from "@/components/ui/button";
+import { useLanguage } from "@/context/language-context";
+
 export function BackToTopButton() {
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const toggleVisibility = () => {
-      if (window.scrollY > 200) {
-        setIsVisible(true);
-      } else {
-        setIsVisible(false);
-      }
-    };
-
-    window.addEventListener("scroll", toggleVisibility);
-    return () => window.removeEventListener("scroll", toggleVisibility);
-  }, []);
-
-  const scrollToTop = () => {
-    const prefersReducedMotion = window.matchMedia(
-      "(prefers-reduced-motion: reduce)"
-    ).matches;
-    window.scrollTo({
-      top: 0,
-      behavior: prefersReducedMotion ? "auto" : "smooth",
-    });
-  };
+  const { t } = useLanguage();
 
   return (
-    <button
-      onClick={scrollToTop}
-      aria-label="Back to top"
-      className={`z-10 fixed bottom-6 right-6 rounded-full bg-primary p-3 text-primary-foreground shadow-lg transition-opacity hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ${
-        isVisible ? "opacity-100" : "opacity-0 pointer-events-none"
-      }`}
+    <a
+      href="#top"
+      className={buttonVariants({
+        variant: "outline",
+        size: "default",
+        className: "h-11 min-h-11",
+      })}
     >
-      <ArrowUp size={24} />
-    </button>
+      <ArrowUp aria-hidden="true" className="size-4" />
+      {t("footer.backToTop")}
+    </a>
   );
 }

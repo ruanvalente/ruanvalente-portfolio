@@ -1,17 +1,18 @@
 import type React from "react";
 import type { Metadata, Viewport } from "next";
+import Script from "next/script";
 import { cookies } from "next/headers";
 
 import { Plus_Jakarta_Sans, JetBrains_Mono } from "next/font/google";
 
 import { Header } from "@/components/shared/header";
 import { Footer } from "@/components/shared/footer";
-import { BackToTopButton } from "@/components/ui/back-to-top-button";
 import { ThemeProvider } from "@/components/theme-provider";
 
 import "./globals.css";
 import { LanguageProvider } from "@/context/language-context";
 import { getLanguage, LANGUAGE_COOKIE } from "@/lib/i18n";
+import { SITE_AUTHOR, SITE_NAME, SITE_URL } from "@/lib/site";
 
 const fontSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -39,8 +40,8 @@ export const viewport: Viewport = {
 const JSON_LD_PERSON = {
   "@context": "https://schema.org",
   "@type": "Person",
-  name: "Ruan Valente",
-  url: "https://ruanvalente-portfolio.vercel.app",
+  name: SITE_AUTHOR,
+  url: SITE_URL,
   jobTitle: "Frontend Engineer",
   worksFor: {
     "@type": "Organization",
@@ -52,64 +53,90 @@ const JSON_LD_PERSON = {
   ],
 };
 
-export const metadata: Metadata = {
-  title: "Ruan Valente | Frontend Engineer",
-  description:
-    "Professional portfolio of Ruan Valente, a Frontend Engineer with 5+ years of experience in creating modern web interfaces.",
-  keywords: [
-    "Frontend Engineer",
-    "Web Developer",
-    "React",
-    "Next.js",
-    "TypeScript",
-    "JavaScript",
-    "Software Engineer",
-    "Web Development",
-  ],
-  authors: [{ name: "Ruan Valente" }],
-  creator: "Ruan Valente",
-  publisher: "Ruan Valente",
-  robots: {
-    index: true,
-    follow: true,
-  },
-  openGraph: {
-    type: "website",
-    locale: "en_US",
-    url: "https://ruanvalente-portfolio.vercel.app/",
+const COPY = {
+  en: {
     title: "Ruan Valente | Frontend Engineer",
     description:
-      "Professional portfolio of Ruan Valente, a Frontend Engineer with 5+ years of experience in creating modern web interfaces.",
-    siteName: "Ruan Valente Portfolio",
+      "Frontend engineer with 5+ years building accessible, fast React and Next.js interfaces. See projects, experience and design systems work.",
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "Ruan Valente | Frontend Engineer",
+  "pt-BR": {
+    title: "Ruan Valente | Engenheiro Frontend",
     description:
-      "Professional portfolio of Ruan Valente, a Frontend Engineer with 5+ years of experience in creating modern web interfaces.",
-    creator: "@ruantux",
+      "Engenheiro frontend com mais de 5 anos criando interfaces React e Next.js acessíveis e rápidas. Veja projetos, experiência e design systems.",
   },
-  manifest: "/manifest.json",
-  icons: {
-    icon: [
-      {
-        url: "/favicon.ico",
-        sizes: "any",
-      },
-      {
-        url: "/icon1.png",
-        type: "image/png",
-        sizes: "96x96",
-      },
+} as const;
+
+export async function generateMetadata(): Promise<Metadata> {
+  const cookieStore = await cookies();
+  const lang = getLanguage(cookieStore.get(LANGUAGE_COOKIE)?.value);
+  const copy = COPY[lang];
+
+  return {
+    metadataBase: new URL(SITE_URL),
+    title: copy.title,
+    description: copy.description,
+    applicationName: SITE_NAME,
+    keywords: [
+      "Frontend Engineer",
+      "Engenheiro Frontend",
+      "React",
+      "Next.js",
+      "TypeScript",
+      "Design Systems",
+      "Acessibilidade",
+      "Web Performance",
     ],
-    apple: [
-      {
-        url: "/apple-icon.png",
-        sizes: "180x180",
-      },
-    ],
-  },
-};
+    authors: [{ name: SITE_AUTHOR }],
+    creator: SITE_AUTHOR,
+    publisher: SITE_AUTHOR,
+    alternates: {
+      canonical: "/",
+    },
+    robots: {
+      index: true,
+      follow: true,
+    },
+    other: {
+      "page-type": "service",
+      "site-kind": "other",
+      kind: "service",
+    },
+    openGraph: {
+      type: "website",
+      locale: lang === "pt-BR" ? "pt_BR" : "en_US",
+      url: SITE_URL,
+      title: copy.title,
+      description: copy.description,
+      siteName: SITE_NAME,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: copy.title,
+      description: copy.description,
+      creator: "@ruantux",
+    },
+    manifest: "/manifest.json",
+    icons: {
+      icon: [
+        {
+          url: "/favicon.ico",
+          sizes: "any",
+        },
+        {
+          url: "/icon1.png",
+          type: "image/png",
+          sizes: "96x96",
+        },
+      ],
+      apple: [
+        {
+          url: "/apple-icon.png",
+          sizes: "180x180",
+        },
+      ],
+    },
+  };
+}
 
 export default async function RootLayout({
   children,
@@ -120,8 +147,34 @@ export default async function RootLayout({
   const lang = getLanguage(cookieStore.get(LANGUAGE_COOKIE)?.value);
 
   return (
-    <html lang={lang} suppressHydrationWarning>
+    <html
+      lang={lang}
+      data-type="service"
+      data-site-kind="other"
+      data-kind="service"
+      suppressHydrationWarning
+    >
+      <head>
+        <link rel="modulepreload" href="/moments/moments.js" />
+        <link rel="modulepreload" href="/moments/lib.js" />
+        <link rel="modulepreload" href="/moments/picture-develops/moment.js" />
+        <Script
+          id="moments-loader"
+          strategy="afterInteractive"
+          src="/moments/moments.js"
+          type="module"
+        />
+        <Script
+          id="motion-head"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{
+            __html:
+              "document.documentElement.classList.add('m-enter','mo-js');setTimeout(()=>document.documentElement.classList.add('m-enter-done','mo-safe'),2500)",
+          }}
+        />
+      </head>
       <body
+        id="top"
         className={`${fontSans.variable} ${fontMono.variable} font-sans antialiased`}
       >
         <script
@@ -133,7 +186,6 @@ export default async function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(JSON_LD_PERSON) }}
         />
-        <BackToTopButton />
         <ThemeProvider
           attribute="class"
           defaultTheme="system"

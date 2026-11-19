@@ -11,16 +11,16 @@ import {
 import { useLanguage } from "@/context/language-context";
 
 export function LanguageToggle() {
-  const { language, setLanguage } = useLanguage();
+  const { language, setLanguage, t } = useLanguage();
 
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
         <Button
           variant="outline"
-          size="sm"
-          className="border-border/80"
-          aria-label="Toggle language"
+          size="icon"
+          className="h-11 w-11 border-border/80"
+          aria-label={t("toggle.language")}
         >
           {language === "en" ? "🇺🇸" : "🇧🇷"}
         </Button>
@@ -31,14 +31,13 @@ export function LanguageToggle() {
           className="flex items-center gap-2 hover:cursor-pointer"
         >
           <div className="w-full flex justify-between gap-4">
-            <span>English </span>
-            <span title="American flag">
+            <span>{t("language.english")}</span>
+            <span aria-hidden="true">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="20"
                 height="14"
                 viewBox="0 0 20 14"
-                aria-label="American flag"
               >
                 <rect width="20" height="14" fill="#b22234" />
                 <g fill="#fff">
@@ -68,14 +67,13 @@ export function LanguageToggle() {
           className="flex items-center gap-2"
         >
           <div className="w-full flex justify-between gap-4 hover:cursor-pointer">
-            <span>Português</span>
-            <span title="Brazilian flag">
+            <span>{t("language.portuguese")}</span>
+            <span aria-hidden="true">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="20"
                 height="14"
                 viewBox="0 0 20 14"
-                aria-label="Brazilian flag"
               >
                 <rect width="20" height="14" fill="#3eae46" />
                 <polygon points="10,2 18,7 10,12 2,7" fill="#ffcc29" />

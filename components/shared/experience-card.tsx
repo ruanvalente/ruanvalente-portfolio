@@ -55,6 +55,8 @@ export function ExperienceCard({
   currentLabel,
 }: ExperienceCardProps) {
   const { summary, responsibilities } = parseDescription(description);
+  const shownResponsibilities = responsibilities.slice(0, 4);
+  const shownTechnologies = technologies.slice(0, 8);
 
   return (
     <Card className="border border-border/80 bg-card shadow-sm">
@@ -86,7 +88,7 @@ export function ExperienceCard({
 
         {responsibilities.length > 0 && (
           <ul className="mt-space-md space-y-space-sm">
-            {responsibilities.map((item) => (
+            {shownResponsibilities.map((item) => (
               <li
                 key={item}
                 className="flex gap-space-sm text-body-sm text-muted-foreground"
@@ -102,9 +104,9 @@ export function ExperienceCard({
           </ul>
         )}
 
-        {technologies.length > 0 && (
+        {shownTechnologies.length > 0 && (
           <ul className="mt-space-lg flex flex-wrap gap-space-xs">
-            {technologies.map((technologie) => (
+            {shownTechnologies.map((technologie) => (
               <li key={technologie}>
                 <Badge
                   variant="outline"

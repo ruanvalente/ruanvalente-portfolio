@@ -16,11 +16,11 @@ const config = {
     container: {
       center: true,
       padding: {
-        DEFAULT: "1rem",
-        md: "1.5rem",
+        DEFAULT: "1.5rem",
+        md: "2rem",
       },
       screens: {
-        "2xl": "1120px",
+        "2xl": "1280px",
       },
     },
     extend: {
@@ -77,6 +77,10 @@ const config = {
         display: [
           "3.5rem",
           { lineHeight: "1.1", letterSpacing: "-0.03em", fontWeight: "800" },
+        ],
+        "hero-mobile": [
+          "2.375rem",
+          { lineHeight: "1.12", letterSpacing: "-0.025em", fontWeight: "700" },
         ],
         "headline-lg": [
           "2.25rem",
