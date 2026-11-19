@@ -4,7 +4,6 @@ import { describe, expect, it } from "vitest";
 import type React from "react";
 
 import { ProjectsSection } from "@/components/shared/projects-section";
-import { TestimonialsSection } from "@/components/shared/testimonials-section";
 import { Header } from "@/components/shared/header";
 import { Footer } from "@/components/shared/footer";
 import { HeroSection } from "@/components/shared/hero-section";
@@ -75,11 +74,6 @@ describe("axe accessibility audit", () => {
 
   it("projects section has no accessibility violations", async () => {
     const { container } = render(wrap(<ProjectsSection />));
-    expect(await axe(container)).toHaveNoViolations();
-  });
-
-  it("testimonials section has no accessibility violations", async () => {
-    const { container } = render(wrap(<TestimonialsSection />));
     expect(await axe(container)).toHaveNoViolations();
   });
 });

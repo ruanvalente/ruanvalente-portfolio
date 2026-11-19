@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { ExternalLink } from "lucide-react";
 import { ProjectCard } from "./project-card";
 import { SectionHeader } from "./section-header";
@@ -9,64 +10,82 @@ import { useLanguage } from "@/context/language-context";
 
 export function ProjectsSection() {
   const { t } = useLanguage();
+  const [filter, setFilter] = useState("all");
+
+  const filtered = PROJECTS.filter((project) =>
+    project.category.includes(filter)
+  );
+  const firstRow = filtered.slice(0, 3);
+  const secondRow = filtered.slice(3);
+
+  const cards = (items: typeof filtered) =>
+    items.map((project) => (
+      <ProjectCard
+        key={project.title}
+        title={project.title}
+        description={t(project.descriptionKey)}
+        tags={project.tags}
+        link={project.link}
+        category={t(
+          `projects.filter.${
+            project.category.find((value) => value !== "all") ?? "other"
+          }`
+        )}
+        featured={"featured" in project && project.featured}
+      />
+    ));
 
   return (
-    <section id="projects" className="py-space-xl md:py-space-2xl">
-      <div className="container px-gutter-mobile md:px-gutter">
-        <SectionHeader
-          eyebrow={t("projects.eyebrow")}
-          title={t("projects.title")}
-          accent
-        />
+    <section id="projects" data-screen="free" className="section g2 projects scroll-mt-16">
+      <div className="wrap">
+        <Tabs value={filter} onValueChange={setFilter} className="flex min-h-0 flex-1 flex-col">
+          <TabsContent
+            value={filter}
+            data-ui="project-gallery"
+            className="g2-grid min-h-0 flex-1"
+          >
+            <div className="screen-group">
+              <SectionHeader
+                eyebrow={t("projects.eyebrow")}
+                title={t("projects.title")}
+                accent
+                align="left"
+                className="mb-space-md"
+              />
 
-        <Tabs defaultValue="all" className="mx-auto max-w-4xl">
-          <TabsList className="mb-space-lg flex h-auto flex-wrap items-center justify-center gap-space-sm rounded-none bg-transparent p-0">
-            {TABS.map((tab) => (
-              <TabsTrigger
-                key={tab.value}
-                value={tab.value}
-                className="rounded-full border border-border/80 bg-transparent px-space-md py-space-xs text-label-md text-muted-foreground data-[state=active]:border-primary data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:shadow-none"
-              >
-                {t(`projects.filter.${tab.value}`)}
-              </TabsTrigger>
-            ))}
-          </TabsList>
+              <TabsList className="mb-space-md flex h-auto flex-wrap items-center justify-start gap-2 rounded-none bg-transparent p-0">
+                {TABS.map((tab) => (
+                  <TabsTrigger
+                    key={tab.value}
+                    value={tab.value}
+                    className="rounded-none px-space-md"
+                  >
+                    {t(`projects.filter.${tab.value}`)}
+                  </TabsTrigger>
+                ))}
+              </TabsList>
 
-          {TABS.map((tab) => (
-            <TabsContent
-              key={tab.value}
-              value={tab.value}
-              className="grid gap-space-md md:grid-cols-2 md:gap-space-lg lg:grid-cols-3"
-            >
-              {PROJECTS.filter((project) =>
-                project.category.includes(tab.value)
-              ).map((project, idx) => (
-                <ProjectCard
-                  key={project.title}
-                  title={project.title}
-                  description={t(project.descriptionKey)}
-                  tags={project.tags}
-                  link={project.link}
-                  category={t(
-                    `projects.filter.${
-                      project.category.find((value) => value !== "all") ??
-                      "other"
-                    }`
-                  )}
-                  featured={"featured" in project && project.featured}
-                  index={idx}
-                />
-              ))}
-            </TabsContent>
-          ))}
+              <div className="grid auto-rows-fr gap-space-md md:grid-cols-2 md:gap-6 lg:grid-cols-3">
+                {cards(firstRow)}
+              </div>
+            </div>
+
+            {secondRow.length > 0 ? (
+              <div className="screen-group">
+                <div className="grid auto-rows-fr gap-space-md md:grid-cols-2 md:gap-6 lg:grid-cols-3">
+                  {cards(secondRow)}
+                </div>
+              </div>
+            ) : null}
+          </TabsContent>
         </Tabs>
 
-        <div className="mt-space-lg text-center md:mt-space-xl">
+        <div className="mt-space-md">
           <a
             href="https://github.com/ruanvalente"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1 rounded-sm px-1 text-primary transition-colors hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+            className="inline-flex min-h-11 items-center gap-1 rounded-sm text-primary transition-colors hover:underline"
           >
             {t("projects.viewmore")}
             <ExternalLink size={16} aria-hidden="true" />

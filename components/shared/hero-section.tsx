@@ -1,5 +1,8 @@
 import { Github, Linkedin, Mail, type LucideIcon } from "lucide-react";
 import Image from "next/image";
+
+import { buttonVariants } from "@/components/ui/button";
+import { SITE_AUTHOR } from "@/lib/site";
 import type { Translator } from "@/lib/i18n";
 
 const SOCIAL_LINKS: {
@@ -45,125 +48,93 @@ export function HeroSection({ t }: { t: Translator }) {
   ];
 
   return (
-    <section className="container px-gutter-mobile py-space-xl md:px-gutter md:py-space-2xl">
-      <div className="grid md:grid-cols-[minmax(0,1.1fr)_minmax(0,1fr)] md:gap-x-space-2xl">
-        {/* Status / availability */}
-        <div className="order-1 mb-space-md md:col-start-1 md:row-start-1">
-          <span className="inline-flex items-center gap-space-sm rounded-full border border-border/80 bg-card px-space-md py-space-xs text-label-sm text-on-surface-variant shadow-sm">
-            <span
-              aria-hidden="true"
-              className="h-2 w-2 rounded-full bg-primary"
-            />
-            {t("hero.status")}
-          </span>
-        </div>
+    <section
+      id="hero"
+      data-enter="true"
+      className="hero flex h-[100svh] flex-col justify-center pb-16 pt-28 lg:h-screen"
+    >
+      <div className="wrap">
+        <div className="hero-text flex flex-col justify-center gap-space-lg">
+          <div className="grid grid-cols-1 items-start gap-space-md md:grid-cols-2 md:gap-6 max-md:flex max-md:flex-col max-md:gap-0">
+            <div className="max-md:contents">
+              <p className="text-label-md text-muted-foreground max-md:order-1">
+                {t("hero.hello")}
+              </p>
+              <h1 className="mt-space-sm text-hero-mobile text-primary md:text-display max-md:order-2">
+                <span className="block text-foreground">{SITE_AUTHOR}</span>
+                <span className="block">{t("hero.title")}</span>
+              </h1>
+              <p className="mt-space-md max-w-2xl text-body-md text-muted-foreground sm:hidden md:text-body-lg max-md:order-4">
+                {t("hero.descriptionShort")}
+              </p>
+              <p className="mt-space-md hidden max-w-2xl text-body-md text-muted-foreground sm:block md:text-body-lg max-md:order-4">
+                {t("hero.description")}
+              </p>
 
-        {/* Greeting */}
-        <p className="order-2 text-label-md text-muted-foreground md:col-start-1 md:row-start-2">
-          {t("hero.hello")}
-        </p>
+              <div className="mt-space-md flex flex-wrap gap-space-sm max-md:order-5">
+                <a
+                  href="#projects"
+                  className={buttonVariants({ variant: "default", size: "lg" })}
+                >
+                  {t("hero.cta.projects")}
+                </a>
+                <a
+                  href="#contact"
+                  className={buttonVariants({ variant: "outline", size: "lg" })}
+                >
+                  {t("hero.cta.contact")}
+                </a>
+              </div>
 
-        {/* Name */}
-        <h1 className="order-3 mt-space-sm text-headline-lg text-primary md:col-start-1 md:row-start-3 md:text-display">
-          Ruan Valente
-        </h1>
+              <ul className="mt-space-md hidden flex-wrap items-center gap-x-space-md gap-y-space-sm sm:flex max-md:order-6">
+                {SOCIAL_LINKS.map(({ label, href, icon: Icon, external }) => (
+                  <li key={label}>
+                    <a
+                      href={href}
+                      aria-label={label}
+                      {...(external
+                        ? { target: "_blank", rel: "noopener noreferrer" }
+                        : {})}
+                      className="inline-flex min-h-11 items-center gap-space-sm text-label-md text-muted-foreground transition-colors hover:text-primary"
+                    >
+                      <Icon size={18} aria-hidden="true" />
+                      {label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-        {/* Role */}
-        <p className="order-4 mt-space-sm text-headline-sm text-foreground md:col-start-1 md:row-start-4 md:text-headline-md">
-          {t("hero.title")}
-        </p>
-
-        {/* Avatar + floating metadata */}
-        <div className="order-5 my-space-lg flex justify-center md:col-start-2 md:row-span-8 md:row-start-1 md:my-0 md:self-center">
-          <div className="relative">
-            <div className="relative h-56 w-56 overflow-hidden rounded-full border-4 border-primary bg-surface-container shadow-[0_10px_30px_-10px_rgba(24,24,27,0.15)] sm:h-64 sm:w-64 md:h-80 md:w-80">
+            <figure
+              data-ui="portrait"
+              data-moment="picture-develops"
+              className="relative aspect-square w-full overflow-hidden rounded-full border border-border/80 bg-surface-container max-md:order-3 max-md:mt-space-md"
+            >
               <Image
-                src="https://avatars.githubusercontent.com/u/6674232?s=400&u=62eb573c8af66e882bbf633187e0f247714d30ec&v=4"
-                alt="Ruan Valente"
+                src="/profile-ruanvalente.jpg"
+                alt="Retrato de Ruan Valente"
                 fill
-                className="object-cover"
+                className="!object-contain"
                 priority
                 quality={80}
-                sizes="(max-width: 640px) 224px, (max-width: 768px) 256px, 320px"
+                sizes="(max-width: 767px) 100vw, 640px"
               />
-            </div>
-
-            <span
-              aria-hidden="true"
-              className="pointer-events-none absolute -left-4 top-8 hidden items-center gap-space-sm rounded-md border border-border/80 bg-card px-space-md py-space-sm text-label-sm text-on-surface-variant shadow-[0_4px_12px_-4px_rgba(24,24,27,0.12)] sm:inline-flex"
-            >
-              <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-              {t("hero.badge.role")}
-            </span>
-            <span
-              aria-hidden="true"
-              className="pointer-events-none absolute -right-4 bottom-10 hidden items-center gap-space-sm rounded-md border border-border/80 bg-card px-space-md py-space-sm text-label-sm text-on-surface-variant shadow-[0_4px_12px_-4px_rgba(24,24,27,0.12)] sm:inline-flex"
-            >
-              <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-              {t("hero.badge.stack")}
-            </span>
+            </figure>
           </div>
-        </div>
 
-        {/* Description */}
-        <p className="order-6 mt-space-lg text-body-md text-muted-foreground md:col-start-1 md:row-start-5 md:text-body-lg">
-          {t("hero.description")}
-        </p>
-
-        {/* CTAs */}
-        <div className="order-7 mt-space-lg flex flex-wrap gap-space-sm md:col-start-1 md:row-start-6 md:gap-space-md">
-          <a
-            href="#projects"
-            className="inline-flex h-11 items-center justify-center gap-2 whitespace-nowrap rounded bg-primary px-5 text-sm font-medium text-primary-foreground ring-offset-background transition-transform hover:-translate-y-px hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-          >
-            {t("hero.cta.projects")}
-          </a>
-          <a
-            href="#contact"
-            className="inline-flex h-11 items-center justify-center gap-2 whitespace-nowrap rounded border border-border bg-background px-5 text-sm font-medium text-foreground ring-offset-background transition-colors hover:bg-accent hover:text-accent-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-          >
-            {t("hero.cta.contact")}
-          </a>
-        </div>
-
-        {/* Social */}
-        <div className="order-8 mt-space-lg md:col-start-1 md:row-start-7">
-          <p className="mb-space-sm text-label-sm uppercase tracking-wide text-muted-foreground my-4">
-            {t("hero.social")}
-          </p>
-          <ul className="flex flex-wrap mt-4 items-center gap-space-lg">
-            {SOCIAL_LINKS.map(({ label, href, icon: Icon, external }) => (
-              <li key={label}>
-                <a
-                  href={href}
-                  aria-label={label}
-                  title={label}
-                  {...(external
-                    ? { target: "_blank", rel: "noopener noreferrer" }
-                    : {})}
-                  className="inline-flex items-center gap-space-sm rounded-sm text-label-sm text-muted-foreground transition-colors hover:text-primary focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-                >
-                  <Icon size={16} aria-hidden="true" />
-                  {label}
-                </a>
-              </li>
+          <dl className="hidden grid-cols-1 gap-space-md border-t border-border/60 pt-space-md sm:grid sm:grid-cols-3">
+            {metrics.map((metric) => (
+              <div key={metric.label} className="flex flex-col">
+                <dt className="order-2 text-label-sm text-muted-foreground">
+                  {metric.label}
+                </dt>
+                <dd className="order-1 whitespace-pre-line text-body-md font-bold leading-snug text-foreground">
+                  {metric.value}
+                </dd>
+              </div>
             ))}
-          </ul>
+          </dl>
         </div>
-
-        {/* Metrics */}
-        <dl className="order-9 mt-space-xl grid grid-cols-1 gap-space-md border-t border-border/60 pt-space-lg sm:grid-cols-3 md:col-start-1 md:row-start-8">
-          {metrics.map((metric) => (
-            <div key={metric.label} className="flex flex-col">
-              <dt className="order-2 text-label-sm text-muted-foreground">
-                {metric.label}
-              </dt>
-              <dd className="order-1 whitespace-pre-line text-body-sm font-bold leading-snug text-foreground sm:text-body-md sm:font-bold">
-                {metric.value}
-              </dd>
-            </div>
-          ))}
-        </dl>
       </div>
     </section>
   );

@@ -39,6 +39,14 @@
   --outline: 17 20% 55%;
   --outline-variant: 16 50% 80%;
   --surface-tint: 18 88% 34%;
+
+  /* the one page rhythm (design-taste system.css): one section per screen */
+  --nav: 4rem;
+  --bar: 0px;
+  --padt: 6rem;
+  --padb: 3rem;
+  --gut: 1.5rem;
+  --container: 80rem;
 }
 
 .dark {
@@ -79,12 +87,174 @@
   --surface-tint: 43 96% 56%;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
   @apply bg-background text-foreground;
+  overflow-x: clip;
 }
 
 html {
-  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: auto;
+  scroll-padding-top: 0;
+}
+
+/* one container: equal margins, no inner padding */
+.wrap {
+  position: relative;
+  z-index: 1;
+  width: min(calc(100% - 2 * var(--gut)), var(--container));
+  margin-inline: auto;
+  padding-inline: 0;
+}
+
+:focus-visible {
+  outline: 2px solid hsl(var(--primary));
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+@keyframes hero-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+html.m-enter:not(.m-enter-done) .hero-text > * {
+  animation: hero-in 700ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* ---- one section per screen ----------------------------------------------
+   every main section and the footer is exactly one or two screens tall on a
+   desktop; on a phone it grows with its content (min-height, never fixed) so
+   nothing spills into the next section. */
+main > section,
+footer.closing {
+  position: relative;
+  height: calc(var(--h, 1) * 100svh);
+  padding: var(--padt) 0 calc(var(--padb) + var(--bar));
+}
+
+main > section.hero {
+  height: 100svh;
+  padding: 0;
+}
+
+main > section.hero > .wrap {
+  justify-content: center;
+  padding-block: calc(var(--nav) + 2rem) 1.5rem;
+}
+
+main > section > .wrap,
+footer.closing > .wrap {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* two-screen sections: the one .wrap holds two screen groups (grid rows) */
+main > section.g2 {
+  --h: 2;
+}
+
+main > section.g2:not(.projects) > .wrap {
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) minmax(0, 1fr);
+  row-gap: calc(var(--padt) + var(--padb) + var(--bar));
+}
+
+/* the recent-work gallery shows larger stack visuals than the main project grid */
+#recent-work [data-ui="project-stack"] {
+  height: 14rem;
+}
+
+/* the projects' tab panel is the two-screen grid; its wrap also holds the closing link */
+.g2-grid {
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) minmax(0, 1fr);
+  row-gap: calc(var(--padt) + var(--padb) + var(--bar));
+}
+
+.screen-group {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --gut: 5rem;
+    --padt: 7.5rem;
+    --padb: 4.5rem;
+    --nav: 4.5rem;
+  }
+
+  main > section.g2 .screen-group > .grid:last-child {
+    flex: 1 1 auto;
+    min-height: 0;
+  }
+}
+
+/* 640-1279: keep at least the screens, grow past them rather than overlap */
+@media (min-width: 640px) and (max-width: 1279px) {
+  main > section:not(.hero),
+  footer.closing {
+    height: auto;
+    min-height: calc(var(--h, 1) * 100svh);
+  }
+}
+
+/* phone: lvh, auto height, --hm when stacking makes the content taller */
+@media (max-width: 639px) {
+  main > section:not(.hero),
+  footer.closing {
+    height: auto;
+    min-height: calc(var(--hm, var(--h, 1)) * 100lvh);
+  }
+
+  main > section.g2:not(.g2m) > .wrap {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+  }
+
+  .g2-grid {
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+  }
+
+  main > section.g2m {
+    --hm: 2;
+  }
+
+  main > section.g2m > .wrap {
+    display: grid;
+    grid-template-rows: minmax(0, 1fr) minmax(0, 1fr);
+    row-gap: calc(var(--padt) + var(--padb) + var(--bar));
+  }
+
+  /* the hero's full-width portrait makes the text taller than one phone screen;
+     grow with the content so nothing hides under the fixed nav */
+  main > section.hero {
+    height: auto;
+    min-height: 100lvh;
+  }
+
+  main > section.hero > .wrap {
+    justify-content: flex-end;
+    row-gap: 1rem;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

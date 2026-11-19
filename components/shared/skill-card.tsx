@@ -12,17 +12,17 @@ export function SkillCard({
 }) {
   return (
     <Card className="h-full border border-border/80 bg-card shadow-sm transition-shadow hover:shadow-[0_10px_30px_-10px_rgba(24,24,27,0.05),0_4px_6px_-2px_rgba(24,24,27,0.02)]">
-      <CardHeader>
+      <CardHeader className="p-space-md">
         {Icon ? (
           <span className="flex h-10 w-10 items-center justify-center rounded-md bg-muted text-primary">
             <Icon size={20} aria-hidden="true" />
           </span>
         ) : null}
-        <CardTitle className="text-label-md font-semibold text-primary">
+        <CardTitle className="text-headline-sm font-semibold text-primary">
           {title}
         </CardTitle>
       </CardHeader>
-      <CardContent>
+      <CardContent className="p-space-md pt-0">
         <ul className="space-y-space-xs text-body-sm text-muted-foreground">
           {skills.map((skill) => (
             <li key={skill} className="flex items-center gap-space-sm">

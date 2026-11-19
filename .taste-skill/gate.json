@@ -1,0 +1,210 @@
+{
+ "start": "2026-11-19T02:52:38.967Z",
+ "round": 0,
+ "idle": 0,
+ "errors": 0,
+ "status": "pass",
+ "history": [
+  {
+   "at": "2026-11-19T02:55:16.203Z",
+   "mode": "manual",
+   "status": "pass",
+   "fails": 0,
+   "round": 0,
+   "reused": false,
+   "stopHookActive": false
+  }
+ ],
+ "max": 3,
+ "marker": {
+  "page": null,
+  "url": "http://localhost:3000/",
+  "root": null,
+  "kind": "service",
+  "category": "Frontend engineering, design systems and technical challenges",
+  "primary": "View Projects",
+  "rounds": 3,
+  "start": "2026-11-19T02:52:38.967Z",
+  "by": "gate.mjs --start"
+ },
+ "manual": true,
+ "fp": "b88e1be34f333683",
+ "page": "http://localhost:3000/",
+ "found": {
+  "fails": [],
+  "warns": [
+   {
+    "check": "cta",
+    "where": "section#experience \"Frontend engineering experience\"",
+    "msg": "a section over 1.5 screens long with no link or button in it",
+    "fix": "add the action: a button in the hero, one on every priced item, one in the closing section",
+    "widths": [
+     1440,
+     390
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "copy-buttons",
+    "where": "header.nav.fixed > div.wrap.flex > div.hidden.shrink-0 > a.inline-flex.items-center \"Resume\"",
+    "msg": "\"Resume\" does not start with a verb (book, buy, try, start, get, see...) (and 1 more like it: \"Back to top\")",
+    "fix": "label buttons with a verb and what the visitor gets (\"Book a room\", \"Start free trial\")",
+    "widths": [
+     1440
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "section-gaps",
+    "where": "section#hero / section#about",
+    "msg": "167px between these sections, -28% against the median 232px of gaps at a change of ground",
+    "fix": "use one gap between sections (all within 25% of each other)",
+    "widths": [
+     1440
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "section-gaps",
+    "where": "section#skills / section#experience",
+    "msg": "170px between these sections, -27% against the median 232px of gaps at a change of ground",
+    "fix": "use one gap between sections (all within 25% of each other)",
+    "widths": [
+     1440,
+     390
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "section-gaps",
+    "where": "section#experience / section#projects",
+    "msg": "319px between these sections, +38% against the median 232px of gaps at a change of ground",
+    "fix": "use one gap between sections (all within 25% of each other)",
+    "widths": [
+     1440,
+     390
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "section-gaps",
+    "where": "section#contact / footer#footer",
+    "msg": "344px between these sections, +48% against the median 232px",
+    "fix": "use one gap between sections (all within 25% of each other)",
+    "widths": [
+     1440
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "nav-labels",
+    "where": "header.nav.fixed > nav.contents > a.sr-only \"Skip to content\"",
+    "msg": "\"Skip to content\" opens a section headed \"Ruan Valente Mid-Level Frontend Engineer\"",
+    "fix": "name each nav link after the heading of the section it opens",
+    "widths": [
+     1440
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "link-styles",
+    "where": "section#projects > div.wrap > div.mt-space-md > a.inline-flex.min-h-11 \"View more on GitHub\"",
+    "msg": "text links in 3 looks: no line, bold (3, like \"GitHub\"); no line, regular (2, like \"View more on GitHub\"); border 1px, regular (3, like \"Email contato.ruanva\")",
+    "fix": "give text links one look wherever they sit: one underline, one weight",
+    "widths": [
+     1440
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "stranded-action",
+    "where": "div.grid.gap-6 > div:nth-of-type(1) > div.mt-space-md > a.inline-flex.items-center \"Send Message\"",
+    "msg": "stands 308px down from the nearest text of its block (\"Interested in working together\")",
+    "fix": "put the button under or beside the text it belongs to",
+    "widths": [
+     1440
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "nav-current",
+    "where": "header.nav.fixed",
+    "msg": "the nav stays on screen with 5 links to the page's sections, but never marks the one you are in (no link changes as the page scrolls)",
+    "fix": "mark the link of the section on screen (a colour, a weight or a line under it) as the visitor scrolls",
+    "widths": [
+     1440
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "nav",
+    "where": "header.nav.fixed > div.wrap.flex > button.inline-flex.h-11",
+    "msg": "the nav is lopsided: its last item ends 10px inside the content's edge (366px), while its first starts on the other edge",
+    "fix": "start the nav's first item and end its last on the content's two edges",
+    "widths": [
+     390
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "cta",
+    "where": "section#skills \"Skills for product teams\"",
+    "msg": "a section over 1.5 screens long with no link or button in it",
+    "fix": "add the action: a button in the hero, one on every priced item, one in the closing section",
+    "widths": [
+     390
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "section-gaps",
+    "where": "section#about / section#skills",
+    "msg": "uneven space at the edge of a band: 95px outside its edge, 48px inside it (the space on either side of a change of ground reads as one gap only when the two match)",
+    "fix": "use one gap between sections (all within 25% of each other)",
+    "widths": [
+     390
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "section-gaps",
+    "where": "section#recent-work / section#challenges",
+    "msg": "uneven space at the edge of a band: 60px outside its edge, 95px inside it (the space on either side of a change of ground reads as one gap only when the two match)",
+    "fix": "use one gap between sections (all within 25% of each other)",
+    "widths": [
+     390
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "section-gaps",
+    "where": "section#challenges / section#contact",
+    "msg": "uneven space at the edge of a band: 95px outside its edge, 48px inside it (the space on either side of a change of ground reads as one gap only when the two match)",
+    "fix": "use one gap between sections (all within 25% of each other)",
+    "widths": [
+     390
+    ],
+    "from": "consistency"
+   },
+   {
+    "check": "visual-caption",
+    "where": "div.hero-text.flex > div.grid.grid-cols-1 > div > p.mt-space-md.max-w-2xl:nth-of-type(2) \"Frontend developer with 5+ years buildin\"",
+    "msg": "a muted 15px line of 2 rows sits 17px under the picture image: it reads as a caption: \"Frontend developer with 5+ years buildin...\"; no caption or description under any image, render or visual (house rule)",
+    "fix": "take the line away: no caption or description under, over or on any image, render or visual; a licence credit goes in one footer line",
+    "widths": [
+     390
+    ],
+    "from": "consistency"
+   }
+  ],
+  "crashed": [],
+  "seconds": {
+   "consistency": 144,
+   "layout": 13
+  }
+ },
+ "open": [],
+ "waived": [],
+ "warnCount": 16,
+ "at": "2026-11-19T02:55:16.204Z"
+}

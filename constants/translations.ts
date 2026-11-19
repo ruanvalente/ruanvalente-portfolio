@@ -5,13 +5,27 @@ export const TRANSLATIONS = {
     "nav.skills": "Skills",
     "nav.experience": "Experience",
     "nav.projects": "Projects",
-    "nav.testimonials": "Testimonials",
     "nav.contact": "Contact",
     "nav.resume": "Resume",
+    "nav.skip": "Skip to content",
+    "nav.primary": "Primary navigation",
+    "nav.mobile": "Mobile navigation",
+    "nav.menu": "Open menu",
+    "nav.menuTitle": "Menu",
+    "nav.close": "Close menu",
+    "toggle.language": "Change language",
+    "toggle.theme": "Change theme",
+    "language.english": "English",
+    "language.portuguese": "Portuguese",
+    "theme.light": "Light",
+    "theme.dark": "Dark",
+    "theme.system": "System",
 
     // Hero
     "hero.hello": "Hello, I'm",
     "hero.title": "Mid-Level Frontend Engineer",
+    "hero.descriptionShort":
+      "Frontend developer with 5+ years building accessible, high-performance web interfaces.",
     "hero.description":
       "Passionate frontend developer with 5+ years of experience creating modern, scalable, and high-performance web interfaces. Focused on delivering clean, accessible code and exceptional digital experiences.",
     "hero.cta.contact": "Get in touch",
@@ -28,7 +42,7 @@ export const TRANSLATIONS = {
     "hero.metrics.specialty.label": "Specialization",
 
     // About
-    "about.title": "About Me",
+    "about.title": "The engineer behind the work",
     "about.eyebrow": "About",
     "about.whoiam.title": "Who I Am",
     "about.whoiam.p1":
@@ -49,7 +63,7 @@ export const TRANSLATIONS = {
       "Systems Analysis and Development by FACINT College",
 
     // Skills
-    "skills.title": "Skills & Technologies",
+    "skills.title": "Skills for product teams",
     "skills.eyebrow": "Skills",
     "skills.frontend": "Frontend Core",
     "skills.frameworks": "Frameworks",
@@ -57,10 +71,10 @@ export const TRANSLATIONS = {
     "skills.design": "Design & Product",
     "skills.tools": "Tools & Quality",
     "skills.other": "Engineering & Practices",
-    "skills.stack": "Main Tech Stack",
+    "skills.stack": "Frontend tools I use daily",
 
     // Experience
-    "experience.title": "Work Experience",
+    "experience.title": "Frontend engineering experience",
     "experience.eyebrow": "Career Path",
     "experience.current": "Current",
     "experience.job0.title": "Frontend Mid-Level",
@@ -98,22 +112,9 @@ export const TRANSLATIONS = {
     "projects.featured": "Featured",
     "projects.viewmore": "View more on GitHub",
 
-    // Testimonials
-    "testimonials.title": "What People Say",
-    "testimonials.subtitle":
-      "Feedback from colleagues and clients I've had the pleasure to work with",
-    "testimonials.pauseAutoplay": "Pause autoplay",
-    "testimonials.resumeAutoplay": "Resume autoplay",
-    "testimonials.ana.text":
-      "Ruan is an exceptional frontend engineer. His attention to detail and ability to translate complex designs into pixel-perfect interfaces is remarkable. He consistently delivers high-quality code and is always willing to help the team.",
-    "testimonials.carlos.text":
-      "Working with Ruan was a great experience. He has deep knowledge of modern frontend technologies and always brings innovative solutions to technical challenges. His code is clean, well-documented, and maintainable.",
-    "testimonials.maria.text":
-      "Ruan has an excellent eye for design and user experience. He understands the importance of accessibility and performance, always ensuring that the final product meets the highest standards. A true professional.",
-    "testimonials.joao.text":
-      "I learned a lot working alongside Ruan. He's patient, collaborative, and always willing to share his knowledge. His expertise in React and Next.js helped our team deliver projects faster and with better quality.",
-    "testimonials.fernanda.text":
-      "Ruan is reliable and communicative. He always meets deadlines and keeps the team informed about project progress. His technical skills combined with his collaborative approach make him an invaluable team member.",
+    // Recent Work
+    "recent.title": "Recent frontend and full-stack work",
+    "recent.eyebrow": "Recent Work",
 
     // Project Descriptions
     "projects.descriptions.yube":
@@ -129,10 +130,22 @@ export const TRANSLATIONS = {
     "projects.descriptions.ledger":
       "Ledger CLI is a simple command line (CLI) financial management application using Ruby and SQLite. The project is part of a challenge provided by the DevsNorte community.",
     "projects.descriptions.book_challenge":
-      "Web API of a bookstore system with TDD.",
+      "Backend challenge: a bookstore REST API built with Nest.js and TDD. CRUD for books, authors and orders, filtered search, automatic stock control, JWT authentication with admin/customer roles and automated tests.",
+    "projects.descriptions.vero_preco":
+      "Regional marketplace connecting local buyers and sellers in Pará. Discover used items by category and location, manage listings and favorites, with Supabase auth and server-side authorization.",
+    "projects.descriptions.diabemapp":
+      "iOS/iPadOS app for tracking diabetes care routines. A single timeline for glucose, meals, medication and notes, with charts and local JSON/CSV/ZIP import and export — no servers involved.",
+    "projects.descriptions.diabem":
+      "Offline-first PWA for personal diabetes tracking. Log glucose, meals, activity and medication in encrypted local storage, with statistics, insights, PDF reports and an installable mobile experience.",
+    "projects.descriptions.image_compressor":
+      "Next.js web app that compresses images while preserving quality. Drag-and-drop upload, adjustable quality, JPEG/PNG/WebP/AVIF output, PDF merging, live statistics and an accessible interface.",
+    "projects.descriptions.contaai_rails":
+      "Full-stack Rails platform for writing, publishing and reading books. Rich-text editor with autosave, drag-and-drop chapters, reader ratings and favorites, powered by Hotwire and PostgreSQL.",
+    "projects.descriptions.bunstack":
+      "Full-stack Bun playground with a clean-architecture Elysia API and a React 19 web app. Task management, authentication, dashboard, SQLite/Supabase and typed validation end to end.",
 
     // Challenges
-    "challenges.title": "Technical Challenges",
+    "challenges.title": "Technical challenges solved",
     "challenges.eyebrow": "Challenges",
     "challenges.view": "View on GitHub",
     "challenges.description": "Frontend Challenge",
@@ -143,13 +156,15 @@ export const TRANSLATIONS = {
       "Frontend challenge focused on building a modern web interface with React and TypeScript.",
     "challenges.description.link":
       "Frontend implementation for a company challenge, showcasing responsive design and modern JavaScript.",
-    "challenges.description.ledger": "Backend challenge",
-    "challenges.description.book_challenge": "Backend challenge",
+    "challenges.description.ledger":
+      "DevsNorte community challenge: a Ruby and SQLite CLI for personal finance. Add, list and filter transactions, check balances and export history to CSV or JSON.",
+    "challenges.description.book_challenge":
+      "Backend challenge: a bookstore REST API with Nest.js and TDD. CRUD for books, authors and orders, filtered search, stock control, JWT auth with admin/customer roles and automated tests.",
     // Contact
-    "contact.title": "Get In Touch",
+    "contact.title": "Contact to build frontend products",
     "contact.eyebrow": "Contact",
     "contact.subtitle": "Interested in working together or have any questions?",
-    "contact.subtitle2": "Feel free to reach out!",
+    "contact.subtitle2": "Feel free to reach out.",
     "contact.email": "Email",
     "contact.linkedin": "LinkedIn",
     "contact.github": "GitHub",
@@ -160,6 +175,7 @@ export const TRANSLATIONS = {
 
     // Footer
     "footer.rights": "All rights reserved.",
+    "footer.backToTop": "Back to top",
   },
   "pt-BR": {
     // Navigation
@@ -167,13 +183,27 @@ export const TRANSLATIONS = {
     "nav.skills": "Habilidades",
     "nav.experience": "Experiência",
     "nav.projects": "Projetos",
-    "nav.testimonials": "Depoimentos",
     "nav.contact": "Contato",
     "nav.resume": "Currículo",
+    "nav.skip": "Ir para o conteúdo",
+    "nav.primary": "Navegação principal",
+    "nav.mobile": "Navegação mobile",
+    "nav.menu": "Abrir menu",
+    "nav.menuTitle": "Menu",
+    "nav.close": "Fechar menu",
+    "toggle.language": "Alterar idioma",
+    "toggle.theme": "Alterar tema",
+    "language.english": "Inglês",
+    "language.portuguese": "Português",
+    "theme.light": "Claro",
+    "theme.dark": "Escuro",
+    "theme.system": "Sistema",
 
     // Hero
     "hero.hello": "Olá, eu sou",
     "hero.title": "Engenheiro Frontend Pleno",
+    "hero.descriptionShort":
+      "Desenvolvedor frontend com 5+ anos criando interfaces web acessíveis e de alta performance.",
     "hero.description":
       "Desenvolvedor frontend apaixonado com mais de 5 anos de experiência criando interfaces web modernas, escaláveis e de alta performance. Focado em entregar código limpo, acessível e experiências digitais excepcionais.",
     "hero.cta.contact": "Entre em contato",
@@ -190,7 +220,7 @@ export const TRANSLATIONS = {
     "hero.metrics.specialty.label": "Especialização",
 
     // About
-    "about.title": "Sobre Mim",
+    "about.title": "O engenheiro por trás do trabalho",
     "about.eyebrow": "Sobre",
     "about.whoiam.title": "Quem Sou",
     "about.whoiam.p1":
@@ -211,7 +241,7 @@ export const TRANSLATIONS = {
       "Análise e Desenvolvimento de Sistemas pela Faculdade FACINT",
 
     // Skills
-    "skills.title": "Habilidades & Tecnologias",
+    "skills.title": "Habilidades para times de produto",
     "skills.eyebrow": "Habilidades",
     "skills.frontend": "Frontend Core",
     "skills.frameworks": "Frameworks",
@@ -219,10 +249,10 @@ export const TRANSLATIONS = {
     "skills.design": "Design & Product",
     "skills.tools": "Ferramentas & Qualidade",
     "skills.other": "Engenharia & Práticas",
-    "skills.stack": "Principais Tecnologias",
+    "skills.stack": "Ferramentas frontend que uso diariamente",
 
     // Experience
-    "experience.title": "Experiência Profissional",
+    "experience.title": "Experiência frontend em design systems",
     "experience.eyebrow": "Trajetória",
     "experience.current": "Atual",
     "experience.job0.title": "Frontend Pleno",
@@ -258,22 +288,9 @@ export const TRANSLATIONS = {
     "projects.featured": "Destaque",
     "projects.viewmore": "Ver mais no GitHub",
 
-    // Testimonials
-    "testimonials.title": "O Que Dizem Sobre Mim",
-    "testimonials.subtitle":
-      "Feedback de colegas e clientes com quem tive o prazer de trabalhar",
-    "testimonials.pauseAutoplay": "Pausar reprodução automática",
-    "testimonials.resumeAutoplay": "Retomar reprodução automática",
-    "testimonials.ana.text":
-      "Ruan é um engenheiro frontend excepcional. Sua atenção aos detalhes e capacidade de traduzir designs complexos em interfaces pixel-perfect é notável. Ele sempre entrega código de alta qualidade e está sempre disposto a ajudar a equipe.",
-    "testimonials.carlos.text":
-      "Trabalhar com o Ruan foi uma ótima experiência. Ele tem conhecimento profundo de tecnologias frontend modernas e sempre traz soluções inovadoras para desafios técnicos. Seu código é limpo, bem documentado e fácil de manter.",
-    "testimonials.maria.text":
-      "Ruan tem um excelente olho para design e experiência do usuário. Ele entende a importância da acessibilidade e performance, sempre garantindo que o produto final atenda aos mais altos padrões. Um verdadeiro profissional.",
-    "testimonials.joao.text":
-      "Aprendi muito trabalhando ao lado do Ruan. Ele é paciente, colaborativo e sempre disposto a compartilhar seu conhecimento. Sua expertise em React e Next.js ajudou nossa equipe a entregar projetos mais rápido e com melhor qualidade.",
-    "testimonials.fernanda.text":
-      "Ruan é confiável e comunicativo. Ele sempre cumpre prazos e mantém a equipe informada sobre o progresso dos projetos. Suas habilidades técnicas combinadas com sua abordagem colaborativa o tornam um membro valioso da equipe.",
+    // Trabalhos recentes
+    "recent.title": "Trabalhos frontend e fullstack recentes",
+    "recent.eyebrow": "Trabalhos recentes",
 
     // Descrições dos Projetos (PT-BR)
     "projects.descriptions.yube":
@@ -289,28 +306,42 @@ export const TRANSLATIONS = {
     "projects.descriptions.ledger":
       "Ledger CLI é uma aplicação simples de gestão financeira via linha de comando (CLI) utilizando Ruby e SQLite. O projeto faz parte de um desafio fornecido pela comunidade DevsNorte",
     "projects.descriptions.book_challenge":
-      "API web de um sistema para livraria com TDD.",
+      "Desafio backend: API REST de uma livraria com Nest.js e TDD. CRUD de livros, autores e pedidos, busca filtrada, atualização automática de estoque, autenticação JWT com papéis de admin/cliente e testes automatizados.",
+    "projects.descriptions.vero_preco":
+      "Marketplace regional que conecta compradores e vendedores locais no Pará. Descubra itens usados por categoria e localização, gerencie anúncios e favoritos, com autenticação Supabase e autorização aplicada no servidor.",
+    "projects.descriptions.diabemapp":
+      "Aplicativo iOS/iPadOS para acompanhar a rotina de cuidados com diabetes. Uma linha do tempo única para glicemia, refeições, medicamentos e anotações, com gráficos e exportação/importação local em JSON, CSV e ZIP — sem servidores.",
+    "projects.descriptions.diabem":
+      "PWA offline-first para acompanhamento pessoal de diabetes. Registre glicemia, refeições, atividades e medicamentos em armazenamento local criptografado, com estatísticas, insights, relatórios em PDF e instalação no celular.",
+    "projects.descriptions.image_compressor":
+      "Aplicação Next.js que comprime imagens preservando a qualidade. Upload por arrastar e soltar, qualidade ajustável, saída em JPEG/PNG/WebP/AVIF, união em PDF, estatísticas em tempo real e interface acessível.",
+    "projects.descriptions.contaai_rails":
+      "Plataforma Rails fullstack para escrever, publicar e ler livros. Editor rich-text com salvamento automático, capítulos reordenáveis por arrastar, avaliações e favoritos dos leitores, com Hotwire e PostgreSQL.",
+    "projects.descriptions.bunstack":
+      "Playground fullstack com Bun, API Elysia em clean architecture e aplicação React 19. Gerenciamento de tarefas, autenticação, dashboard, SQLite/Supabase e validação tipada de ponta a ponta.",
 
     // Challenges
-    "challenges.title": "Desafios Técnicos",
+    "challenges.title": "Desafios técnicos resolvidos",
     "challenges.eyebrow": "Desafios",
     "challenges.view": "Ver no GitHub",
     "challenges.description": "Desafio de Frontend",
     "challenges.category.frontend": "Frontend",
     "challenges.category.backend": "Backend",
 
-    "challenges.descriptions.yube":
+    "challenges.description.yube":
       "Desafio de frontend focado na construção de uma interface web moderna com React e TypeScript.",
-    "challenges.descriptions.link":
+    "challenges.description.link":
       "Implementação de frontend para um desafio corporativo, com foco em design responsivo e JavaScript moderno.",
-    "challenges.description.ledger": "Desafio backend",
-    "challenges.description.book_challenge": "Desafio backend",
+    "challenges.description.ledger":
+      "Desafio da comunidade DevsNorte: uma CLI de finanças pessoais com Ruby e SQLite. Adicione, liste e filtre transações, consulte saldos e exporte o histórico em CSV ou JSON.",
+    "challenges.description.book_challenge":
+      "Desafio backend: API REST de uma livraria com Nest.js e TDD. CRUD de livros, autores e pedidos, busca filtrada, controle de estoque, autenticação JWT com papéis de admin/cliente e testes automatizados.",
     // Contact
-    "contact.title": "Entre em Contato",
+    "contact.title": "Vamos construir projetos frontend",
     "contact.eyebrow": "Contato",
     "contact.subtitle":
       "Interessado em trabalharmos juntos ou tem alguma pergunta?",
-    "contact.subtitle2": "Sinta-se à vontade para entrar em contato!",
+    "contact.subtitle2": "Sinta-se à vontade para entrar em contato.",
     "contact.email": "Email",
     "contact.linkedin": "LinkedIn",
     "contact.github": "GitHub",
@@ -321,5 +352,6 @@ export const TRANSLATIONS = {
 
     // Footer
     "footer.rights": "Todos os direitos reservados.",
+    "footer.backToTop": "Voltar ao topo",
   },
 };

@@ -32,6 +32,6 @@ describe("translate", () => {
 describe("createTranslator", () => {
   it("creates a translator bound to a language", () => {
     const t = createTranslator("pt-BR");
-    expect(t("skills.title")).toBe("Habilidades & Tecnologias");
+    expect(t("skills.title")).toBe("Habilidades para times de produto");
   });
 });

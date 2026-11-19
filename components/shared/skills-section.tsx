@@ -69,24 +69,33 @@ export function SkillsSection({ t }: { t: Translator }) {
   ];
 
   return (
-    <section id="skills" className="py-space-xl md:py-space-2xl">
-      <div className="container px-gutter-mobile md:px-gutter">
+    <section
+      id="skills"
+      data-screen="free"
+      className="section scroll-mt-16"
+    >
+      <div className="wrap">
         <SectionHeader
           eyebrow={t("skills.eyebrow")}
           title={t("skills.title")}
+          align="left"
+          className="mb-space-lg"
         />
 
-        <div className="grid grid-cols-1 gap-space-md sm:grid-cols-2 lg:grid-cols-3 lg:gap-space-lg">
+        <div
+          data-ui="skills-matrix"
+          className="grid grid-cols-1 gap-space-md sm:grid-cols-2 lg:grid-cols-3"
+        >
           {categories.map(({ key, icon, skills }) => (
             <SkillCard key={key} title={t(key)} icon={icon} skills={skills} />
           ))}
         </div>
 
-        <div className="mt-space-xl md:mt-space-2xl">
-          <h3 className="mb-space-lg text-center text-label-sm uppercase tracking-wide text-muted-foreground">
+        <div className="mt-space-md">
+          <h3 className="mb-space-md text-headline-sm text-muted-foreground">
             {t("skills.stack")}
           </h3>
-          <div className="flex flex-wrap justify-center gap-space-sm md:gap-space-md">
+          <div className="flex flex-wrap gap-space-sm md:gap-space-md">
             {TECH_BADGE.map((badge) => (
               <TechBadge key={badge.name} name={badge.name} />
             ))}
