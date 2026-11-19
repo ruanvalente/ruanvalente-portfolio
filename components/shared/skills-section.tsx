@@ -69,11 +69,7 @@ export function SkillsSection({ t }: { t: Translator }) {
   ];
 
   return (
-    <section
-      id="skills"
-      data-screen="free"
-      className="section scroll-mt-16"
-    >
+    <section id="skills" data-screen="free" className="section scroll-mt-16">
       <div className="wrap">
         <SectionHeader
           eyebrow={t("skills.eyebrow")}

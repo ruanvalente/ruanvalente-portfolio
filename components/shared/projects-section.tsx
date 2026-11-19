@@ -36,9 +36,17 @@ export function ProjectsSection() {
     ));
 
   return (
-    <section id="projects" data-screen="free" className="section g2 projects scroll-mt-16">
+    <section
+      id="projects"
+      data-screen="free"
+      className="section g2 projects scroll-mt-16"
+    >
       <div className="wrap">
-        <Tabs value={filter} onValueChange={setFilter} className="flex min-h-0 flex-1 flex-col">
+        <Tabs
+          value={filter}
+          onValueChange={setFilter}
+          className="flex min-h-0 flex-1 flex-col"
+        >
           <TabsContent
             value={filter}
             data-ui="project-gallery"

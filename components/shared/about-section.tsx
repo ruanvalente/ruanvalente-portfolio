@@ -20,10 +20,7 @@ export function AboutSection({ t }: { t: Translator }) {
   ];
 
   return (
-    <section
-      id="about"
-      className="section scroll-mt-16 bg-surface-container"
-    >
+    <section id="about" className="section scroll-mt-16 bg-surface-container">
       <div className="wrap">
         <SectionHeader
           eyebrow={t("about.eyebrow")}

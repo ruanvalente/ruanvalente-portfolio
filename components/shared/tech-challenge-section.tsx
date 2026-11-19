@@ -33,9 +33,7 @@ export function TechChallengeSection({ t }: { t: Translator }) {
         >
           {CHALLENGES.map((challenge) => {
             const description = t(challenge.descriptionKey);
-            const category = t(
-              `challenges.category.${challenge.category}`
-            );
+            const category = t(`challenges.category.${challenge.category}`);
             const stack = challenge.tags;
 
             return (

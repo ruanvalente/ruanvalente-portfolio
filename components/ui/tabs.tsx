@@ -43,10 +43,7 @@ const TabsContent = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <TabsPrimitive.Content
     ref={ref}
-    className={cn(
-      "mt-2 rounded-md",
-      className
-    )}
+    className={cn("mt-2 rounded-md", className)}
     {...props}
   />
 ));

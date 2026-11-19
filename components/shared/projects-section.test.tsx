@@ -72,9 +72,9 @@ describe("ProjectsSection", () => {
     renderProjects("pt-BR");
     expect(screen.getByRole("tab", { name: "Todos" })).toBeInTheDocument();
     expect(screen.getByRole("tab", { name: "Outros" })).toBeInTheDocument();
-    expect(
-      screen.getAllByRole("link", { name: /Ver Projeto$/ }).length
-    ).toBe(6);
+    expect(screen.getAllByRole("link", { name: /Ver Projeto$/ }).length).toBe(
+      6
+    );
     expect(
       screen.getAllByRole("link", { name: "Ver mais no GitHub" }).length
     ).toBe(1);
